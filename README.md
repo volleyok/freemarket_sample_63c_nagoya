@@ -39,7 +39,7 @@ Things you may want to cover:
 - has_many :selling_items,->{where(“buyer_id is NULL”)}, foreign_key: ”seller_id”, class_name: “Item”
 - has_many :sold_items, ->{where(“buyer_id is not NULL”)},foreign_key: ”seller_id”, class_name: “Item”
 
-## itemsテーブル
+## postsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
@@ -48,10 +48,11 @@ Things you may want to cover:
 |cotegory|string|null: false|
 |status|string|null: false|
 |postage|string|null: false|
-|delivery_fee|integer|null: false|
 |ship_from|string|null: false|
-|shipping_date|date|null: false|
+|shipping_date|string|null: false|
 |price|integer|null: false|
+
+|delivery_fee|integer|null: false|
 |seller_id|integer|null: false|
 |buyer_id|integer|null: false|
 ### Association
