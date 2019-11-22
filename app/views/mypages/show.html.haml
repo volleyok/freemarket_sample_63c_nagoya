@@ -1,0 +1,10 @@
+.post-contents
+    - @post.each do |post|
+        =link_to "/posts/#{post.id}" do
+            .post-content
+                .post-name
+                = post.name
+                .edit-tag
+                =link_to '編集', "/posts/#{post.id}/edit", method: :get
+                .delite-tag
+                =link_to '削除', "/posts/#{post.id}", method: :delete 
