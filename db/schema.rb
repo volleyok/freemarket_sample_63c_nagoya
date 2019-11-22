@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20191120090215) do
     t.integer  "price"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+    t.integer  "user_id"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
