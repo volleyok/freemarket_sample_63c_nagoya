@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20191120090215) do
     t.string   "name"
     t.text     "description",   limit: 65535
     t.string   "cotegory"
+    t.string   "brand"
     t.string   "status"
     t.string   "postage"
     t.string   "ship_from"
