@@ -384,7 +384,8 @@ img.rogo {
   width: 100%;
   background: url("https://web-jp-assets.mercdn.net/_next/static/images/download_app_bg-b57d6f1a32f2aebd89cf6f43bc2e4b39.jpg");
   background-position: center center;
-  // background-size: 260px 0px;
+  background-repeat: no-repeat;
+  background-size: cover;
 
   &__box{
     width: 750px;
