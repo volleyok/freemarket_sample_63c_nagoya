@@ -35,11 +35,11 @@ ActiveRecord::Schema.define(version: 20191122051945) do
     t.datetime "remember_created_at"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.string   "nickname",               default: "", null: false
+    t.string   "nickname"
     t.string   "profile_img"
-    t.string   "lasttname",                           null: false
+    t.string   "lastname",                            null: false
     t.string   "firstname",                           null: false
-    t.string   "lasttname_kana",                      null: false
+    t.string   "lastname_kana",                       null: false
     t.string   "firstname_kana",                      null: false
     t.date     "birthday"
     t.string   "postal_code",                         null: false
