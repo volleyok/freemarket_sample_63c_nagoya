@@ -86,7 +86,7 @@
           -@post.each do |post|
             %li.item__box-list
               .itme__box-tipe
-              =link_to '/posts/#{post.id}', class: "item__box-image" do
+              =link_to "/posts/#{post.id}", class: "item__box-image" do
                 %img.itme-image{src: "https://static.mercdn.net/thumb/photos/m87721300662_1.jpg?1548652381",}
                   .itme__box-tipe2
                     = post.name
