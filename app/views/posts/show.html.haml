@@ -1,10 +1,7 @@
 .wrapper
   .item-box-container
-    %h1.item-name エコバック
-    %p.item-wording
-      商品の説明　商品の説明　商品の説明　商品の説明　商品の説明　商品の説明　
-      商品の説明　商品の説明　商品の説明　商品の説明　商品の説明　商品の説明　
-      商品の説明　商品の説明　商品の説明　商品の説明　商品の説明　商品の説明　
+    %h1.item-name 
+      = @post.name
     .item-main-content.flex-box
       .owl-item-inner
         = link_to image_tag('/img/logo_red.svg', width: '300', height: '300'), root_path
@@ -12,37 +9,38 @@
         %tbody
           %tr
             %th 出品者
-            %td= link_to "Aoi"#, new_user_session_path
+            %td= link_to "#{@post.user.name}"#, new_user_session_path
           %tr
             %th カテゴリー
-            %td= link_to "バック"#, new_user_registration_path
+            %td= link_to "#{@post.name}"#, new_user_registration_path
           %tr
             %th ブランド
             %td= link_to "猫"
           %tr
             %th 商品の状態
-            %td 新品・未使用
+            %td="#{@post.status}" 
           %tr
             %th 配送料の負担
-            %td 送料込み(出品者負担)
+            %td="#{@post.postage}"
           %tr
             %th 配送の方法
             %td らくらくメルカリ便
           %tr
             %th 配送元地域
-            %td= link_to "大阪府"
+            %td= link_to "#{@post.ship_from}"
           %tr
             %th 配送日の目安
-            %td 1~2で配送
+            %td= "#{@post.shipping_date}"
     .item-price-box.text-center
-      .item-price.bold 500円
+      %p.item-price.bold
+        = "#{@post.price}円" 
       .item-tax (税込み)
       .item-shipping-fee 送料込み
     .item-buy-btn.bold
       = link_to "購入画面に進む"
     .item-description
-    %p.item-description-inner コメント　コメント　コメント　コメント　コメント　コメント　コメント　コメント　コメント　コメント　コメント　コメント　コメント　コメント　コメント　コメント　コメント　コメント　コメント　コメント　コメント　コメント　コメント　コメント　コメント　コメント　コメント　
-
+    %p.item-description-inner
+      = "#{@post.description}"
     .item-button-container
       .item-button-left
         = link_to "いいね！"

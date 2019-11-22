@@ -10,6 +10,7 @@ class CreatePosts < ActiveRecord::Migration[5.0]
       t.string      :shipping_date
       t.integer     :price
       t.timestamps
+      t.integer     :user_id
     end
   end
 end

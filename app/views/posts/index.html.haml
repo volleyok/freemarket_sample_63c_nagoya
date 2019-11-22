@@ -1,1 +1,8 @@
-a
+.post-contents
+    - @post.each do |post|
+        =link_to "/posts/#{post.id}" do
+            .post-content
+                .post-name
+                = post.name
+                .post-price
+                = "¥#{post.price}"
