@@ -14,9 +14,17 @@ ActiveRecord::Schema.define(version: 20191120090215) do
 
   create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
-    t.text     "description", limit: 65535
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.text     "description",   limit: 65535
+    t.string   "cotegory"
+    t.string   "brand"
+    t.string   "status"
+    t.string   "postage"
+    t.string   "ship_from"
+    t.string   "shipping_date"
+    t.integer  "price"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.integer  "user_id"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

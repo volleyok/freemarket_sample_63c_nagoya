@@ -1,0 +1,6 @@
+.user-name
+  = @user.name
+
+.user-posts
+  =link_to "/mypages/#{current_user.id}" do
+    = "出品した商品 - 出品中"
