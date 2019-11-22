@@ -1,8 +1,173 @@
-.post-contents
-    - @post.each do |post|
-        =link_to "/posts/#{post.id}" do
-            .post-content
-                .post-name
-                = post.name
-                .post-price
-                = "¥#{post.price}"
+.contents
+  %header.header
+    .all-contents
+      .top-contents
+        .left-content
+          =link_to image_tag('/img/fmarket_logo_red.svg', width: '134', height:'40'), root_path
+        .right-content
+          %form.item-search{:action => "/jp/search/"}
+            %input.search-form{:name => "keyword", :placeholder => "何かお探しですか？", :type => "search", :value => ""}/
+            %button.search-btn
+              %i.fas.fa-search
+      .bottom-contents
+        .left-contents
+          .category-search
+            %a.sc-RefOD.jwHbWf{:href => "/jp/mypage/todo/"}
+              %i.fas.fa-list-ul
+              カテゴリーから探す
+          .brand-search
+            %a.sc-RefOD.jwHbWf{:href => "/jp/mypage/todo/"}
+              %i.fas.fa-tag
+              ブランドから探す
+        %ul.right-contents
+          %li.left-content
+            %a.sc-RefOD.jwHbWf2{:href => "/jp/mypage/todo/"}
+              %i.far.fa-heart
+              いいね一覧
+          %li.middle-content1
+            %a.sc-RefOD.jwHbWf2{:href => "/jp/mypage/todo/"}
+              %i.far.fa-bell
+              お知らせ
+          %li.middle-content2
+            %a.sc-RefOD.jwHbWf2{:href => "/jp/mypage/todo/"}
+              %i.fas.fa-check
+              やることリスト
+          %li.right-content1
+            %a.sc-RefOD.jwHbWf3{:href => "/jp/mypage/"}
+              %img.usericon{:alt => "", :src => "https://static.mercdn.net/images/member_photo_noimage_thumb.png"}>/
+              マイページ
+
+
+
+
+  .camera
+    =link_to '#', class: "camera__box" do
+      .camera__box-name
+        出品
+      .camera__box-font
+        %i.fas.fa-camera
+  .image
+    %img.print{src: "https://web-jp-assets.mercdn.net/_next/static/images/top-banner-main-device-1f627e51e488f6ca35feaa6a08b79736.png"}
+      .image__box
+        .image__box-content
+          .image__name1
+            スマホで かんたん
+            %br フリマアプリ
+          .image__name2
+            メルカリはスマホカメラからすぐに出品できる
+            %br 購入時は安心な独自システムのアプリです
+          .image__box-content-app
+            =link_to 'https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8', class: "ssss" do
+              %img.appstore{src: "https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg"}
+            =link_to 'https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja', class: "aaaa" do
+              %img.googlplay{src: "https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg"}
+
+
+
+
+  .title
+    %h1.title__name 人気のカテゴリー
+    .title__content
+      %ul.title__content-box
+        %li.title__content-list 
+          =link_to 'レディース', '#', class: "list1"
+        %li.title__content-list
+          =link_to 'メンズ', '#', class: "list1"
+        %li.title__content-list
+          =link_to '家電・スマホ・カメラ', '#', class: "list1"
+        %li.title__content-list
+          =link_to 'おもちゃ・ホビー・グッズ', '#', class: "list1"
+
+  .item
+    .item__content
+      .item__title
+        %h2.item__title-name レディース新着アイテム
+        =link_to 'もっと見る', '#', class: "miru"
+      .item__box
+        %ul.item__box-lists
+          -@post.each do |post|
+            %li.item__box-list
+              .itme__box-tipe
+              =link_to '/posts/#{post.id}', class: "item__box-image" do
+                %img.itme-image{src: "https://static.mercdn.net/thumb/photos/m87721300662_1.jpg?1548652381",}
+                  .itme__box-tipe2
+                    = post.name
+                    .post-price
+                      = "¥#{post.price}"
+
+
+  .bottom
+    .bottom__box
+      .bottom__left
+        .bottom__name1 スマホでかんたんフリマアプリ
+        .bottom__name2 今すぐ無料ダウンロード ！
+        .bottom__app
+          =link_to image_tag('/img/logo_red.svg', width: '134', height:'65'), root_path
+          =link_to 'https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8', class: "aaa" do
+            %img.app{src: "https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg"}
+          =link_to 'https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja', class: "sss" do
+            %img.googl{src: "https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg"} 
+      .bottom__right
+        %img.bottomprint{src: "https://web-jp-assets.mercdn.net/_next/static/images/download_app_pc-a4418175e8be071827ac88d073f40e4a.png"}/
+
+
+
+
+  %footer.footer
+    .footer-contents
+      .footer-content
+        %h2.footer-content-title メルカリについて
+        %ul.footer-contnt-lists
+          %li.footer-contnt-list
+            .list-contents 会社概要（運営会社）
+          %li.footer-content-list
+            .list-contents 採用情報
+          %li.footer-content-list
+            .list-contents プレスリリース
+          %li.footer-content-list
+            .list-contents 公式ブログ
+          %li.footer-content-list
+            .list-contents メルカリロゴ利用ガイドライン
+          =link_to 'https://twitter.com/mercari_jp', class: "ddd" do
+            %i.fab.fa-twitter
+          =link_to 'https://www.facebook.com/mercarijp', class: "fff" do
+            %i.fab.fa-facebook-square
+      .footer-content
+        %h2.footer-content-title ヘルプ＆ガイド
+        %ul.footer-contnt-lists
+          %li.footer-content-list メルカリガイド
+          %li.footer-content-list らくらくメルカリ便
+          %li.footer-content-list ゆうゆうメルカリ便
+          %li.footer-content-list 大型メルカリ便
+          %li.footer-content-list 車体取引ガイド
+          %li.footer-content-list メルカリあんしん・あんぜん宣言！
+          %li.footer-content-list 偽ブランド品撲滅への取り組み
+          %li.footer-content-list メルカリボックス
+      .footer-content2
+        %h2.footer-content-title プライバシーと利用規約
+        .footer-center
+          .footer-left
+            %ul.footer-content-lists
+              %li.footer-content-list プライバシーポリシー
+              %li.footer-content-list メルカリ利用規約
+              %li.footer-content-list あんしんスマホサポート制度に関する利用特約
+              %li.footer-content-list コンプライアンスポリシー
+          .footer-right
+            %ul.footer-content-lists
+              %li.footer-content-list 個人データの安全管理に係る基本方針
+              %li.footer-content-list 特定商取引に関する表記
+              %li.footer-content-list 資金決済法に基づく表示
+              %li.footer-content-list 法令順守と犯罪抑止のために
+      .footer-content
+        %h2.footer-content-title 国
+        %ul.footer-contnt-lists
+          %li.footer-content-list 日本
+          %li.footer-content-list United stases
+    .footer-logo
+      .sc-drlKqa.hdALBW
+        =link_to image_tag('/img/fmarket_logo_white.svg', width: '134 N ', height:'40',), root_path
+      %span.footername © 2019 Mercari
+
+
+
+
