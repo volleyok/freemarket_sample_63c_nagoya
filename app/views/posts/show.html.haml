@@ -12,10 +12,10 @@
             %td= link_to "#{@post.user.name}"#, new_user_session_path
           %tr
             %th カテゴリー
-            %td= link_to "#{@post.name}"#, new_user_registration_path
+            %td= link_to "#{@post.cotegory}"#, new_user_registration_path
           %tr
             %th ブランド
-            %td= link_to "猫"
+            %td= link_to "#{@post.brand}"
           %tr
             %th 商品の状態
             %td="#{@post.status}" 

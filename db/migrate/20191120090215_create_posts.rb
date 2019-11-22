@@ -4,6 +4,7 @@ class CreatePosts < ActiveRecord::Migration[5.0]
       t.string      :name
       t.text        :description
       t.string      :cotegory
+      t.string      :brand
       t.string      :status
       t.string      :postage
       t.string      :ship_from
