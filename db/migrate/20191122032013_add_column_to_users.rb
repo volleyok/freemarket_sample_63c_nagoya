@@ -1,9 +1,10 @@
 class AddColumnToUsers < ActiveRecord::Migration[5.0]
   def change
+    add_column :users, :nickname, :string
     add_column :users, :profile_img, :string
-    add_column :users, :lasttname, :string, null: false
+    add_column :users, :lastname, :string, null: false
     add_column :users, :firstname, :string, null: false
-    add_column :users, :lasttname_kana, :string, null: false
+    add_column :users, :lastname_kana, :string, null: false
     add_column :users, :firstname_kana, :string, null: false
     add_column :users, :birthday, :date
     add_column :users, :postal_code, :string, null: false
