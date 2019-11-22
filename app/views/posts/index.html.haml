@@ -5,39 +5,37 @@
         .left-content
           =link_to image_tag('/img/fmarket_logo_red.svg', width: '134', height:'40'), root_path
         .right-content
-          %form.item-search{:action => "/jp/search/"}
-            %input.search-form{:name => "keyword", :placeholder => "何かお探しですか？", :type => "search", :value => ""}/
+          %form.item-search{action: "/jp/search/"}
+            %input.search-form{name: "keyword", placeholder: "何かお探しですか？", type: "search", value: ""}
             %button.search-btn
               %i.fas.fa-search
       .bottom-contents
         .left-contents
           .category-search
-            %a.sc-RefOD.jwHbWf{:href => "/jp/mypage/todo/"}
+            =link_to '#', class: "header-menu" do
               %i.fas.fa-list-ul
               カテゴリーから探す
           .brand-search
-            %a.sc-RefOD.jwHbWf{:href => "/jp/mypage/todo/"}
+            =link_to '#', class: "header-menu" do
               %i.fas.fa-tag
               ブランドから探す
         %ul.right-contents
           %li.left-content
-            %a.sc-RefOD.jwHbWf2{:href => "/jp/mypage/todo/"}
+            =link_to '#', class: "header-menu" do
               %i.far.fa-heart
               いいね一覧
           %li.middle-content1
-            %a.sc-RefOD.jwHbWf2{:href => "/jp/mypage/todo/"}
+            =link_to '#', class: "header-menu" do
               %i.far.fa-bell
               お知らせ
           %li.middle-content2
-            %a.sc-RefOD.jwHbWf2{:href => "/jp/mypage/todo/"}
+            =link_to '#', class: "header-menu" do
               %i.fas.fa-check
               やることリスト
           %li.right-content1
-            %a.sc-RefOD.jwHbWf3{:href => "/jp/mypage/"}
-              %img.usericon{:alt => "", :src => "https://static.mercdn.net/images/member_photo_noimage_thumb.png"}>/
-              マイページ
-
-
+            =link_to '#', class: "header-menu" do
+              %img.usericon{alt: "", src: "https://static.mercdn.net/images/member_photo_noimage_thumb.png"}
+              .usericon-name マイページ
 
 
   .camera

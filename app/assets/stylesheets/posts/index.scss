@@ -72,10 +72,12 @@ img.rogo {
     justify-content: space-between;
     margin-top: 8px;
     width: 1062px;
-
+}
   .left-contents{
     display: flex;
     justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
   }
     .category-search{
       padding-right:10px;
@@ -106,20 +108,30 @@ img.rogo {
     display: flex;
     margin:0 7px 0 7px;
     justify-content: center;
+    align-items: center;
   }
 
   .left-content{
     padding-right: 14px;
+    display: flex;
+    padding-bottom: 10px;
   }
     .middle-content1{
       padding: 0px 14px;
+      padding-bottom: 10px;
     }
     .middle-content2{
       padding: 0px 14px;
+      padding-bottom: 10px;
     }
   .right-content1{
     padding-left: 14px;
     padding-bottom: 10px;
+  }
+  .header-menu {
+    display: flex;
+    align-items: center;
+    color: #333333;
   }
   .usericon {
     height:32px;
@@ -127,7 +139,9 @@ img.rogo {
     border-radius: 50%;
     margin-right: 10px;
   }
-}
+  .usericon-name {
+
+  }
 
 
 
