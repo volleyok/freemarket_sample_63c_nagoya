@@ -1,169 +1,171 @@
-.wrapper
-  .item-box-container
-    %h1.item-name 
-      = @post.name
-    .item-main-content.flex-box
-      .owl-item-inner
-        = link_to image_tag('/img/logo_red.svg', width: '300', height: '300'), root_path
-      %table.item-detail-table
-        %tbody
-          %tr
-            %th 出品者
-            %td= link_to "#{@post.user.nickname}"#, new_user_session_path
-          %tr
-            %th カテゴリー
-            %td= link_to "#{@post.cotegory}"#, new_user_registration_path
-          %tr
-            %th ブランド
-            %td= link_to "#{@post.brand}"
-          %tr
-            %th 商品の状態
-            %td="#{@post.status}" 
-          %tr
-            %th 配送料の負担
-            %td="#{@post.postage}"
-          %tr
-            %th 配送の方法
-            %td らくらくメルカリ便
-          %tr
-            %th 配送元地域
-            %td= link_to "#{@post.ship_from}"
-          %tr
-            %th 配送日の目安
-            %td= "#{@post.shipping_date}"
-    .item-price-box.text-center
-      %p.item-price.bold
-        = "#{@post.price}円" 
-      .item-tax (税込み)
-      .item-shipping-fee 送料込み
-    .item-buy-btn.bold
-      = link_to "購入画面に進む", buy_order_confirmation_path
-    .item-description
-    %p.item-description-inner
-      = "#{@post.description}"
-    .item-button-container
-      .item-button-left
-        = link_to "いいね！"
-      .item-button-left
-        = link_to "不適切な商品の報告"
-      .item-button-right
-        = link_to "あんしん・あんぜんへの取り組み"
-  .message-content
-    %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-    -# = text_field :text, class: "textarea-default", type: "text"
-    %textarea.textarea-default
-    %button.message-submit
-      = link_to "コメントする"
+.header
+  = render partial: "header"
+  .wrapper
+    .item-box-container
+      %h1.item-name 
+        = @post.name
+      .item-main-content.flex-box
+        .owl-item-inner
+          = link_to image_tag('/img/logo_red.svg', width: '300', height: '300'), root_path
+        %table.item-detail-table
+          %tbody
+            %tr
+              %th 出品者
+              %td= link_to "#{@post.user.nickname}"#, new_user_session_path
+            %tr
+              %th カテゴリー
+              %td= link_to "#{@post.cotegory}"#, new_user_registration_path
+            %tr
+              %th ブランド
+              %td= link_to "#{@post.brand}"
+            %tr
+              %th 商品の状態
+              %td="#{@post.status}" 
+            %tr
+              %th 配送料の負担
+              %td="#{@post.postage}"
+            %tr
+              %th 配送の方法
+              %td らくらくメルカリ便
+            %tr
+              %th 配送元地域
+              %td= link_to "#{@post.ship_from}"
+            %tr
+              %th 配送日の目安
+              %td= "#{@post.shipping_date}"
+      .item-price-box.text-center
+        %p.item-price.bold
+          = "#{@post.price}円" 
+        .item-tax (税込み)
+        .item-shipping-fee 送料込み
+      .item-buy-btn.bold
+        = link_to "購入画面に進む", buy_order_confirmation_path
+      .item-description
+      %p.item-description-inner
+        = "#{@post.description}"
+      .item-button-container
+        .item-button-left
+          = link_to "いいね！"
+        .item-button-left
+          = link_to "不適切な商品の報告"
+        .item-button-right
+          = link_to "あんしん・あんぜんへの取り組み"
+    .message-content
+      %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+      -# = text_field :text, class: "textarea-default", type: "text"
+      %textarea.textarea-default
+      %button.message-submit
+        = link_to "コメントする"
 
-  %ul.nav-item-link-prev-next
-    %li.nav-item-link-prev
-      %a.icon-arrow-left
-        = link_to "< カードケース 二つ折り スタンダード メタリックグリーン"
-    %li.nav-item-link-next
-      %a.icon-arrow-right
-        = link_to "冬デニム 裏地フリース 150 >"
+    %ul.nav-item-link-prev-next
+      %li.nav-item-link-prev
+        %a.icon-arrow-left
+          = link_to "< カードケース 二つ折り スタンダード メタリックグリーン"
+      %li.nav-item-link-next
+        %a.icon-arrow-right
+          = link_to "冬デニム 裏地フリース 150 >"
 
-  .item-social-media-box
-    %ul.social-media-box
-      %li
-        .share-btn
-          = link_to "F"
-          %i.icon-facebook
-      %li
-        .share-btn
-          = link_to "T"
-          %i.icon-twitter
-      %li
-        .share-btn
-          = link_to "L"
-          %i.icon-line
-      %li
-        .share-btn
-          = link_to "P"
-          %i.icon-pinterest
-  %h2.items-box-head
-    = link_to "森下さんのその他の出品"
-  .items-box-content
-    .items-box
-      = link_to ""
-      .items-box-photo
-        .lazyloaded
-          = link_to image_tag("", width: '220', height: '220')#, topics_path
-        .items-box-body
-          %h3.items-box-name オリエンタルトラフィック ブラック パンプス
-          .items-box-num
-            .items-box-price 2400円
-            .font-2 4
-    .items-box
-      .items-box-photo
-        %img.lazyloaded
-        .items-box-body
-          %h3.items-box-name オリエンタルトラフィック ブラック パンプス
-          .items-box-num
-            .items-box-price 2400円
-            .font-2 4
-    .items-box
-      .items-box-photo
-        %img.lazyloaded
-        .items-box-body
-          %h3.items-box-name オリエンタルトラフィック ブラック パンプス
-          .items-box-num
-            .items-box-price 2400円
-            .font-2 4
-    .items-box
-      .items-box-photo
-        %img.lazyloaded
-        .items-box-body
-          %h3.items-box-name オリエンタルトラフィック ブラック パンプス
-          .items-box-num
-            .items-box-price 2400円
-            .font-2 4
-  %h2.items-box-head
-    = link_to "ディーホリックのローファー/革靴 その他の商品"
-  .items-box-content
-    .items-box
-      .items-box-photo
-        .lazyloaded
-          = link_to image_tag("", width: '220', height: '220')#, topics_path
-        .items-box-body
-          %h3.items-box-name オリエンタルトラフィック ブラック パンプス
-          .items-box-num
-            .items-box-price 2400円
-            .font-2 4
-    .items-box
-      .items-box-photo
-        %img.lazyloaded
-        .items-box-body
-          %h3.items-box-name オリエンタルトラフィック ブラック パンプス
-          .items-box-num
-            .items-box-price 2400円
-            .font-2 4
-    .items-box
-      .items-box-photo
-        %img.lazyloaded
-        .items-box-body
-          %h3.items-box-name オリエンタルトラフィック ブラック パンプス
-          .items-box-num
-            .items-box-price 2400円
-            .font-2 4
-    .items-box
-      .items-box-photo
-        %img.lazyloaded
-        .items-box-body
-          %h3.items-box-name オリエンタルトラフィック ブラック パンプス
-          .items-box-num
-            .items-box-price 2400円
-            .font-2 4
-    .items-box
-      .items-box-photo
-        %img.lazyloaded
-        .items-box-body
-          %h3.items-box-name オリエンタルトラフィック ブラック パンプス
-          .items-box-num
-            .items-box-price 2400円
-            .font-2 4
-  %nav.bread-crumbs
-    %ul.bread-crumbs-box
-      %li.bread-crumbs-box-left
-      = link_to "メルカリ>", root_path
-      %li.bread-crumbs-box-right 　dholic  ローファー スウェード
+    .item-social-media-box
+      %ul.social-media-box
+        %li
+          .share-btn
+            = link_to "F"
+            %i.icon-facebook
+        %li
+          .share-btn
+            = link_to "T"
+            %i.icon-twitter
+        %li
+          .share-btn
+            = link_to "L"
+            %i.icon-line
+        %li
+          .share-btn
+            = link_to "P"
+            %i.icon-pinterest
+    %h2.items-box-head
+      = link_to "森下さんのその他の出品"
+    .items-box-content
+      .items-box
+        = link_to ""
+        .items-box-photo
+          .lazyloaded
+            = link_to image_tag("", width: '220', height: '220')#, topics_path
+          .items-box-body
+            %h3.items-box-name オリエンタルトラフィック ブラック パンプス
+            .items-box-num
+              .items-box-price 2400円
+              .font-2 4
+      .items-box
+        .items-box-photo
+          %img.lazyloaded
+          .items-box-body
+            %h3.items-box-name オリエンタルトラフィック ブラック パンプス
+            .items-box-num
+              .items-box-price 2400円
+              .font-2 4
+      .items-box
+        .items-box-photo
+          %img.lazyloaded
+          .items-box-body
+            %h3.items-box-name オリエンタルトラフィック ブラック パンプス
+            .items-box-num
+              .items-box-price 2400円
+              .font-2 4
+      .items-box
+        .items-box-photo
+          %img.lazyloaded
+          .items-box-body
+            %h3.items-box-name オリエンタルトラフィック ブラック パンプス
+            .items-box-num
+              .items-box-price 2400円
+              .font-2 4
+    %h2.items-box-head
+      = link_to "ディーホリックのローファー/革靴 その他の商品"
+    .items-box-content
+      .items-box
+        .items-box-photo
+          .lazyloaded
+            = link_to image_tag("", width: '220', height: '220')#, topics_path
+          .items-box-body
+            %h3.items-box-name オリエンタルトラフィック ブラック パンプス
+            .items-box-num
+              .items-box-price 2400円
+              .font-2 4
+      .items-box
+        .items-box-photo
+          %img.lazyloaded
+          .items-box-body
+            %h3.items-box-name オリエンタルトラフィック ブラック パンプス
+            .items-box-num
+              .items-box-price 2400円
+              .font-2 4
+      .items-box
+        .items-box-photo
+          %img.lazyloaded
+          .items-box-body
+            %h3.items-box-name オリエンタルトラフィック ブラック パンプス
+            .items-box-num
+              .items-box-price 2400円
+              .font-2 4
+      .items-box
+        .items-box-photo
+          %img.lazyloaded
+          .items-box-body
+            %h3.items-box-name オリエンタルトラフィック ブラック パンプス
+            .items-box-num
+              .items-box-price 2400円
+              .font-2 4
+      .items-box
+        .items-box-photo
+          %img.lazyloaded
+          .items-box-body
+            %h3.items-box-name オリエンタルトラフィック ブラック パンプス
+            .items-box-num
+              .items-box-price 2400円
+              .font-2 4
+    %nav.bread-crumbs
+      %ul.bread-crumbs-box
+        %li.bread-crumbs-box-left
+        = link_to "メルカリ>", root_path
+        %li.bread-crumbs-box-right 　dholic  ローファー スウェード
