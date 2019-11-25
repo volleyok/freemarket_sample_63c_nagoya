@@ -76,3 +76,4 @@ gem 'omniauth-facebook'
 gem 'dotenv-rails'
 
 gem 'pry-rails'
+gem "gretel"

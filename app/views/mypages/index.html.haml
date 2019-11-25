@@ -1,5 +1,7 @@
 = render partial: 'posts/header', post: @post
 .navi
+  - breadcrumb :mypage
+  = render "layouts/breadcrumbs"
 .main
   .content
     .content__icon
