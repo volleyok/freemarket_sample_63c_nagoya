@@ -23,6 +23,7 @@
 .header {
     width: 100%;
     background-color: white;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.16);
 }
 
 .all-contents {
@@ -241,4 +242,8 @@ ul.ladies-lists {
     width: 32px;
     border-radius: 50%;
     margin-right: 10px;
+}
+
+.search-contents {
+    height: 150vh;
 }

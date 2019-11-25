@@ -4,7 +4,7 @@
       .left-content
         =link_to image_tag('/img/fmarket_logo_red.svg', width: '134', height:'40'), root_path
       .right-content
-        %form.item-search{action: "/jp/search/"}
+        %form.item-search{action: search_posts_path}
           %input.search-form{name: "keyword", placeholder: "何かお探しですか？", type: "search", value: ""}
           %button.search-btn
             %i.fas.fa-search
