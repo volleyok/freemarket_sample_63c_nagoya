@@ -1,0 +1,7 @@
+.contents
+  = render partial: "header"
+  .search-contents
+    - @posts.each do |post|
+      = post.name
+      = "¥#{post.price}"
+  = render partial: "footer"
