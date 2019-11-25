@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191122051945) do
+ActiveRecord::Schema.define(version: 20191125025006) do
+
+  create_table "buy_orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "saler_id"
+    t.integer  "buyer_id"
+    t.integer  "fee"
+    t.integer  "sub_total"
+    t.integer  "total_amount"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
