@@ -37,7 +37,7 @@
       .item-tax (税込み)
       .item-shipping-fee 送料込み
     .item-buy-btn.bold
-      = link_to "購入画面に進む"
+      = link_to "購入画面に進む", buy_order_confirmation_path
     .item-description
     %p.item-description-inner
       = "#{@post.description}"
