@@ -1,6 +1,126 @@
-.user-name
-  = @user.nickname
+= render partial: 'posts/header', post: @post
+.navi
+.main
+  .content
+    .content__icon
+      =link_to "#", class: "icon-name" do
+        =image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png", class:'user-icon2'
+        .user-name
+          = @user.nickname
+        .user-date
+          評価  23 出品数  5
+    .content__box
+      .content__menu
+        .menu1
+          .menu1name お知らせ
+        .menu2
+          .menu2name やることリスト
+    .content__box2
+      %ul.content__lists
+        %li.content__list
+          =link_to "#", class: "list-name" do
+            =image_tag('/img/logo_red.svg',class:"gazou")
+            .content__list-text
+              .text 事務局から個別メッセージ「ログイン通知」
+              .time
+                %i.far.fa-clock
+                %span 2日前
+        %li.content__list
+          =link_to "#", class: "list-name" do
+            =image_tag('/img/logo_red.svg',class:"gazou")
+            .content__list-text
+              .text 事務局から個別メッセージ「ログイン通知」
+              .time
+                %i.far.fa-clock
+                %span 2日前
+        %li.content__list
+          =link_to "#", class: "list-name" do
+            =image_tag('/img/logo_red.svg',class:"gazou")
+            .content__list-text
+              .text 事務局から個別メッセージ「ログイン通知」
+              .time
+                %i.far.fa-clock
+                %span 2日前
+        %li.content__list
+          =link_to "#", class: "list-name" do
+            =image_tag('/img/logo_red.svg',class:"gazou")
+            .content__list-text
+              .text 事務局から個別メッセージ「ログイン通知」
+              .time
+                %i.far.fa-clock
+                %span 2日前
+        %li.content__list
+          =link_to "#", class: "list-name" do
+            =image_tag('/img/logo_red.svg',class:"gazou")
+            .content__list-text
+              .text 事務局から個別メッセージ「ログイン通知」
+              .time
+                %i.far.fa-clock
+                %span 2日前
+        %li.content__list2
+          =link_to "一覧を見る","#", class: "list-name2"
+    .content__box3
+      .content__title 購入した商品
+      .content__menu
+        .menu1
+          .menu1name 取引中
+        .menu2
+          .menu2name 過去の取引
+      .content__hako
+  .side
+    %ul.side__list
+      %li.side__list-box
+        =link_to "マイページ", "#", class:"side__list-name"
+      %li.side__list-box
+        =link_to "お知らせ", "#", class:"side__list-name"
+      %li.side__list-box
+        =link_to "やることリスト", "#", class:"side__list-name"
+      %li.side__list-box
+        =link_to "いいね!一覧", "#", class:"side__list-name"
+      %li.side__list-box
+        =link_to "出品する", "#", class:"side__list-name"
+        
+      %li.side__list-box
+        =link_to "/mypages/#{current_user.id}", class:"side__list-name" do
+          = "出品した商品 - 出品中"
+      %li.side__list-box
+        =link_to "出品した商品-取引中", "#", class:"side__list-name"
+      %li.side__list-box
+        =link_to "出品した商品-売却済み", "#", class:"side__list-name"
+      %li.side__list-box
+        =link_to "購入した商品-取引中", "#", class:"side__list-name"
+      %li.side__list-box
+        =link_to "購入した商品-過去の取引", "#", class:"side__list-name"
+      %li.side__list-box
+        =link_to "ニュース一覧", "#", class:"side__list-name"
+      %li.side__list-box
+        =link_to "評価一覧", "#", class:"side__list-name"
+      %li.side__list-box
+        =link_to "ガイド", "#", class:"side__list-name"
+      %li.side__list-box
+        =link_to "お問い合わせ", "#", class:"side__list-name2"
 
-.user-posts
-  =link_to "/mypages/#{current_user.id}" do
-    = "出品した商品 - 出品中"
+    .side__head メルペイ
+    %ul.side__list2
+      %li.side__list-box
+        =link_to "売上・振込申請", "#", class:"side__list-name"
+      %li.side__list-box
+        =link_to "ポイント", "#", class:"side__list-name2"
+
+    .side__head 設定
+    %ul.side__list2
+      %li.side__list-box
+        =link_to "プロフィール", "#", class:"side__list-name"
+      %li.side__list-box
+        =link_to "発送元・お届け先住所変更", "#", class:"side__list-name"
+      %li.side__list-box
+        =link_to "支払い方法", "#", class:"side__list-name"
+      %li.side__list-box
+        =link_to "メール/パスワード", "#", class:"side__list-name"
+      %li.side__list-box
+        =link_to "本人認証", "#", class:"side__list-name"
+      %li.side__list-box
+        =link_to "電話番号の確認", "#", class:"side__list-name"
+      %li.side__list-box
+        =link_to "ログアウト", destroy_user_session_path, class:"side__list-name2", method: :delete
+= render partial: 'posts/footer', post: @post
