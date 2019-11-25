@@ -1,0 +1,99 @@
+%header.header
+  .all-contents
+    .top-contents
+      .left-content
+        =link_to image_tag('/img/fmarket_logo_red.svg', width: '134', height:'40'), root_path
+      .right-content
+        %form.item-search{action: search_posts_path}
+          %input.search-form{name: "keyword", placeholder: "何かお探しですか？", type: "search", value: ""}
+          %button.search-btn
+            %i.fas.fa-search
+    .bottom-contents
+
+      %ul.left-contents
+        %li.category-search
+          =link_to '#', class: "header-menu cotegory-menu" do
+            %i.fas.fa-list-ul
+            %h3 カテゴリーから探す
+          %ul.category-lists
+            =link_to "#" do
+              %li.category-list.ladies
+                %p レディース 
+            =link_to "#" do
+              %li.category-list.mens
+                %p メンズ
+            =link_to "#" do
+              %li.category-list.baby-kids
+                %p ベビー・キッズ
+            =link_to "#" do
+              %li.category-list.interior
+                %p インテリア・住まい・小物
+            =link_to "#" do
+              %li.category-list.hoby
+                %p おもちゃ・ホビー・グッズ
+            =link_to "#" do
+              %li.category-list.cosme
+                %p コスメ・香水・小物
+            =link_to "#" do
+              %li.category-list.category-index
+                %p 家電・スマホ・カメラ
+            =link_to "#" do
+              %li.category-list.category-index
+                %p スポーツ・レジャー
+            =link_to "#" do
+              %li.category-list.category-index
+                %p ハンドメイド
+            =link_to "#" do
+              %li.category-list.category-index
+                %p チケット
+            =link_to "#" do
+              %li.category-list.category-index
+                %p 自転車・オートバイ
+            =link_to "#" do
+              %li.category-list.category-index
+                %p その他
+            =link_to "#" do
+              %li.category-list.category-index
+                %p カテゴリー一覧
+
+        %li.brand-search
+          =link_to '#', class: "header-menu brand-menu" do
+            %i.fas.fa-tag
+            %h3 ブランドから探す
+          %ul.brand-lists
+            =link_to "#" do
+              %li.brand-list
+                %p シャネル
+            =link_to "#" do
+              %li.brand-list
+                %p ナイキ
+            =link_to "#" do
+              %li.brand-list
+                %p ルイヴィトン
+            =link_to "#" do
+              %li.brand-list
+                %p シュプリーム
+            =link_to "#" do
+              %li.brand-list
+                %p アディダス
+            =link_to "#" do
+              %li.brand-list
+                %p ブランド一覧
+
+      %ul.right-contents
+        %li.left-content
+          =link_to '#', class: "header-menu" do
+            %i.far.fa-heart
+            いいね一覧
+        %li.middle-content1
+          =link_to '#', class: "header-menu" do
+            %i.far.fa-bell
+            お知らせ
+        %li.middle-content2
+          =link_to '#', class: "header-menu" do
+            %i.fas.fa-check
+            やることリスト
+        %li.right-content1
+          =link_to '#', class: "header-menu" do
+            %img.usericon{alt: "", src: "https://static.mercdn.net/images/member_photo_noimage_thumb.png"}
+            .usericon-name マイページ

@@ -27,7 +27,11 @@ class PostsController < ApplicationController
   end
 
   def show
-   @post = Post.find(params[:id])
+    @post = Post.find(params[:id])
+  end
+
+  def search
+    @posts = Post.search(params[:keyword])
   end
 
   private
