@@ -4,7 +4,7 @@
   .content
     .content__icon
       =link_to "#", class: "icon-name" do
-        %img.user-icon2{alt: "", src: "https://static.mercdn.net/images/member_photo_noimage_thumb.png"}
+        =image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png", class:'user-icon2'
         .user-name
           = @user.nickname
         .user-date
