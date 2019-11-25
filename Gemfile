@@ -69,3 +69,10 @@ end
 gem 'carrierwave'
 gem 'fog-aws'
 gem "font-awesome-sass"
+
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
+gem 'dotenv-rails'
+
+gem 'pry-rails'
