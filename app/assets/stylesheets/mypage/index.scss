@@ -1,0 +1,204 @@
+.navi{
+  height: 48px;
+  background: #fff;
+  border-top: 1px solid #eee;
+}
+.main{
+  width: 1020px;
+  margin: 40px auto 0;
+  height: 1292px;
+  overflow: scroll;
+}
+.content{
+  float: right;
+  width: 700px;
+  height: 100vh;
+  background-color: white;
+
+  &__icon{
+    height: 200px;
+    padding: 20px;
+    text-align: center;
+    background-image: url("https://www.mercari.com/jp/assets/img/mypage/user-bg.jpg?37328315;");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    .icon-name{
+      margin-top: 50px;
+    }
+
+    .user-icon2{
+      width: 60px;
+      height: 60px;
+      margin: auto;
+      margin-top: 50px;
+      border-radius: 50%;
+
+    }
+    .user-name{
+      margin-top: 8px;
+      font-size: 20px;
+      color: #333;
+    }
+    .user-date{
+      margin-top: 8px;
+      font-size: 15px;
+      color: #333;
+    }
+  }
+
+
+
+
+
+
+
+  &__box{
+    background: #fff;
+  }
+
+  &__menu{
+    height: 74px;
+    background: #eee;
+    display: flex;
+    width: 100%;
+  }
+
+  .menu1{
+    width: 50%;
+    background: #fff;
+    text-align: center;
+    font-size: 16px;
+  }
+  .menu1name{
+    margin-top: 25px;
+  }
+  .menu2{
+    text-align: center;
+    width: 50%;
+    font-size: 16px;
+
+  }
+  .menu2name{
+    margin-top: 25px;
+  }
+
+
+
+
+  &__box2{
+
+  }
+
+  &__lists{
+
+  }
+
+  &__list{
+    border-bottom: 1px solid #eee;
+    height: 80px;
+    display: flex;
+  }
+  .list-name{
+    color: #333;
+    padding: 16px;
+    line-height: 1.5;
+  }
+
+  .gazou{
+    width: 48px;
+    height: 48px;
+    float: left;
+  }
+
+  &__list-text{
+    margin: 0 40px 0 68px;
+  }
+
+  .time{
+    color: #888;
+
+    .far.fa-clock{
+      margin-right: 8px;
+    }
+  }
+
+  &__list2{
+    border: 0;
+    padding: 16px;
+
+    .list-name2{
+      text-align: center;
+      color: #333;
+      height: 56px;
+      background-color: #eee;
+      display: block;
+      line-height: 56px;
+    }
+  }
+
+
+
+
+
+  &__box3{
+    margin: 40px 0 0;
+    background: #fff;
+  }
+
+  &__title{
+    padding: 0 16px;
+    line-height: 72px;
+    background: #fafafa;
+    font-size: 16px;
+
+    &__title-name{
+      font-size: 16px;
+    }
+  }
+
+  &__hako{
+    background: #fff;
+    height: 236px;
+  }
+}
+
+.side{
+  float: left;
+  width: 280px;
+  margin: 0 40px 0 0;
+  height: 1252px;
+
+
+  &__list{
+
+  }
+
+  &__list-box{
+    height: 48px;
+    border-top: 1px solid #eee;
+  }
+
+  &__list-name{
+    display: block;
+    min-height: 48px;
+    padding: 16px;
+    background: #fff;
+    font-size: 14px;
+    color: #333;
+  }
+
+  &__list-name2{
+    display: block;
+    min-height: 48px;
+    background: #fff;
+    font-size: 14px;
+    color: #333;
+    line-height: 48px;
+    padding-left: 16px;
+  }
+
+  &__head{
+    margin-top: 40px;
+  }
+}
