@@ -158,17 +158,19 @@
     .item {
         padding: 22px 0px 100px;
         &__content {
-            width: 1020px;
+            // width: 1175px;
             height: 544px;
-            margin: auto;
+            margin: 0 120px;
         }
         &__title {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 16px;
+            margin-left: 23px;
+            margin-right: 23px;
         }
         &__title-name {
             font-size: 24px;
+            font-weight: bold;
         }
         &__box {
             height: 300px;
@@ -182,10 +184,10 @@
         }
         &__box-list {
             list-style: none;
-            width: 20%;
+            width: 18%;
             height: 270px;
             text-decoration: none;
-            // padding: 10px;
+            padding: 10px;
         }
         &__box-tipe {}
     }
@@ -195,12 +197,14 @@
     }
     
     .itme-image {
-        width: 192px;
+        width: 100%;
+        height: 215px;
         vertical-align: top;
+        background-size: cover;
+        background: center;
     }
     
     .itme__box-tipe2 {
-        width: 169px;
         height: 44px;
         background: white;
         padding: 0 12px;
@@ -214,6 +218,7 @@
         color: rgb(0, 149, 238);
         text-decoration: none;
         padding: 5px 16px 5px 5px;
+        font-weight: bold;
     }
     
     .bottom {

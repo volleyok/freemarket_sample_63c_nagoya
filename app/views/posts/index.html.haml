@@ -2,7 +2,7 @@
   = render partial: "header"
 
   .camera
-    =link_to '#', class: "camera__box" do
+    =link_to new_post_path, class: "camera__box" do
       .camera__box-name
         出品
       .camera__box-font
@@ -43,16 +43,15 @@
     .item__content
       .item__title
         %h2.item__title-name レディース新着アイテム
-        =link_to 'もっと見る', '#', class: "miru"
-      .item__box
-        %ul.item__box-lists
-          -@post.each do |post|
-            %li.item__box-list
-              .itme__box-tipe
-              =link_to "/posts/#{post.id}", class: "item__box-image" do
-                %img.itme-image{src: "https://static.mercdn.net/thumb/photos/m87721300662_1.jpg?1548652381",}
-                  .itme__box-tipe2
-                    = post.name
-                    .post-price
-                      = "¥#{post.price}"
+        =link_to 'もっと見る >', '#', class: "miru"
+      %ul.item__box-lists
+        -@post.each do |post|
+          %li.item__box-list
+            .itme__box-tipe
+            =link_to "/posts/#{post.id}", class: "item__box-image" do
+              =image_tag "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Pride_of_Pets_Dog_Show%2C_2011_%286271388774%29.jpg/250px-Pride_of_Pets_Dog_Show%2C_2011_%286271388774%29.jpg", size: '20x20', class:'itme-image'
+              .itme__box-tipe2
+                = post.name
+                .post-price
+                  = "¥#{post.price}"
   = render partial: "footer"

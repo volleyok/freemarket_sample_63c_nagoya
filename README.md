@@ -26,14 +26,26 @@ Things you may want to cover:
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
-|kana|string|null: false|
-|profile_img|string|null: false|
 |email|string|null: false|
-|birth|integer|null: false|
-|password|string|null: false|
-|send-address|string|null: false, index: true|
-|self-introduction|text|null: false, index: true|
+|encrypted_password|string|null: false|
+|reset_password_token|string|null: false|
+|reset_password_sent_at|string|null: false|
+|remember_created_at|string|null: false|
+|created_at|string|null: false|
+|updated_at|string|null: false|
+|nickname|string|null: false|
+|profile_img|string|null: false|
+|lastname|string|null: false|
+|firstname|string|null: false|
+|lastname_kana|string|null: false|
+|firstname_kana|string|null: false|
+|birthday|string|null: false|
+|postal_code|string|null: false|
+|prefecture|string|null: false|
+|city|string|null: false|
+|address|string|null: false|
+|building_name|string|null: false|
+|phone_number|string|null: false|
 ### Association
 - has_many :bought_items, foreign_key: ”buyer_id”, class_name: “Item”
 - has_many :selling_items,->{where(“buyer_id is NULL”)}, foreign_key: ”seller_id”, class_name: “Item”
@@ -51,15 +63,50 @@ Things you may want to cover:
 |ship_from|string|null: false|
 |shipping_date|string|null: false|
 |price|integer|null: false|
-
 |delivery_fee|integer|null: false|
-|seller_id|integer|null: false|
+|saller_id|integer|null: false|
 |buyer_id|integer|null: false|
 ### Association
-- belongs_to :seller_id, class_name: “User”
+- belongs_to :saler_id, class_name: “User”
 - belongs_to :buyer, class_name: “User”
 
-## likesテーブル
+## buy_ordersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|saler|references|null: false, foreign_key: true|
+|buyer|references|null: false, foreign_key: true|
+|fee|references|null: false, foreign_key: true|
+|sub_total|references|null: false, foreign_key: true|
+|total_amount|references|null: false, foreign_key: true|
+|created_at|references|null: false, foreign_key: true|
+|update_at|references|null: false, foreign_key: true|
+### Association
+- 
+- 
+
+
+## sns_credentialsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|provider|references|null: false, foreign_key: true|
+|uid|references|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+### Association
+- 
+- 
+
+## cardsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|saler|integer|
+|buyer|integer|
+|card_id|integer|
+### Association
+- 
+- 
+
+
+<!-- ## likesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |seller|references|null: false, foreign_key: true|
@@ -67,50 +114,41 @@ Things you may want to cover:
 
 ### Association
 - 
-- 
+-  -->
 
-## evaluationsテーブル
+<!-- ## evaluationsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |seller|text|
 |evaluations|string|
 ### Association
 - 
-- 
+-  -->
 
-## relationshipsテーブル
+<!-- ## relationshipsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |seller|string|
 |buyer|string|
 ### Association
 - 
-- 
+-  -->
 
-## messagesテーブル
+<!-- ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |content|text|
 |image|string|
 ### Association
 - 
-- 
+-  -->
 
-## commentsテーブル
+<!-- ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user|integer|
 |item|integer|
 ### Association
 - 
-- 
+-  -->
 
-## evaluationsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|seller|integer|
-|buyer|integer|
-|card_id|integer|
-### Association
-- 
-- 
