@@ -1,0 +1,56 @@
+.side
+  %ul.side__list
+    %li.side__list-box
+      =link_to "マイページ", "#", class:"side__list-name"
+    %li.side__list-box
+      =link_to "お知らせ", "#", class:"side__list-name"
+    %li.side__list-box
+      =link_to "やることリスト", "#", class:"side__list-name"
+    %li.side__list-box
+      =link_to "いいね!一覧", "#", class:"side__list-name"
+    %li.side__list-box
+      =link_to "出品する", "#", class:"side__list-name"
+      
+    %li.side__list-box
+      =link_to "/mypages/#{current_user.id}", class:"side__list-name" do
+        = "出品した商品 - 出品中"
+    %li.side__list-box
+      =link_to "出品した商品-取引中", "#", class:"side__list-name"
+    %li.side__list-box
+      =link_to "出品した商品-売却済み", "#", class:"side__list-name"
+    %li.side__list-box
+      =link_to "購入した商品-取引中", "#", class:"side__list-name"
+    %li.side__list-box
+      =link_to "購入した商品-過去の取引", "#", class:"side__list-name"
+    %li.side__list-box
+      =link_to "ニュース一覧", "#", class:"side__list-name"
+    %li.side__list-box
+      =link_to "評価一覧", "#", class:"side__list-name"
+    %li.side__list-box
+      =link_to "ガイド", "#", class:"side__list-name"
+    %li.side__list-box
+      =link_to "お問い合わせ", "#", class:"side__list-name2"
+
+  .side__head メルペイ
+  %ul.side__list2
+    %li.side__list-box
+      =link_to "売上・振込申請", "#", class:"side__list-name"
+    %li.side__list-box
+      =link_to "ポイント", "#", class:"side__list-name2"
+
+  .side__head 設定
+  %ul.side__list2
+    %li.side__list-box
+      =link_to "プロフィール", "#", class:"side__list-name"
+    %li.side__list-box
+      =link_to "発送元・お届け先住所変更", "#", class:"side__list-name"
+    %li.side__list-box
+      =link_to "支払い方法", "#", class:"side__list-name"
+    %li.side__list-box
+      =link_to "メール/パスワード", "#", class:"side__list-name"
+    %li.side__list-box
+      =link_to "本人認証", "#", class:"side__list-name"
+    %li.side__list-box
+      =link_to "電話番号の確認", "#", class:"side__list-name"
+    %li.side__list-box
+      =link_to "ログアウト", destroy_user_session_path, class:"side__list-name2", method: :delete

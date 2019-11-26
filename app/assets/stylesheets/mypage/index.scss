@@ -4,8 +4,12 @@
   border-top: 1px solid #eee;
 
   .breadcrumbs{
-    padding: 13px;
     font-size: 15px;
+    overflow: visible;
+    width: 1025px;
+    margin: 0 auto;
+    padding: 14px 0;
+    white-space: normal;
   }
 }
 .main{
@@ -18,7 +22,6 @@
   float: right;
   width: 700px;
   height: 100vh;
-  background-color: white;
 
   &__icon{
     height: 200px;
@@ -74,6 +77,7 @@
     background: #fff;
     text-align: center;
     font-size: 16px;
+    border-top: 2px solid #ea352d;
   }
   .menu1name{
     margin-top: 25px;

@@ -4,7 +4,30 @@ end
 
 crumb :mypage do
   link "マイページ", mypages_path
+  parent :root
 end
+
+crumb :show_mypage do
+  link "出品した用品-出品中", mypage_path
+  parent :mypage
+end
+
+# # Root crumb
+# crumb :root do
+#   link "Home", root_path
+# end
+
+# # Issue list
+# crumb :issues do
+#   link "All issues", issues_path
+# end
+
+# # Issue
+# crumb :issue do |issue|
+#   link issue.title, issue
+#   parent :issues
+# end
+
 
 # crumb :projects do
 #   link "Projects", projects_path
