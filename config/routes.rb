@@ -14,6 +14,12 @@ Rails.application.routes.draw do
   resources :mypages, only: [:index,:edit, :update, :destroy, :show] do
     collection do
       get 'delete'
+      get 'profile'
+      get 'address'
+      get 'card'
+      get 'password'
+      get 'identification'
+      get 'confirmation'
     end
     end
   resources :buy_order, only: :show

@@ -1,0 +1,9 @@
+= render partial: 'posts/header', post: @post
+.navi
+  - breadcrumb :address_mypage
+  = render "layouts/breadcrumbs"
+
+.main
+
+  = render partial: "side"
+= render partial: 'posts/footer', post: @post
