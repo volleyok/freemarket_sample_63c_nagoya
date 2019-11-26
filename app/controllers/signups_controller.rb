@@ -5,7 +5,8 @@ class SignupsController < ApplicationController
     
   end
 
-  def create,
+  def create
+    User.create(user_params)
   end
 
   def new

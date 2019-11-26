@@ -3,7 +3,7 @@
     = link_to image_tag('/img/fmarket_logo_red.svg', width: '300', height: '150'), root_path
 
   .member-wrap
-    = form_for @user, url: new_user_registration_path, method: :get do |f|
+    = form_for @user, url: signups_path, method: :get do |f|
       .field
         .member-person-wrap-suer-text-center
           %p アカウントをお持ちでない方はこちら
