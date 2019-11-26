@@ -20,9 +20,26 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   # def create
-  #   super
+        # super
+  #   session[:nickname] = user_params[:nickname]
+  #   session[:email] = user_params[:email]
+  #   session[:firstname_kana] = user_params[:firstname_kana]
+  #   session[:lastname_kana] = user_params[:lastname_kana]
+  #   session[:firstname] = user_params[:firstname]
+  #   session[:lastname] = user_params[:lastname]
+  #   session[:birthday] = user_params[:birthday]
+  #   password = Devise.friendly_token.first(7)
+  #   if session[:provider].present? && session[:uid].present?
+  #     @user = User.create(nickname:session[:nickname], email: session[:email], password: password, password_confirmation: password, firstname_kana: session[:firstname_kana],lastname_kana: session[:lastname_kana], firstname: session[:firstname], lastname: session[:lastname], birthday: session[:birthday])
+  #     sns = SnsCredential.create(user_id: @user.id,uid: session[:uid], provider: session[:provider])
+  #   else
+  #     @user = User.create(nickname:session[:nickname], email: session[:email], password: session[:password], password_confirmation: session[:password_confirmation],firstname_kana: session[:firstname_kana],lastname_kana: session[:lastname_kana], firstname: session[:firstname], lastname: session[:lastname], birthday: session[:birthday])
+  #   end
   # end
 
+  # def user_params
+  #   params.require(:user).permit(:nickname,:email,:firstname_kana,:lastname_kana,:firstname,:lastname,:birthday)
+  # end
   # GET /resource/edit
   # def edit
   #   super
