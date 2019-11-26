@@ -39,9 +39,4 @@ $(function(){
     var new_image = $(`<input multiple= "multiple" name="product_images[image][]"  type="file" id="image">`);
     $(".image_box").prepend(new_image);
   });
-  // $(document).on('change','#image',function(e){
-    
-  //   $(".image_box").children(":first").css({'display':'block'});
-  //   $(this).css({'display':'none'});
-  // });
 });
