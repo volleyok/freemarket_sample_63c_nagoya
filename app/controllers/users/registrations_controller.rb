@@ -12,7 +12,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  def create
+  # def create
         # super
   #   session[:nickname] = user_params[:nickname]
   #   session[:email] = user_params[:email]
