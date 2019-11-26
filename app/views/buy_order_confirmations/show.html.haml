@@ -1,3 +1,40 @@
-=@posts.name
-= "#{@posts.price}円" 
-=link_to "購入する", buy_order_path
+.main_buy_order
+  .content_buy_order 
+    .content_title 購入内容の確認
+    .content_good_box 
+      .content_good_box_form
+        .content_good_image gazou 
+        .content_good_text aiueo
+        -# =@posts.name
+      .content_good_detail
+        .good_cost
+          .good_cost_box
+            .buy_money ¥550
+            .send_tax 送料込み
+        .good_point
+          .good_point_display ポイントがありません
+        .buy_cost
+          .buy_cost_box
+            .cost_display 支払い金額
+            .real_cost ¥550
+            -# = "#{@posts.price}円" 
+        .attend_content 配送先と支払い方法の入力を完了してください。
+        .purchase
+          .purchase_text 購入する
+          -# =link_to "購入する", buy_order_path
+    .content_user
+      .content_user_box
+        .address 配送先
+        .person_address
+          .person_postal_code a
+          .person_send_address a
+          .person_name a
+        .address_change 変更する
+    .content_cost 
+      .content_cost_box
+        .cost_how 支払い方法
+        .cost_detail
+        .cost_in_cost
+        .cost_change 変更する
+
+
