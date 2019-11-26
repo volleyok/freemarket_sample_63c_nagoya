@@ -11,7 +11,11 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
-  resources :mypages, only: [:index, :show]
+  resources :mypages, only: [:index,:edit, :update, :destroy, :show] do
+    collection do
+      get 'delete'
+    end
+    end
   resources :buy_order, only: :show
   resources :buy_order_confirmations, only: :show 
   resources :signups do

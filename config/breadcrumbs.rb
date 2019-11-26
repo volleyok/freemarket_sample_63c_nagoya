@@ -12,6 +12,12 @@ crumb :show_mypage do
   parent :mypage
 end
 
+crumb :delete_mypage do
+  link "ログアウト", delete_mypages_path
+  parent :mypage
+end
+
+
 # # Root crumb
 # crumb :root do
 #   link "Home", root_path

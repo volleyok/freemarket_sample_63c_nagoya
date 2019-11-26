@@ -1,0 +1,14 @@
+= render partial: 'posts/header', post: @post
+.navi
+  - breadcrumb :delete_mypage
+  = render "layouts/breadcrumbs"
+
+.main
+  .delete
+    .delete__content
+      .delete__box
+        =link_to "ログアウト", destroy_user_session_path, class:"delete__btn", method: :delete
+  = render partial: "side"
+= render partial: 'posts/footer', post: @post
+
+

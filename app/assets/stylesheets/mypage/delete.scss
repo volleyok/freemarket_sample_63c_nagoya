@@ -1,0 +1,27 @@
+.delete{
+  height: 179px;
+  width: 700px;
+  background-color: #fff;
+  float: right;
+
+  &__content{
+    padding: 64px;
+  }
+
+  &__box{
+    max-width: 320px;
+    margin: auto;
+
+  }
+
+  &__btn{
+    background: #ea352d;
+    border: 1px solid #ea352d;
+    color: #fff;
+    display: block;
+    width: 100%;
+    line-height: 48px;
+    font-size: 14px;
+    text-align: center;
+  }
+}

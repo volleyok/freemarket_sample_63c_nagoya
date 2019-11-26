@@ -1,7 +1,7 @@
 .side
   %ul.side__list
     %li.side__list-box
-      =link_to "マイページ", "#", class:"side__list-name"
+      =link_to "マイページ", "#", class:"side__list-name" 
     %li.side__list-box
       =link_to "お知らせ", "#", class:"side__list-name"
     %li.side__list-box
@@ -53,4 +53,4 @@
     %li.side__list-box
       =link_to "電話番号の確認", "#", class:"side__list-name"
     %li.side__list-box
-      =link_to "ログアウト", destroy_user_session_path, class:"side__list-name2", method: :delete
+      =link_to "ログアウト", delete_mypages_path, class:"side__list-name2"
