@@ -13,7 +13,6 @@ class MypagesController < ApplicationController
   end
 
   def delete
-    @user = User.find(current_user.id)
   end
 
   def show
