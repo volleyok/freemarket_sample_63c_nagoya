@@ -1,0 +1,106 @@
+.progress-wrap
+  .progress-image
+  = link_to image_tag('/img/logo_red.svg', width: '150', height: '100'), root_path
+  %ur.progress-bar
+    %li.progress-bar-red
+      %span 会員情報
+    %li.progress-bar-normal
+      %span 電話番号認証
+    %li.progress-bar-normal
+      %span お届け先住所入力
+    %li.progress-bar-normal
+      %span 支払い方法
+    %li.progress-bar-normal
+      %span 完了
+  .progress-bar-clear
+
+%label{for: "progressbar"}
+%progress#progressbar{max: "100", value: "0"}
+
+.member-wrap
+  %h2 会員情報入力
+  = form_for @user, url: phone_signups_path, method: :get do |f|
+    - if @user.errors.any?
+      %h2= "エラーが発生しました。"
+
+    .field
+      = f.label :nickname, "ニックネーム", class: "member-text"
+      %span.required 必須
+      %br/
+      = f.text_field :nickname, autofocus: true, class: "field-input", placeholder: "例)メルカリ太郎",autocomplete: "nickname"
+    
+    .field
+      = f.label :email, "メールアドレス", class: "member-text"
+      %span.required 必須
+      %br/
+      = f.email_field :email, autofocus: true, class: "field-input", placeholder: "PC・携帯どちらでも可",autocomplete: "email"
+
+    .field
+      = f.label :password, "パスワード", class: "member-text"
+      %span.required 必須
+      %br/
+      = f.password_field :password, class: "field-input",placeholder: "7文字以上",autocomplete: "new-password"
+      %input#password-check{type: "checkbox"}
+    .actions
+
+    .member-person-wrap
+      .member-person-wrap-suer
+        %h3 本人確認
+      .member-person-wrap-suer-text
+        %p 安心・安全にご利用いただくために、お客様の本人情報の登録にご協力ください。他のお客様に公開されることはありません。
+
+    .field
+      = f.label :lastname, "お名前(全角)", class: "member-text"
+      %span.required 必須
+      %br/
+      = f.text_field :lastname, autofocus: true, class: "field-input-half", placeholder: "例) 山田",autocomplete: "lastname"
+      = f.text_field :firstname, autofocus: true, class: "field-input-half", placeholder: "例) 彩",autocomplete: "firstname"
+
+    .field
+      = f.label :lastname_kana, "お名前カナ(全角)", class: "member-text"
+      %span.required 必須
+      %br/
+      = f.text_field :lastname_kana, autofocus: true, class: "field-input-half", placeholder: "例) ヤマダ",autocomplete: "lastname_kana"
+      = f.text_field :firstname_kana, autofocus: true, class: "field-input-half", placeholder: "例) アヤ",autocomplete: "firstname_kana"
+
+    .field
+      = f.label :birthday, "生年月日", class: "member-text"
+      %span.required 必須
+      %br/
+
+      = f.text_field :birthday, autofocus: true, class: "field-input-time", placeholder: "--",autocomplete: "birthday"
+      %span 年
+
+      = f.text_field :birthday, autofocus: true, class: "field-input-time", placeholder: "--",autocomplete: "birthday"
+      %span 月
+
+      = f.text_field :birthday, autofocus: true, class: "field-input-time", placeholder: "--",autocomplete: "birthday"
+      %span 日
+
+      .member-person-wrap-suer-text
+        %p ※本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+
+      -#  ここに私はロボットではありませんのコードを記述
+
+
+
+    .field
+      .member-person-wrap-suer-text
+        %p 「次へ進む」のボタンを押すことにより、利用規約に同意したものとみなします
+
+
+
+    = f.submit "次へ進む", class: "submit-button"
+
+    .submit-button-text
+      = link_to "本人登録の情報について＞"
+
+  %ul.footer-wrap
+    %li.footer-text プライバシーポリシー
+    %li.footer-text メルカリ利用規約
+    %li.footer-text 特定商取引に関する表記
+  
+  .footer-image
+    = link_to image_tag("https://www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?2177740229", width: '70', height: '70'), root_path
+  .footer-copy
+    %p &copy; 2019 Mercari
