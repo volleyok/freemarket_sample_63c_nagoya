@@ -1,10 +1,29 @@
-.post-contents
-    - @post.each do |post|
-        =link_to "/posts/#{post.id}" do
+= render partial: "/posts/header/"
+.navi
+  - breadcrumb :show_mypage
+  = render "layouts/breadcrumbs"
+.main
+  .content
+    .content__box4
+      .content__title 出品した商品
+      .content2
+        .menu3
+          .menu3name 出品中
+        .menu4
+          .menu4name 取引中
+        .menu5
+          .menu5name 売却済み
+      .content__hako
+        - @post.each do |post|
+          =link_to "/posts/#{post.id}" do
             .post-content
-                .post-name
-                = post.name
-                .edit-tag
-                =link_to '編集', "/posts/#{post.id}/edit", method: :get
-                .delite-tag
-                =link_to '削除', "/posts/#{post.id}", method: :delete 
+              .post-name
+              = post.name
+              .edit-tag
+              =link_to '編集', "/posts/#{post.id}/edit", method: :get
+              .delite-tag
+              =link_to '削除', "/posts/#{post.id}", method: :delete 
+
+  = render "side"
+= render "posts/footer"
+
