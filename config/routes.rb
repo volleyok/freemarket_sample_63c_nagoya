@@ -14,4 +14,15 @@ Rails.application.routes.draw do
   resources :mypages, only: [:index, :show]
   resources :buy_order, only: :show
   resources :buy_order_confirmations, only: :show 
+  resources :signups do
+    collection do
+      get 'new'
+      get 'phone'
+      get 'address'
+      get 'check'
+      get 'complete' # ここで、入力の全てが終了する
+      get 'done' # 登録完了後のページ
+    end
+  end
+
 end
