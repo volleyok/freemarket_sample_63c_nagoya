@@ -1,0 +1,12 @@
+= render partial: 'posts/header', post: @post
+.navi
+  - breadcrumb :confirmation_mypage
+  = render "layouts/breadcrumbs"
+
+.main
+  .confirmation
+    .confirmation__content 完了
+    .confirmation__box 確認済みです
+
+  = render partial: "side"
+= render partial: 'posts/footer', post: @post

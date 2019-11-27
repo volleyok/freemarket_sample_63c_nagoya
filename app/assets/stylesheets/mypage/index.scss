@@ -96,7 +96,7 @@
 
 
   &__box2{
-
+    background-color: #fff;
   }
 
   &__lists{
@@ -112,8 +112,14 @@
     color: #333;
     padding: 16px;
     line-height: 1.5;
+    width: 100%;
   }
-
+  .fa-chevron-right{
+    float: right;
+    color: #333;
+    font-size: 15px;
+    padding-top: 20px;
+  }
   .gazou{
     width: 48px;
     height: 48px;
@@ -121,7 +127,7 @@
   }
 
   &__list-text{
-    margin: 0 40px 0 68px;
+    margin: 0 0 0 68px;
   }
 
   .time{
@@ -190,7 +196,6 @@
 
   &__list-name{
     display: block;
-    min-height: 48px;
     padding: 16px;
     background: #fff;
     font-size: 14px;

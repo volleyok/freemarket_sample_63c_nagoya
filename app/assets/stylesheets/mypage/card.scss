@@ -1,0 +1,62 @@
+.card{
+  height:360px;
+  width: 700px;
+  background-color: #fff;
+  float: right;
+
+  &__title{
+    text-align: center;
+    font-size: 24px;
+    padding: 8px 24px;
+    border-bottom: 1px solid #f5f5f5;
+  }
+
+  &__content{
+    padding: 64px;
+  }
+
+  &__name{
+    max-width: 320px;
+    margin: 0 auto;
+    font-size: 16px;
+  }
+  &__box{
+    padding: 24px 0;
+    height: 60px;
+    border-bottom: 1px solid #eee;
+  }
+  &__name2{
+    max-width: 320px;
+    margin: 0 auto;
+    height: 50px;
+    width: 320px;
+  }
+  &__btn{
+    background: #ea352d;
+    border: 1px solid #ea352d;
+    color: #fff;
+    height: 50px;
+    width: 320px;
+    display: flex;
+    align-items: center;
+  }
+  .fa.fa-credit-card{
+    margin: 0 16px 0 34px;
+  }
+  &__name3{
+    display: block;
+    margin: 40px 0 0;
+  }
+
+  &__text2{
+    color: #0099e8;
+    font-size: 14px;
+    display: flex;
+    float: right;
+    align-items: center;
+  }
+
+  .fas.fa-chevron-right{
+    margin-left: 8px;
+  }
+}

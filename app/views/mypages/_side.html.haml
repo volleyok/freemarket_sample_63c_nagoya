@@ -1,7 +1,7 @@
 .side
   %ul.side__list
     %li.side__list-box
-      =link_to "マイページ", "#", class:"side__list-name"
+      =link_to "マイページ", "#", class:"side__list-name" 
     %li.side__list-box
       =link_to "お知らせ", "#", class:"side__list-name"
     %li.side__list-box
@@ -41,16 +41,16 @@
   .side__head 設定
   %ul.side__list2
     %li.side__list-box
-      =link_to "プロフィール", "#", class:"side__list-name"
+      =link_to "プロフィール", profile_mypages_path, class:"side__list-name"
     %li.side__list-box
-      =link_to "発送元・お届け先住所変更", "#", class:"side__list-name"
+      =link_to "発送元・お届け先住所変更", address_mypages_path, class:"side__list-name"
     %li.side__list-box
-      =link_to "支払い方法", "#", class:"side__list-name"
+      =link_to "支払い方法", card_mypages_path, class:"side__list-name"
     %li.side__list-box
-      =link_to "メール/パスワード", "#", class:"side__list-name"
+      =link_to "メール/パスワード", password_mypages_path, class:"side__list-name"
     %li.side__list-box
-      =link_to "本人認証", "#", class:"side__list-name"
+      =link_to "本人認証", identification_mypages_path, class:"side__list-name"
     %li.side__list-box
-      =link_to "電話番号の確認", "#", class:"side__list-name"
+      =link_to "電話番号の確認", confirmation_mypages_path, class:"side__list-name"
     %li.side__list-box
-      =link_to "ログアウト", destroy_user_session_path, class:"side__list-name2", method: :delete
+      =link_to "ログアウト", delete_mypages_path, class:"side__list-name2"
