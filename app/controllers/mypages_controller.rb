@@ -19,7 +19,6 @@ class MypagesController < ApplicationController
   end
 
   def address
-    @user = User.find(current_user.id)
   end
 
   def card

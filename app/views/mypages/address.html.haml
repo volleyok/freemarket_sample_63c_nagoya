@@ -14,7 +14,7 @@
   %section.address
     %h2 発送先・お届け先住所変更
     .address-wrapper
-      = form_for @user, url: address_mypages_path, method: :get do |f|
+      = form_for current_user, url: address_mypages_path, method: :get do |f|
         .address-group-top
           = f.label :name, "お名前", class: "member-text"
           %span.required 必須
