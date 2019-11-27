@@ -19,7 +19,7 @@ $(function(){
   $('form').on('change', 'input[type="file"]','#image' ,function(e) {
     var file = e.target.files[0],
         reader = new FileReader(),
-        $preview = $("#preview");
+        $preview = $(".preview");
         t = this;
     if(file.type.indexOf("image") < 0){
       return false;
