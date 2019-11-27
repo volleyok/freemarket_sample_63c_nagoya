@@ -1,0 +1,56 @@
+.address {
+  background: #fff;
+  float: right;
+  width: 700px;
+  height: 1133px;
+  color: #333;
+  padding-bottom: 64px; 
+  &-wrapper {
+    padding: 40px 40px 64px;
+    width: 343px;
+    margin: auto;
+  }
+  &-group {
+    margin-top: 32px;
+    &-top {
+      margin: 0;
+    }
+  }
+  & h2 {
+    height: 50px;
+    text-align: center;
+    font-size: 24px;
+    background: #fff;
+    line-height: 50px;
+    font-weight: bold;
+    border-bottom: 2px solid #eee;
+  }
+}
+.camera {
+  bottom: 32px;
+  font-size: 22px;
+  height: 160px;
+  right: 32px;
+  width: 160px;
+  position: fixed;
+  background-color: rgb(234, 53, 45);
+  border-radius: 50%;
+  z-index: 2;
+  &__box {
+      width: 160px;
+      height: 160px;
+      color: white;
+      text-decoration: none;
+  }
+  &__box-name {
+      font-size: 22px;
+      text-align: center;
+      padding-top: 32px;
+  }
+  &__box-font {
+      width: 60px;
+      height: 54px;
+      margin: -8px auto 0px;
+      height: 100px;
+  }
+}

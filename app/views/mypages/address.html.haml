@@ -2,8 +2,71 @@
 .navi
   - breadcrumb :address_mypage
   = render "layouts/breadcrumbs"
+.camera
+  =link_to new_post_path, class: "camera__box" do
+    .camera__box-name
+      出品
+    .camera__box-font
+      %i.fas.fa-camera
 
 .main
+
+  %section.address
+    %h2 発送先・お届け先住所変更
+    .address-wrapper
+      = form_for @user, url: address_mypages_path, method: :get do |f|
+        .address-group-top
+          = f.label :name, "お名前", class: "member-text"
+          %span.required 必須
+          %br/
+          = f.text_field :lastname, autofocus: true, class: "field-input", placeholder: "山田",autocomplete: "lastname"
+          = f.text_field :firstname, autofocus: true, class: "field-input", placeholder: "彩",autocomplete: "firstname"
+    
+        .address-group
+          = f.label :name, "お名前カナ", class: "member-text"
+          %span.required 必須
+          %br/
+          = f.text_field :lastname_kana, autofocus: true, class: "field-input", placeholder: "ヤマダ",autocomplete: "lastname_kana"
+          = f.text_field :firstname_kana, autofocus: true, class: "field-input", placeholder: "アヤ",autocomplete: "firstname_kana"
+  
+        .address-group
+          = f.label :name, "郵便番号", class: "member-text"
+          %span.required 必須
+          %br/
+          = f.text_field :postal_code, autofocus: true, class: "field-input", placeholder: "例) 123-4567",autocomplete: "postal_code"
+
+        .address-group
+          = f.label :prefecture, "都道府県", class: "member-text"
+          %span.required 必須
+          %br/
+          = f.text_field :prefecture, autofocus: true, class: "field-input", placeholder: "北海道",autocomplete: "prefecture"
+        
+        .address-group
+          = f.label :city, "市区町村", class: "member-text"
+          %span.required 必須
+          %br/
+          = f.text_field :city, autofocus: true, class: "field-input", placeholder: "例) 横浜市緑区",autocomplete: "city"
+        
+        .address-group
+          = f.label :address, "番地", class: "member-text"
+          %span.required 必須
+          %br/
+          = f.text_field :address, autofocus: true, class: "field-input", placeholder: "例) 青山1-1-1",autocomplete: "address"
+        
+        .address-group
+          = f.label :building_name, "建物名", class: "member-text"
+          %span.required-any 任意
+          %br/
+          = f.text_field :building_name, autofocus: true, class: "field-input", placeholder: "例) 柳ビル103",autocomplete: "building_name"
+        
+        .address-group
+          = f.label :phone_number, "電話", class: "member-text"
+          %span.required-any 任意
+          %br/
+          = f.text_field :phone_number, autofocus: true, class: "field-input", placeholder: "例) 09012345678",autocomplete: "phone_number"
+        .address-group
+          = f.submit "次へ進む", class: "submit-button"
+
 
   = render partial: "side"
 = render partial: 'posts/footer', post: @post
