@@ -4,6 +4,21 @@
   = render "layouts/breadcrumbs"
 
 .main
+  .card
+    .card__title 支払い方法
+    .card__content
+      .card__name クレジットカード一覧
+      .card__box
+        .card__name2
+          =link_to "#" do
+            .card__btn 
+              %i.fa.fa-credit-card
+              .card__text クレジットカードを追加する
+      .card__name3
+        =link_to "#" do
+          .card__text2
+            .aaa 支払い方法について
+            %i.fas.fa-chevron-right
 
   = render partial: "side"
 = render partial: 'posts/footer', post: @post

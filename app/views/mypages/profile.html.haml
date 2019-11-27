@@ -4,6 +4,15 @@
   = render "layouts/breadcrumbs"
 
 .main
+  .profile
+    .profile__title プロフィール
+    .profile__box
+      .profile__list
+        =image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png", class:'user-icon3'
+        %input.profile__name
+      .profile__list2
+        %input.profile__text
+        .profile__btn 変更
 
   = render partial: "side"
 = render partial: 'posts/footer', post: @post
