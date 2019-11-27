@@ -2,7 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .main_buy_order{
+  .content_buy_header{
+    text-align: center;
+  }
   .content_buy_order{
+    background-color: #fff;
     width: 700px;
     margin: 0 auto;
     height: 1000px;

@@ -1,4 +1,6 @@
 .main_buy_order
+  .content_buy_header
+    = link_to image_tag('/img/fmarket_logo_red.svg', width: '300', height: '150'), root_path
   .content_buy_order 
     .content_title 購入内容の確認
     .content_good_box 
@@ -36,5 +38,15 @@
         .cost_detail
         .cost_in_cost
         .cost_change 変更する
+  .footer_wrapper
+    %ul.footer-wrap
+      %li.footer-text プライバシーポリシー
+      %li.footer-text メルカリ利用規約
+      %li.footer-text 特定商取引に関する表記
+    
+    .footer-image
+      = link_to image_tag("https://www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?2177740229", width: '70', height: '70'), root_path
 
+    .footer-copy
+      %p &copy; 2019 Mercari
 
