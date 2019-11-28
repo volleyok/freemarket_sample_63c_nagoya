@@ -1,0 +1,59 @@
+.myidentification {
+  background: #fff;
+  float: right;
+  width: 700px;
+  height: 1100px;
+  color: #333;
+  font-size: 14px;
+  padding-bottom: 64px; 
+  &-wrapper {
+    padding: 64px;
+    width: 600px;
+    margin: auto;
+  }
+  &-group {
+    margin-top: 40px;
+    &-top {
+      margin: 0;
+    }
+  }
+  & h2 {
+    height: 50px;
+    text-align: center;
+    font-size: 24px;
+    background: #fff;
+    line-height: 50px;
+    font-weight: bold;
+    border-bottom: 2px solid #eee;
+  }
+}
+.submit-button-text-left {
+  width: 550px;
+  text-align: right;
+}
+.myidentification-group-name {
+  width: 572px;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+.my-field-input {
+  height: 48px;
+  width: 550px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  padding: 10px 16px 8px;
+  margin-top: 8px;
+  border-radius: 4px;
+  font-size: 16px;
+}
+.my-submit-button {
+  background: red;
+  color: #fff;
+  height: 50px;
+  width: 550px;
+  border-style: none;
+  font-size: 14px;
+  &:hover {
+    opacity: .7;
+  }
+}
