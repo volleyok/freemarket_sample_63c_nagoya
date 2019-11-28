@@ -1,4 +1,6 @@
 .container
+  .post_header
+    = link_to image_tag('/img/fmarket_logo_red.svg', width: '300', height: '150'), root_path
   .newmain
     .main_container
       .container-into
@@ -14,7 +16,7 @@
                 .image_box_main
                   .preview
                   %label{for:"image",class:"image_box"}
-                    %input{name:"product_images[image][]",type: "file", value: "",id:"image",class:"image_boxs",accept: "image/*",multiple:  true,data: {image: 0}}/
+                    %input{name:"product_images[image][]",type: "file", value: "",id:"image",class:"image_boxs",accept: "image/*",multiple: true,image:"0",style:"display:none"}/
               .good_content
                 .good_content_box
                   .good_content_title 商品名
@@ -109,3 +111,4 @@
                   =form.submit "出品する"
                 .sell_btn_back
                   .sell_btn_back_text もどる
+  = render partial: "signups/footer"
