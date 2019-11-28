@@ -1,4 +1,3 @@
-!!!
 .container
   .newmain
     .main_container
@@ -27,18 +26,7 @@
                 = form.text_field :description, placeholder:"商品説明(必須1000文字まで)",class:"good_description_box"
               .good_content_detail
                 .good_content_detail_title 商品の詳細
-
                 .good_content_form  
-
-
-
-
-                  -# .good_form_1
-                  -#   .good_form_1_box
-                  -#     .good_form_1_title カテゴリー
-                  -#     .must 必須
-                  -#   = form.collection_select :categories, @parents, :id, :name,{prompt: "---"}, class: "select-default", id: "parent-form", name: 'post[category_ids][]'
-
                   .sell__about__right__wrap
                     = form.label :category, "カテゴリー"
                     %span.required
@@ -47,49 +35,10 @@
                         %option{value: 0} ---
                         - Category.where('ancestry IS NULL').each do |category|
                           %option{value: "#{category.id}"} #{category.name}
-                      -# %i.fas.fa-chevron-down
                     .sell__about__right__wrap-box.child
                       %select#child
-                      -# %i.fas.fa-chevron-down
                     .sell__about__right__wrap-box.grand_child
                       = form.collection_select(:category, [], :id, :name, {prompt: "---"}, {id: "grand_child"})
-                      -# %i.fas.fa-chevron-down
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                   .good_form_2
                     .good_form_2_box
                       .good_form_2_title サイズ

@@ -6,7 +6,6 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    # @parents = Category.all.order("id ASC").limit(13)
     @parents = Category.all.order("id ASC").limit(13)
     @post.build_shipment
     @post.build_brand
@@ -14,7 +13,6 @@ class PostsController < ApplicationController
 
   def create
       @post = Post.new(post_params)
-      # Post.create(post_params)
       if @post.save!
        shipment_id = Shipment.find(@post.id)
        post = Post.find(@post.id)
@@ -58,10 +56,8 @@ class PostsController < ApplicationController
   private
     def post_params
       params.require(:post).permit(:name, :description, :category, :size, :price, :status, 
-      shipment_attributes: [:id, :delivery_fee, :shipping_method, :ship_from, :ship_days],
+      shipment_attributes: [:id, :delivery_fee, :shipping_method, :ship_from, :ship_days],images: [], 
       brand_attributes: [:id, :brand], category_ids: []).merge(seller_id: current_user.id)
     end
 
 end
-
-# ,images: [], 
