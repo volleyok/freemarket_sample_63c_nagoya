@@ -3,15 +3,14 @@ class CreatePosts < ActiveRecord::Migration[5.0]
     create_table :posts do |t|
       t.string      :name
       t.text        :description
-      t.string      :cotegory
-      t.string      :brand
-      t.string      :status
-      t.string      :postage
-      t.string      :ship_from
-      t.string      :shipping_date
+      t.text        :size
       t.integer     :price
+      t.string      :status
       t.timestamps
-      t.integer     :user_id
+      t.integer     :seller_id
+      t.integer     :buyer_id
+      t.integer     :brand_id
+      t.integer     :shipment_id
     end
   end
 end
