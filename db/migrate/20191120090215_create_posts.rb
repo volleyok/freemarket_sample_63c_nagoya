@@ -6,6 +6,7 @@ class CreatePosts < ActiveRecord::Migration[5.0]
       t.text        :size
       t.integer     :price
       t.string      :status
+      t.string     :category
       t.timestamps
       t.integer     :seller_id
       t.integer     :buyer_id

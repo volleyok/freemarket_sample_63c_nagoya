@@ -41,6 +41,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @category = Category.find(@post.category)
   end
 
   def search
@@ -55,7 +56,7 @@ class PostsController < ApplicationController
 
   private
     def post_params
-      params.require(:post).permit(:name, :description, :size, :price, :status, 
+      params.require(:post).permit(:name, :description, :category, :size, :price, :status, 
       shipment_attributes: [:id, :delivery_fee, :shipping_method, :ship_from, :ship_days],
       brand_attributes: [:id, :brand], category_ids: []).merge(seller_id: current_user.id)
     end

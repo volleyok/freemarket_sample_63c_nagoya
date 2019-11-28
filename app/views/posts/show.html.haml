@@ -11,33 +11,33 @@
           %tbody
             %tr
               %th 出品者
-              %td= link_to "#{@post.user.nickname}"#, new_user_session_path
+              %td= link_to "#{@post.seller.nickname}"#, new_user_session_path
             %tr
               %th カテゴリー
-              %td= link_to "#{@post.cotegory}"#, new_user_registration_path
+              %td= link_to "#{@category.name}"#, new_user_registration_path
             %tr
               %th ブランド
-              %td= link_to "#{@post.brand}"
+              %td= link_to "#{@post.brand.brand}"
             %tr
               %th 商品の状態
               %td="#{@post.status}" 
             %tr
               %th 配送料の負担
-              %td="#{@post.postage}"
+              %td="#{@post.shipment.delivery_fee}"
             %tr
               %th 配送の方法
               %td らくらくメルカリ便
             %tr
               %th 配送元地域
-              %td= link_to "#{@post.ship_from}"
+              %td= link_to "#{@post.shipment.ship_from}"
             %tr
               %th 配送日の目安
-              %td= "#{@post.shipping_date}"
+              %td= "#{@post.shipment.ship_days}"
       .item-price-box.text-center
         %p.item-price.bold
           = "#{@post.price}円" 
         .item-tax (税込み)
-        .item-shipping-fee 送料込み
+        .item-shipping-fee #{@post.shipment.delivery_fee}
       .item-buy-btn.bold
         = link_to "購入画面に進む", buy_order_confirmation_path
       .item-description

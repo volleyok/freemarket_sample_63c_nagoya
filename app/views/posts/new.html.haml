@@ -40,7 +40,7 @@
                   -#   = form.collection_select :categories, @parents, :id, :name,{prompt: "---"}, class: "select-default", id: "parent-form", name: 'post[category_ids][]'
 
                   .sell__about__right__wrap
-                    = form.label :categories, "カテゴリー"
+                    = form.label :category, "カテゴリー"
                     %span.required
                     .sell__about__right__wrap-box.parent
                       %select#parent
@@ -52,9 +52,8 @@
                       %select#child
                       -# %i.fas.fa-chevron-down
                     .sell__about__right__wrap-box.grand_child
-                      = form.collection_select(:categories, [], :id, :name, {prompt: "---"}, {id: "grand_child"})
+                      = form.collection_select(:category, [], :id, :name, {prompt: "---"}, {id: "grand_child"})
                       -# %i.fas.fa-chevron-down
-
 
 
 
@@ -119,7 +118,7 @@
                     = form.fields_for :shipment do |shipment|
                       = shipment.label "配送料の負担"                      
                       .must 必須
-                      = shipment.select :delivery_fee, [["送料込み（出品者負担)", "送料込み（出品者負担)"], ["着払い(購入者負担)", "着払い(購入者負担)"]],  :prompt => "---" ,class:"good_send_task_box"
+                      = shipment.select :delivery_fee, [["送料込み", "送料込み"], ["着払い", "着払い"]],  :prompt => "---" ,class:"good_send_task_box"
                       = shipment.label "配送料の方法"                      
                       .must 必須
                       = shipment.select :shipping_method, [["未定", "未定"], ["らくらくメルカリ便", "らくらくメルカリ便"], ["ゆうメール", "ゆうメール"], ["レターパック", "レターパック"], ["普通郵便(定形、定形外)", "普通郵便(定形、定形外)"], ["クロネコヤマト", "クロネコヤマト"], ["ゆうパック", "ゆうパック"], ["クリックポスト", "クリックポスト"], ["ゆうパケット", "ゆうパケット"]],  :prompt => "---" ,class:"good_send_task_box"

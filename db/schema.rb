@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20191126114643) do
     t.text     "size",        limit: 65535
     t.integer  "price"
     t.string   "status"
+    t.string   "category"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
     t.integer  "seller_id"
