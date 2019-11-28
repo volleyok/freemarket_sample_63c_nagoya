@@ -78,3 +78,4 @@ gem 'dotenv-rails'
 gem 'pry-rails'
 gem "gretel"
 gem 'ancestry'
+gem 'active_hash'
