@@ -11,6 +11,20 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
+  namespace :api do
+    resources "posts", controller: :posts, only: :child, defaults: { format: 'json' } do
+      collection do
+        get 'child'
+      end
+    end
+    resources "posts", controller: :posts, only: :grand_child, defaults: { format: 'json' } do
+      collection do
+        get 'grand_child'
+      end
+    end
+
+  end
+
   resources :mypages, only: [:index,:edit, :update, :destroy, :show] do
     collection do
       get 'delete'
