@@ -5,8 +5,8 @@ class Post < ApplicationRecord
   belongs_to :shipment
   accepts_nested_attributes_for :shipment
   accepts_nested_attributes_for :brand
-  has_many :posts_categories
-  has_many :categories, through: :posts_categories
+  # has_many :posts_categories
+  # has_many :categories, through: :posts_categories
   def self.search(search)
     return Post.all unless search
     Post.where('name LIKE(?)', "%#{search}%")
