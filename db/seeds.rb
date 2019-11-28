@@ -1,3 +1,5 @@
+require './db/seeds/area.rb'
+
 lady = Category.create(name: "レディース")
 man = Category.create(name: "メンズ")
 baby = Category.create(name: "ベビー・キッズ")
