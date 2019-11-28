@@ -1,7 +1,10 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  has_many :posts
+  has_many :buyed_posts, foreign_key: "buyer_id", class_name: "Post"
+  has_many :saling_posts, -> { where("buyer_id is NULL") }, foreign_key: "seller_id", class_name: "Post"
+  has_many :sold_posts, -> { where("buyer_id is not NULL") }, foreign_key: "seller_id", class_name: "Post"
+
   has_many :sns_credentials, dependent: :destroy
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,

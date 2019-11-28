@@ -1,4 +1,3 @@
-!!!
 .container
   .newmain
     .main_container
@@ -28,16 +27,34 @@
               .good_content_detail
                 .good_content_detail_title 商品の詳細
                 .good_content_form  
-                  .good_form_1
-                    .good_form_1_box
-                      .good_form_1_title カテゴリー
-                      .must 必須
-                    = select_tag :cotegory, options_for_select(["レディース", "メンズ", "ベビーキッズ", "インテリア", "本","おもちゃ","コスメ","家電","スポーツ","ハンドメイド","チケット","自転車","その他"]),class:"good_form_box"
+                  .sell__about__right__wrap
+                    = form.label :category, "カテゴリー"
+                    %span.required
+                    .sell__about__right__wrap-box.parent
+                      %select#parent
+                        %option{value: 0} ---
+                        - Category.where('ancestry IS NULL').each do |category|
+                          %option{value: "#{category.id}"} #{category.name}
+                    .sell__about__right__wrap-box.child
+                      %select#child
+                    .sell__about__right__wrap-box.grand_child
+                      = form.collection_select(:category, [], :id, :name, {prompt: "---"}, {id: "grand_child"})
                   .good_form_2
                     .good_form_2_box
-                      .good_form_2_title 商品の状態
+                      .good_form_2_title サイズ
                       .must 必須
-                    = select_tag :status, options_for_select(["新品","未使用に近い","目立った傷なし","やや傷や汚れあり","汚れ傷あり","状態が悪い"]),class:"good_form_box"
+                    = form.select :size,[["S","S"],["M","M"],["L","L"]],  :prompt => "---",class:"good_form_box"
+                  .form-group.brand--container
+                  = form.fields_for :brand do |brand|
+                    = brand.label "ブランド"
+                    %span.form-require-gray 任意
+                    %div
+                      = brand.text_field :brand, placeholder: "例）シャネル", value: "", class: "input-default"
+                  .good_form_3
+                    .good_form_3_box
+                      .good_form_3_title 商品の状態
+                      .must 必須
+                    = form.select :status, [["新品","新品"],["未使用に近い","未使用に近い"],["目立った傷なし","目立った傷なし"],["やや傷や汚れあり","やや傷や汚れあり"],["汚れ傷あり","汚れ傷あり"],["状態が悪い","状態が悪い"]],  :prompt => "---",class:"good_form_box"
               .good_send_how
                 .good_send_how_title_box
                   .good_send_how_title 配送について
@@ -46,19 +63,20 @@
                 .good_send_how_form
                   .good_send_how_form_1
                     .good_send_task
-                      .good_send_task_title 配送料の負担
+                      .good_send_task_title 
+                    = form.fields_for :shipment do |shipment|
+                      = shipment.label "配送料の負担"                      
                       .must 必須
-                    = select_tag :postage, options_for_select(["送料込み（出品者負担)","着払い(購入者負担)"]),class:"good_send_task_box"
-                  .good_send_how_form_2
-                    .good_area
-                      .good_area_title 発送元の地域
+                      = shipment.select :delivery_fee, [["送料込み", "送料込み"], ["着払い", "着払い"]],  :prompt => "---" ,class:"good_send_task_box"
+                      = shipment.label "配送料の方法"                      
                       .must 必須
-                    = select_tag :ship_from, options_for_select(["北海道","青森","岩手","宮城","秋田","山形","福島","茨城","栃木","群馬","埼玉","千葉","東京","神奈川","新潟","富山","石川","福井","山梨","長野","岐阜","静岡","愛知","三重","滋賀","京都","大阪","兵庫","奈良","和歌山","鳥取","島根","岡山","兵庫","広島","山口","徳島","香川","愛媛","高知","福岡","佐賀","長崎","大分","熊本","宮崎","鹿児島","沖縄","未定"]),class:"good_area_box"
-                  .good_send_how_form_3
-                    .good_send_day
-                      .good_send_day_title 発送までの日数
+                      = shipment.select :shipping_method, [["未定", "未定"], ["らくらくメルカリ便", "らくらくメルカリ便"], ["ゆうメール", "ゆうメール"], ["レターパック", "レターパック"], ["普通郵便(定形、定形外)", "普通郵便(定形、定形外)"], ["クロネコヤマト", "クロネコヤマト"], ["ゆうパック", "ゆうパック"], ["クリックポスト", "クリックポスト"], ["ゆうパケット", "ゆうパケット"]],  :prompt => "---" ,class:"good_send_task_box"
+                      = shipment.label "発送元の地域"                      
                       .must 必須
-                    = select_tag :shipping_date, options_for_select(["1~2日で配送","3~4日で配送","5~6日で配送"]),class:"good_send_day_box"
+                      = shipment.collection_select(:ship_from, Area.all, :id, :name, prompt: "---")
+                      = shipment.label "発送までの日数"                      
+                      .must 必須
+                      = shipment.select :ship_days, [["1~2日で配送", "1~2日で配送"], ["3~4日で配送", "3~4日で配送"], ["5~6日で配送", "5~6日で配送"]],  :prompt => "---" ,class:"good_send_task_box"
               .good_cost
                 .good_cost_title_box
                   .good_cost_title 販売価格(300~9,999,999)
@@ -87,6 +105,7 @@
                   .h2 またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
                   .h3 また、出品をもちまして加盟店規約に同意したことになります。
                 .sell_btn_confirm 
-                  .sell_btn_confirm_text 出品する
+                  .sell_btn_confirm_text
+                  =form.submit "出品する"
                 .sell_btn_back
                   .sell_btn_back_text もどる
