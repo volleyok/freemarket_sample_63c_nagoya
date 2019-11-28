@@ -2,8 +2,74 @@
 .navi
   - breadcrumb :identification_mypage
   = render "layouts/breadcrumbs"
-
+.camera
+  =link_to new_post_path, class: "camera__box" do
+    .camera__box-name
+      出品
+    .camera__box-font
+      %i.fas.fa-camera
 .main
+  %section.myidentification
+    %h2 本人情報の登録
+    .myidentification-wrapper
+      = form_for current_user, url: identification_mypages_path, method: :get do |f|
+        .mypassword-group-top
+          %p お客さまの本人情報をご登録ください。
+          %p 登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+          .submit-button-text-left
+            = link_to "本人確認書類のアップロード"
+        .myidentification-group
+          = f.label :text, "お名前", class: "member-text"
+          %br/
+          .myidentification-group-name
+            = current_user.lastname
+            = current_user.firstname
+
+        .myidentification-group
+          = f.label :text, "お名前カナ", class: "member-text"
+          %br/
+          .myidentification-group-name
+            = current_user.lastname_kana
+            = current_user.firstname_kana
+
+        .myidentification-group
+          = f.label :text, "生年月日", class: "member-text"
+          %br/
+          .myidentification-group-name
+            = current_user.birthday
+
+        .myidentification-group
+          = f.label :postal_code, "郵便番号", class: "member-text"
+          %span.required-any 任意
+          %br/
+          = f.text_field :postal_code, autofocus: true, class: "my-field-input", placeholder: "例) 123-4567",autocomplete: "postal_code"
+
+        .myidentification-group
+          = f.label :prefecture, "都道府県", class: "member-text"
+          %span.required-any 任意
+          %br/
+          = f.text_field :prefecture, autofocus: true, class: "my-field-input", placeholder: "北海道",autocomplete: "prefecture"
+
+        .myidentification-group
+          = f.label :city, "市町村", class: "member-text"
+          %span.required-any 任意
+          %br/
+          = f.text_field :city, autofocus: true, class: "my-field-input", placeholder: "例) 横浜市緑区",autocomplete: "city"
+  
+        .myidentification-group
+          = f.label :address, "番地", class: "member-text"
+          %span.required-any 任意
+          %br/
+          = f.text_field :address, autofocus: true, class: "my-field-input", placeholder: "例) 青山1-1-1",autocomplete: "address"
+  
+        .myidentification-group
+          = f.label :building_name, "建物名", class: "member-text"
+          %span.required-any 任意
+          %br/
+          = f.text_field :building_name, autofocus: true, class: "my-field-input", placeholder: "例) 柳ビル103",autocomplete: "building_name"
+
+        .myidentification-group
+          = f.submit "登録する", class: "my-submit-button"
 
   = render partial: "side"
 = render partial: 'posts/footer', post: @post
