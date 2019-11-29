@@ -11,6 +11,10 @@ class SignupsController < ApplicationController
   def new
   end
 
+  def show
+    @user = User.new
+  end
+
   def phone
   end
 

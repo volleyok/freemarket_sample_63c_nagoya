@@ -40,6 +40,7 @@ Rails.application.routes.draw do
   resources :buy_order_confirmations, only: :show 
   resources :signups do
     collection do
+      get 'show'
       get 'new'
       get 'phone'
       get 'address'
