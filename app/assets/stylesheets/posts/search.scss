@@ -1,0 +1,119 @@
+.search_list_main{
+  display: flex;
+  width: 1020px;
+  margin: 40px auto;
+  .side_list_main{
+    float: left;
+    width: 380px;
+  }
+  .search_box{
+    top:0;
+    left: 0;
+    width: auto;
+    opacity: 1;
+    border: solid 1px ;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 5px;
+    
+  }
+  .search_list{
+    background-color: #fff;
+    margin: 40px 0 0 0 ;
+    display: block;
+    padding:10px;
+  }
+  .search_title{
+    font-style: initial;
+    font-size: 16px;
+  }
+  .search_keyword{
+    margin: 24px 0;
+    width: 100%;
+    &_box{
+      display: flex;
+    }
+  }
+    .fa-plus{
+      color: #888;
+      margin-right: 5px;
+      vertical-align:middle ;
+      padding: 5px 0 0 0 ;
+    }
+    .text{
+      font-size: 16px;
+    }
+    .search{
+      height: 40px;
+      border-radius: 4px ;
+      margin: 5px 0px 5px 5px;
+      width: 90%;
+      border: 1px solid #ccc;
+
+    }
+  .search_category{
+    margin: 24px 0;
+    .fa-list{
+      color: #888;
+      margin-right: 5px;
+      padding: 5px 0 0 0 ;
+    }
+  }
+  .search_bland{
+    margin: 24px 0;
+    .fa-tag{
+      color: #888;
+      margin-right: 5px;
+      padding: 5px 0 0 0 ;
+    }
+  }
+  .search_size{
+    margin: 24px 0;
+    .fa-expand{
+      color: #888;
+      margin-right: 5px;
+      padding: 5px 0 0 0 ;
+    }
+  }
+  .search_price{
+    margin: 24px 0;
+    .fa-coins{
+      color: #888;
+      margin-right: 5px;
+      padding: 5px 0 0 0 ;
+    }
+    .price_box{
+      width: 40%;
+      height: 50px;
+      border-radius: 4px ;
+      border: 1px solid #ccc;
+      margin: 5px 0px 5px 5px;
+    }
+  }
+  .search_condition{
+    .fa-star{
+      color: #888;
+      margin-right: 5px;
+      padding: 5px 0 0 0 ;
+    }
+    .check_box{
+      margin: 5px;
+      .text1{
+        font-size: 12px;
+      }
+    }
+    .check{
+      width: 13px;
+      height: 13px;
+      margin: 5px;
+    }
+  }
+  .search_custumer{}
+  .search_status{}
+  .search_btn{}
+  .item__box-lists{
+    float: right;
+    margin: 0 0 0 40px ;
+  }
+  
+}
