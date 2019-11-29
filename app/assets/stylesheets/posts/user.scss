@@ -2,8 +2,14 @@ body {
   background: #eee;
   height: 100%;
 }
+.bold {
+  font-weight: bold;
+}
 .entry_wrapper {
   height: 100vh;
+  &-btn {
+    height: 600px;
+  }
 }
 #progressbar[value] {
   appearance: none;
@@ -277,4 +283,106 @@ body {
 }
 .footer_wrapper {
   margin-top: 150px;
+  &-btn {
+    margin: 0;
+  }
+}
+.button-wrap {
+  width: 700px;
+  margin: auto;
+  text-align: center;
+  padding-bottom: 30px;
+  background: #fff;
+  & h2 {
+    background: #fff;
+    font-size: 22px;
+    height: 100px;
+    margin-bottom: 0;
+    padding: 32px;
+    border-bottom: 2px solid #eee;
+    text-align: center;
+    box-sizing: border-box;
+  }
+}
+.button-wrap-bold {
+  width: 700px;
+  margin: auto;
+  text-align: center;
+  padding-bottom: 30px;
+  background: #fff;
+  & h2 {
+    background: #fff;
+    font-size: 22px;
+    height: 100px;
+    margin-bottom: 0;
+    padding: 32px;
+    border-bottom: 2px solid #eee;
+    text-align: center;
+    box-sizing: border-box;
+    font-weight: bold;
+  }
+}
+.btn {
+  margin-top: 20px;
+  border-radius: 4px;
+  color: #fff;
+  background-color: #ea352d;
+  font-size: 14px;
+  width: 343px;
+  height: 50px;
+  cursor: pointer;
+  position: relative;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  box-shadow: 1px 2px 4px rgba(0,0,0,.2);
+  &:hover {
+  opacity: .7;
+  }
+}
+.far.fa-envelope,.fab.fa-facebook-square,.fab.fa-google {
+  padding: 10px;
+  font-size: 30px;
+}
+.btn-mail-text {
+  padding: 10px;
+  width: 260px;
+}
+.btn-blue {
+  background: #385185;
+  margin-top: 20px;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 14px;
+  width: 343px;
+  height: 50px;
+  cursor: pointer;
+  position: relative;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  box-shadow: 1px 2px 4px rgba(0,0,0,.2);
+  &:hover {
+  opacity: .7;
+  }
+}
+
+.btn-white {
+  background: rgb(249, 249, 249);
+  margin-top: 20px;
+  border-radius: 4px;
+  color: #385185;
+  font-size: 14px;
+  width: 343px;
+  height: 50px;
+  cursor: pointer;
+  position: relative;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  box-shadow: 1px 2px 4px rgba(0,0,0,.2);
+  &:hover {
+  opacity: .7;
+  }
 }

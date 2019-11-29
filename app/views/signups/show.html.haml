@@ -1,0 +1,28 @@
+.entry_wrapper-btn
+  .top_image
+    = link_to image_tag('/img/fmarket_logo_red.svg', width: '300', height: '150'), root_path
+  .button-wrap-bold
+    %h2 新規会員登録
+  .button-wrap
+    =link_to new_signup_path, class: 'btn' do
+      %i.far.fa-envelope
+      .btn-mail-text メールアドレスで登録する。
+
+    =link_to user_facebook_omniauth_callback_path, class: 'btn-blue' do
+      %i.fab.fa-facebook-square
+      .btn-mail-text Facebookで登録する
+
+    =link_to user_google_oauth2_omniauth_callback_path, class: 'btn-white' do
+      %i.fab.fa-google
+      .btn-mail-text Googleで登録する
+
+.footer_wrapper-btn
+  %ul.footer-wrap
+    %li.footer-text プライバシーポリシー
+    %li.footer-text メルカリ利用規約
+    %li.footer-text 特定商取引に関する表記
+
+  .footer-image
+    = link_to image_tag("https://www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?2177740229", width: '70', height: '70'), root_path
+  .footer-copy
+    %p &copy; 2019 Mercari
