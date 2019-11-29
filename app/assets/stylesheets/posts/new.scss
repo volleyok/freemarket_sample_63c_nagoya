@@ -1,32 +1,38 @@
 .container {
     padding: 0 0 0px;
+    font-weight: bold;
+    input {
+        border-radius: 5px;
+        font-weight: normal;
+    }
+    .content_buy_header {
+        width: 100%;
+        height: 126px;
+        img {
+            width: 100%;
+            margin-top: 25px;
+        }
+    }
     .newmain {
         display: block;
         .main_container {
-            height: 1900px;
-            width: 700px;
+            width: 775px;
             margin: 0 auto;
+            background-color: #fff;
             .container-into {
                 .container-into_header {
                     font-size: 22px;
                     text-align: center;
                     padding: 32px 16px;
                     line-height: 1.5;
+                    font-weight: bold;
                 }
                 .text {
                     border-top: 1px solid #eee;
                     .image_upload {
-                        width: 720px;
                         padding: 40px;
                         .image_upload_box {
                             display: flex;
-                            .must {
-                                margin: 0 8px;
-                                background: #ea352d;
-                                padding: 4px;
-                                color: #fff;
-                                font-size: 12px;
-                            }
                         }
                         .text {
                             font-size: 13px;
@@ -50,77 +56,42 @@
                         }
                     }
                     .good_content {
-                        width: 720px;
-                        padding: 10px 40px 10px 40px;
+                        padding: 40px;
                         border-top: 1px solid #eee;
-                        height: 250px;
                         .good_content_box {
                             display: flex;
                             width: 620px;
-                            .must {
-                                margin: 0 8px;
-                                background: #ea352d;
-                                padding: 4px;
-                                color: #fff;
-                                font-size: 12px;
-                            }
                         }
                         .good_box {
                             width: 100%;
-                            height: 30px;
-                            padding: 12px 0px 26px 0px;
+                            height: 48px;
                             border-style: groove, border-width thin;
                             border: 1px solid #ccc;
                         }
                         .good_description {
                             display: flex;
                             margin-top: 30px;
-                            .must {
-                                margin: 0 8px;
-                                background: #ea352d;
-                                padding: 4px;
-                                color: #fff;
-                                font-size: 12px;
-                            }
                         }
                         .good_description_box {
                             width: 100%;
-                            height: 70px;
+                            height: 140px;
                             border-style: groove, border-width thin;
                             padding: 12px 0px 0 0px;
                             border: 1px solid #ccc;
+                            border-radius: 0px;
                         }
                     }
                     .good_content_detail {
                         padding: 40px;
                         border-top: 1px solid #eee;
-                        height: 250px;
-                        width: 720px;
+                        display: flex;
+                        justify-content: space-between;
                         .good_content_detail_title {
                             float: left;
                         }
                         .good_content_form {
                             width: 400px;
-                            height: 200px;
                             float: right;
-                            // .good_form_1{
-                            //   .good_form_1_box{
-                            //     display: flex;
-                            //     .must{
-                            //       margin: 0 8px;
-                            //       background: #ea352d;
-                            //       padding: 4px;
-                            //       color: #fff;
-                            //       font-size: 12px;
-                            //     }
-                            //   }
-                            //   .good_form_box{
-                            //     width: 100%;
-                            //     height: 50px;
-                            //     margin-top:8px;
-                            //     border: 1px solid #ccc;
-                            //   }
-                            // }
                             .sell__about__right__wrap {
                                 .child {
                                     display: none;
@@ -130,16 +101,20 @@
                                 }
                             }
                             .good_form_2 {
-                                margin-top: 50px;
+                                // margin-top: 50px;
                                 .good_form_2_box {
                                     display: flex;
-                                    .must {
-                                        margin: 0 8px;
-                                        background: #ea352d;
-                                        padding: 4px;
-                                        color: #fff;
-                                        font-size: 12px;
-                                    }
+                                }
+                                .good_form_box {
+                                    width: 100%;
+                                    height: 50px;
+                                    border: 1px solid #ccc;
+                                }
+                            }
+                            .good_form_3 {
+                                // margin-top: 50px;
+                                .good_form_3_box {
+                                    display: flex;
                                 }
                                 .good_form_box {
                                     width: 100%;
@@ -152,14 +127,18 @@
                     .good_send_how {
                         padding: 40px;
                         border-top: 1px solid #eee;
-                        height: 250px;
-                        width: 720px;
+                        display: flex;
+                        justify-content: space-between;
                         .good_send_how_title_box {
                             display: flex;
                             width: 200px;
                             float: left;
+                            align-items: center;
+                            height: 25px;
                             .good_send_how_title {}
                             .good_send_question {
+                                height: 20px;
+                                margin-left: 5px;
                                 background: #0099e8;
                                 border-radius: 50%;
                                 color: #fff;
@@ -170,19 +149,14 @@
                         }
                         .good_send_how_form {
                             width: 400px;
-                            height: 280px;
                             float: right;
                             margin-top: 0px;
+                            .good_send_task {
+                                padding-top: 20px;
+                            }
                             .good_send_how_form_1 {
                                 .good_send_task {
                                     display: flex;
-                                    .must {
-                                        margin: 0 8px;
-                                        background: #ea352d;
-                                        padding: 4px;
-                                        color: #fff;
-                                        font-size: 12px;
-                                    }
                                 }
                                 .good_send_task_box {
                                     width: 100%;
@@ -195,13 +169,6 @@
                                 .good_area {
                                     display: flex;
                                     margin-top: 3px;
-                                    .must {
-                                        margin: 0 8px;
-                                        background: #ea352d;
-                                        padding: 4px;
-                                        color: #fff;
-                                        font-size: 12px;
-                                    }
                                 }
                                 .good_area_box {
                                     width: 100%;
@@ -222,13 +189,6 @@
                             .good_send_how_form_3 {
                                 .good_send_day {
                                     display: flex;
-                                    .must {
-                                        margin: 0 8px;
-                                        background: #ea352d;
-                                        padding: 4px;
-                                        color: #fff;
-                                        font-size: 12px;
-                                    }
                                 }
                                 .good_send_day_box {
                                     width: 100%;
@@ -242,16 +202,20 @@
                     .good_cost {
                         padding: 40px;
                         border-top: 1px solid #eee;
-                        height: 180px;
-                        width: 720px;
+                        display: flex;
+                        justify-content: space-between;
                         .good_cost_title_box {
                             display: flex;
                             width: 200px;
                             float: left;
+                            align-items: center;
+                            height: 25px;
                             .good_cost_title {
                                 font-size: 14px;
                             }
                             .good_cost_question {
+                                height: 20px;
+                                margin-left: 5px;
                                 background: #0099e8;
                                 border-radius: 50%;
                                 color: #fff;
@@ -262,7 +226,6 @@
                         }
                         .good_cost_box {
                             width: 400px;
-                            height: 240px;
                             float: right;
                             .cost {
                                 height: 60px;
@@ -271,19 +234,13 @@
                                         display: flex;
                                         float: left;
                                         .cost_clearfix_titie {}
-                                        .must {
-                                            margin: 0 8px;
-                                            background: #ea352d;
-                                            padding: 4px;
-                                            color: #fff;
-                                            font-size: 12px;
-                                        }
                                     }
                                     .cost_clearfix_num {
                                         float: right;
                                         display: flex;
                                         .money_key {
                                             margin: 10px 5px 0 0;
+                                            font-weight: normal;
                                         }
                                         .input_cost {
                                             width: 100px;
@@ -297,6 +254,7 @@
                                 border-top: 1px solid #ccc;
                                 height: 60px;
                                 .tasx_clreafix {
+                                    font-weight: normal;
                                     .left_task {
                                         top: 30px;
                                         float: left;
@@ -327,8 +285,8 @@
                     .sell_btn {
                         padding: 40px;
                         border-top: 1px solid #eee;
-                        height: 180px;
-                        width: 720px;
+                        height: 240px;
+                        font-weight: normal;
                         .sell_btn_text {
                             .h1 {
                                 font-size: 13px;
@@ -342,26 +300,24 @@
                         }
                     }
                     .sell_btn_confirm {
-                        width: 100%;
-                        height: 50px;
-                        margin-top: 10px;
-                        background: red;
-                        .sell_btn_confirm_text {
-                            color: white;
-                            padding: 10px;
-                            text-align: center;
+                        input {
+                            width: 100%;
+                            height: 50px;
+                            margin-top: 44px;
+                            background: #ea352d;
+                            color: #fff;
+                            border-radius: 0px;
+                            cursor: pointer;
                         }
                     }
                     .sell_btn_back {
                         height: 50px;
-                        width: 50%;
-                        margin-top: 20px;
-                        margin-left: 170px;
-                        padding-bottom: 30px;
-                        .sell_btn_back_text {
-                            text-align: center;
-                            background-color: gray;
-                            height: 40px;
+                        width: 45%;
+                        margin: 24px auto 0;
+                        text-align: center;
+                        background-color: #aaa;
+                        line-height: 50px;
+                        a {
                             color: white;
                         }
                     }
@@ -369,4 +325,56 @@
             }
         }
     }
+}
+
+.footer_wrapper {
+    font-weight: normal;
+    margin-top: 10px;
+    img {
+        height: 150px;
+    }
+}
+
+select {
+    font-weight: normal;
+    height: 50px;
+    width: 100%;
+    background-color: #fff;
+    border-color: rgb(214, 212, 212);
+    cursor: pointer;
+}
+
+.content_form {
+    padding: 10px 0;
+    width: 100%;
+}
+
+.form_label {
+    display: flex;
+    align-items: center;
+    padding-bottom: 5px;
+}
+
+.must {
+    background: #ea352d;
+    padding: 4px;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 2px;
+    font-weight: bold;
+    margin-left: 5px;
+    height: 15px;
+    width: 25px;
+}
+
+.form-require-gray {
+    background: #d4d4d4;
+    padding: 4px;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 2px;
+    font-weight: bold;
+    margin-left: 5px;
+    height: 15px;
+    width: 25px;
 }
