@@ -93,6 +93,23 @@ body {
     box-sizing: border-box;
   }
 }
+
+.entry_wrapper .member-wrap {
+  width: 456px;
+  height: 100%;
+  margin: 70px auto 0;
+  padding-bottom: 30px;
+  & h2 {
+    background: #fff;
+    font-size: 22px;
+    height: 100px;
+    margin-bottom: 0;
+    padding: 32px;
+    border-bottom: 2px solid #eee;
+    text-align: center;
+    box-sizing: border-box;
+  }
+}
 .new_user {
   background: #fff;
   padding: 30px 0;
@@ -171,7 +188,7 @@ body {
         opacity: .7;
       }
     }
-    &-left {
+    &-left1 {
       text-align: left;
       width: 343px;
       margin: 10px auto;

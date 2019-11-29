@@ -7,12 +7,13 @@
   .profile
     .profile__title プロフィール
     .profile__box
-      .profile__list
-        =image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png", class:'user-icon3'
-        %input.profile__name
-      .profile__list2
-        %input.profile__text
-        .profile__btn 変更
-
+      = form_for current_user, url: profile_mypages_path, method: :get do |f|
+        .profile__list
+          =image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png", class:'user-icon3'
+          = f.text_field :nickname, autofocus: true, class: "profile__name",autocomplete: "nickname"
+        .profile__list2
+          .profile__text
+          .profile__aaa
+            = f.submit "変更する", class: "profile__btn"
   = render partial: "side"
 = render partial: 'posts/footer', post: @post
