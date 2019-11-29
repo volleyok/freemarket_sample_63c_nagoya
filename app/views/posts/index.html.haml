@@ -7,22 +7,26 @@
         出品
       .camera__box-font
         %i.fas.fa-camera
-  .image
-    %img.print{src: "https://web-jp-assets.mercdn.net/_next/static/images/top-banner-main-device-1f627e51e488f6ca35feaa6a08b79736.png"}
-      .image__box
-        .image__box-content
-          .image__name1
-            スマホで かんたん
-            %br フリマアプリ
-          .image__name2
-            メルカリはスマホカメラからすぐに出品できる
-            %br 購入時は安心な独自システムのアプリです
-          .image__box-content-app
-            =link_to 'https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8', class: "ssss" do
-              %img.appstore{src: "https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg"}
-            =link_to 'https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja', class: "aaaa" do
-              %img.googlplay{src: "https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg"}
-
+  .slick
+    .image
+      .box
+        .image__box
+          .image__box-content
+            .image__name1
+              スマホで かんたん
+              %br フリマアプリ
+            .image__name2
+              メルカリはスマホカメラからすぐに出品できる
+              %br 購入時は安心な独自システムのアプリです
+            .image__box-content-app
+              =link_to 'https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8', class: "ssss" do
+                %img.appstore{src: "https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg"}
+              =link_to 'https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja', class: "aaaa" do
+                %img.googlplay{src: "https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg"}
+        %img.print{src: "https://web-jp-assets.mercdn.net/_next/static/images/top-banner-main-device-1f627e51e488f6ca35feaa6a08b79736.png"}
+    .image2
+    .image3
+    
 
 
 
@@ -42,16 +46,21 @@
   .item
     .item__content
       .item__title
-        %h2.item__title-name レディース新着アイテム
-        =link_to 'もっと見る >', '#', class: "miru"
+        .item__title-name レディース新着アイテム
+        =link_to "#", class: "miru" do
+          もっとみる
+          %i.fas.fa-chevron-right
       %ul.item__box-lists
         -@post.each do |post|
           %li.item__box-list
             .itme__box-tipe
-            =link_to post_path(post.id), class: "item__box-image" do
-              =image_tag "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Pride_of_Pets_Dog_Show%2C_2011_%286271388774%29.jpg/250px-Pride_of_Pets_Dog_Show%2C_2011_%286271388774%29.jpg", size: '20x20', class:'itme-image'
-              .itme__box-tipe2
-                = post.name
-                .post-price
-                  = "¥#{post.price}"
+              =link_to post_path(post.id), class: "item__box-image" do
+                .item-top
+                  .post-price
+                    = "¥#{post.price}"
+                  =image_tag "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Pride_of_Pets_Dog_Show%2C_2011_%286271388774%29.jpg/250px-Pride_of_Pets_Dog_Show%2C_2011_%286271388774%29.jpg", size: '20x20', class:'itme-image'
+                .itme__bottom
+                  .itme__bottom-name
+                    = post.name
+
   = render partial: "footer"

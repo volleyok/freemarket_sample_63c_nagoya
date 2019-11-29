@@ -16,9 +16,9 @@
             %i.fas.fa-list-ul
             %h3 カテゴリーから探す
           %ul.category-lists
-            =link_to "#" do
-              %li.category-list.ladies
-                %p レディース 
+            %li
+              =link_to "レディース", '#',class: "category-lists-ladies"
+
             =link_to "#" do
               %li.category-list.mens
                 %p メンズ
@@ -79,21 +79,27 @@
             =link_to "#" do
               %li.brand-list
                 %p ブランド一覧
-
-      %ul.right-contents
-        %li.left-content
-          =link_to '#', class: "header-menu" do
-            %i.far.fa-heart
-            いいね一覧
-        %li.middle-content1
-          =link_to '#', class: "header-menu" do
-            %i.far.fa-bell
-            お知らせ
-        %li.middle-content2
-          =link_to '#', class: "header-menu" do
-            %i.fas.fa-check
-            やることリスト
-        %li.right-content1
-          =link_to "mypages", class: "header-menu" do
-            %img.usericon{alt: "", src: "https://static.mercdn.net/images/member_photo_noimage_thumb.png"}
-            .usericon-name マイページ
+      - if user_signed_in?
+        %ul.right-contents
+          %li.left-content
+            =link_to '#', class: "header-menu" do
+              %i.far.fa-heart
+              いいね一覧
+          %li.middle-content1
+            =link_to '#', class: "header-menu" do
+              %i.far.fa-bell
+              お知らせ
+          %li.middle-content2
+            =link_to '#', class: "header-menu" do
+              %i.fas.fa-check
+              やることリスト
+          %li.right-content1
+            =link_to "mypages", class: "header-menu" do
+              %img.usericon{alt: "", src: "https://static.mercdn.net/images/member_photo_noimage_thumb.png"}
+              .usericon-name マイページ
+      - else
+        .right-box
+          .right-list
+            =link_to "新規会員登録", new_user_session_path, class: "right-name"
+          .right-list2
+            =link_to "ログイン", new_user_registration_path, class: "right-name2"
