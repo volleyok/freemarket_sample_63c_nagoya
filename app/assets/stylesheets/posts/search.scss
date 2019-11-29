@@ -123,7 +123,13 @@
       margin: 5px 0 5px 0 ;
     }
   }
-  .search_status{}
+  .search_status{
+    .fa-weight-hanging{
+      color: #888;
+      margin-right: 5px;
+      padding: 5px 0 0 0 ;
+    }
+  }
   .search_btn{}
   .item__box-lists{
     float: right;

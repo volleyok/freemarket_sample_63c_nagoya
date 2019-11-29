@@ -82,9 +82,19 @@
             %span.text1 送料込み（出品者負担）
         .search_status
           %label.search_keyword_box
-            %i.fa.fa-cart
+            %i.fa.fa-weight-hanging
             .text 販売状況
+          %iabel.check_box
+            %input{type:"checkbox",class:"check"}
+            %span.text1 すべて
+          %iabel.check_box
+            %input{type:"checkbox",class:"check"}
+            %span.text1 販売中
+          %iabel.check_box
+            %input{type:"checkbox",class:"check"}
+            %span.text1 売り切れ
         .search_btn
+          
     %ul.item__box-lists
       -@posts.each do |post|
         %li.item__box-list
