@@ -1,8 +1,11 @@
 @import "reset";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import "posts/show";
+@import "slick-theme"; 
+@import "slick";
+@import "carousel";
 @import "posts/index";
+@import "posts/show";
 @import "posts/user";
 @import "posts/new";
 
@@ -73,20 +76,33 @@ img.rogo {
         height: 40px;
     }
     .search-form {
-        width: 841px;
+        width: 875px;
         height: 40px;
         background-color: whitesmoke;
         font-size: 16px;
         border-width: 1px;
         border-style: solid;
-        border-color: #CCCCCC;
+        border-color: rgb(204, 204, 204);
+        border-image: initial;
+        border-radius: 4px;
         padding: 0px 50px 0px 10px;
     }
     .search-btn {
-        width: 40px;
+        background-color: transparent;
+        cursor: pointer;
         height: 40px;
-        background-color: rgb(245, 245, 245);
         position: absolute;
+        right: 180px;
+        top: 8px;
+        width: 40px;
+        -webkit-appearance: none;
+        border-width: initial;
+        border-style: none;
+        border-color: initial;
+        border-image: initial;
+        border-radius: 0px 4px 4px 0px;
+        padding: 0px;
+    
     }
     .fas.fa-search {
         font-size: 14px;
@@ -97,8 +113,7 @@ img.rogo {
     height: 50px;
     display: flex;
     justify-content: space-between;
-    margin-top: 8px;
-    width: 1062px;
+    width: 1060px;
 }
 
 .left-contents {
@@ -170,6 +185,7 @@ ul.ladies-lists {
             padding-left: 15px;
         }
     }
+
 }
 
 .brand-lists {
@@ -261,4 +277,39 @@ ul.ladies-lists {
 
 .search-contents {
     height: 150vh;
+}
+
+.right-box {
+    display: flex;
+    align-items: center;
+}
+
+.right-list {
+    text-align: center;
+}
+
+.right-name {
+    background-color: rgb(234, 53, 45);
+    color: rgb(255, 255, 255);
+    padding: 8px 10px;
+    border-radius: 4px;
+    border-color: rgb(234, 53, 45);
+    border-width: 1px;
+    font-size: 14px;
+}
+
+.right-list2 {
+    text-align: center;
+    margin-left: 11px;
+}
+
+.right-name2 {
+    font-size: 14px;
+    padding: 8px 10px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 149, 238);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(0, 149, 238);
+    border-radius: 4px;
 }
