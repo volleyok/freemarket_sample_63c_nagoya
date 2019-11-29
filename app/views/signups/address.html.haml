@@ -45,31 +45,31 @@
       = f.label :prefecture, "都道府県", class: "member-text"
       %span.required 必須
       %br/
-      = f.email_field :prefecture, autofocus: true, class: "field-input", placeholder: "北海道",autocomplete: "prefecture"
+      = f.text_field :prefecture, autofocus: true, class: "field-input", placeholder: "北海道",autocomplete: "prefecture"
     
     .field
       = f.label :city, "市区町村", class: "member-text"
       %span.required 必須
       %br/
-      = f.email_field :city, autofocus: true, class: "field-input", placeholder: "例) 横浜市緑区",autocomplete: "city"
+      = f.text_field :city, autofocus: true, class: "field-input", placeholder: "例) 横浜市緑区",autocomplete: "city"
     
     .field
       = f.label :address, "番地", class: "member-text"
       %span.required 必須
       %br/
-      = f.email_field :address, autofocus: true, class: "field-input", placeholder: "例) 青山1-1-1",autocomplete: "address"
+      = f.text_field :address, autofocus: true, class: "field-input", placeholder: "例) 青山1-1-1",autocomplete: "address"
     
     .field
       = f.label :building_name, "建物名", class: "member-text"
       %span.required-any 任意
       %br/
-      = f.email_field :building_name, autofocus: true, class: "field-input", placeholder: "例) 柳ビル103",autocomplete: "building_name"
+      = f.text_field :building_name, autofocus: true, class: "field-input", placeholder: "例) 柳ビル103",autocomplete: "building_name"
     
     .field
       = f.label :phone_number, "電話", class: "member-text"
       %span.required-any 任意
       %br/
-      = f.email_field :phone_number, autofocus: true, class: "field-input", placeholder: "例) 09012345678",autocomplete: "phone_number"
+      = f.telephone_field :phone_number, autofocus: true, class: "field-input", placeholder: "例) 09012345678",autocomplete: "phone_number"
 
     .field
     = f.submit "次へ進む", class: "submit-button"
