@@ -102,13 +102,27 @@
         font-size: 12px;
       }
     }
-    .check{
-      width: 13px;
-      height: 13px;
-      margin: 5px;
+    .check_main1{
+      margin:5px 0 5px 0;
     }
   }
-  .search_custumer{}
+  .search_custumer{
+    margin: 24px 0;
+    .fa-truck-moving{
+      color: #888;
+      margin-right: 5px;
+      padding: 5px 0 0 0 ;
+    }
+    .check_box{
+      margin: 5px;
+      .text1{
+        font-size: 12px;
+      }
+    }
+    .custumer_box{
+      margin: 5px 0 5px 0 ;
+    }
+  }
   .search_status{}
   .search_btn{}
   .item__box-lists{

@@ -67,7 +67,23 @@
             %input{type:"checkbox",class:"check"}
             %span.text1 全体的に状態が悪い
         .search_custumer
+          %label.search_keyword_box
+            %i.fa.fa-truck-moving
+            .text 発送料の負担
+          .custumer_box
+            %iabel.check_box
+              %input{type:"checkbox",class:"check"}
+              %span.text1 すべて
+            %iabel.check_box
+              %input{type:"checkbox",class:"check"}
+              %span.text1 着払い（購入者負担）
+          %iabel.check_box
+            %input{type:"checkbox",class:"check"}
+            %span.text1 送料込み（出品者負担）
         .search_status
+          %label.search_keyword_box
+            %i.fa.fa-cart
+            .text 販売状況
         .search_btn
     %ul.item__box-lists
       -@posts.each do |post|
