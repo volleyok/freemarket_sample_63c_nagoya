@@ -16,9 +16,9 @@
             %i.fas.fa-list-ul
             %h3 カテゴリーから探す
           %ul.category-lists
-            %li
-              =link_to "レディース", '#',class: "category-lists-ladies"
-
+            =link_to '#' do
+              %li.category-list-ladies
+                %p レディース
             =link_to "#" do
               %li.category-list.mens
                 %p メンズ
@@ -100,6 +100,6 @@
       - else
         .right-box
           .right-list
-            =link_to "新規会員登録", new_user_session_path, class: "right-name"
+            =link_to "新規会員登録", signups_path, class: "right-name"
           .right-list2
-            =link_to "ログイン", new_user_registration_path, class: "right-name2"
+            =link_to "ログイン", new_user_session_path, class: "right-name2"
