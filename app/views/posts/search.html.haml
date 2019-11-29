@@ -63,7 +63,7 @@
             %iabel.check_box
               %input{type:"checkbox",class:"check"}
               %span.text1 傷や汚れあり
-          %iabel.check_box
+          %iabel.check_box_2
             %input{type:"checkbox",class:"check"}
             %span.text1 全体的に状態が悪い
         .search_custumer
@@ -94,7 +94,10 @@
             %input{type:"checkbox",class:"check"}
             %span.text1 売り切れ
         .search_btn
-          
+          %bottun.clear_box
+            .clear クリア
+          %buttun.finish_box
+            .finish 完了
     %ul.item__box-lists
       -@posts.each do |post|
         %li.item__box-list

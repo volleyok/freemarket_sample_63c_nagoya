@@ -13,7 +13,8 @@ $(document).on('turbolinks:load', ()=> {
         return function(e) {
           $preview.append($('<img>').attr({
             src: e.target.result,
-            width: "150px",
+            width: "110px",
+            height: "110px",
             class: "preview",
             title: file.name
           }));

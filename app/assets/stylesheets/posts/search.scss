@@ -12,9 +12,10 @@
     width: auto;
     opacity: 1;
     border: solid 1px ;
-    height: 30px;
+    height: 40px;
     background-color: #fff;
     border-radius: 5px;
+    border: 1px solid #ccc;
     
   }
   .search_list{
@@ -84,7 +85,7 @@
     }
     .price_box{
       width: 40%;
-      height: 50px;
+      height: 48px;
       border-radius: 4px ;
       border: 1px solid #ccc;
       margin: 5px 0px 5px 5px;
@@ -97,13 +98,18 @@
       padding: 5px 0 0 0 ;
     }
     .check_box{
-      margin: 5px;
+      width: 48%;
+      display:inline-block;
       .text1{
         font-size: 12px;
       }
     }
     .check_main1{
-      margin:5px 0 5px 0;
+      margin:15px 0 15px 0;
+    }
+    .check_box_2{
+      width: 50%;
+      font-size: 13px;
     }
   }
   .search_custumer{
@@ -114,23 +120,50 @@
       padding: 5px 0 0 0 ;
     }
     .check_box{
-      margin: 5px;
+      margin: 10px 0 10px 0;
       .text1{
         font-size: 12px;
       }
     }
     .custumer_box{
-      margin: 5px 0 5px 0 ;
+      margin: 10px 0 10px 0 ;
     }
   }
   .search_status{
+    .search_keyword_box{
+      margin: 10px 0 10px 0;
+    }
     .fa-weight-hanging{
       color: #888;
       margin-right: 5px;
       padding: 5px 0 0 0 ;
     }
   }
-  .search_btn{}
+  .search_btn{
+    display: flex;
+    .clear_box{
+      width: 110px;
+      float: left;
+      background-color: #aaa;
+      text-align: center;
+      line-height: 50px;
+      color: #fff;
+      margin-top: 30px;
+      height: 50px;
+    }
+    .finish_box{
+      background-color: red;
+      width: 110px;
+      float: right;
+      text-align: center;
+      line-height: 50px;
+      color: #fff;
+      font-size: 15px;
+      margin-top: 30px;
+      margin-left: 20px;
+      height: 50px;
+    }
+  }
   .item__box-lists{
     float: right;
     margin: 0 0 0 40px ;
