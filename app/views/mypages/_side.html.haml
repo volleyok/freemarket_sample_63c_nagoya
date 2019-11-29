@@ -1,56 +1,100 @@
 .side
   %ul.side__list
     %li.side__list-box
-      =link_to "マイページ", "#", class:"side__list-name" 
+      =link_to mypages_path, class:"side__list-name" do
+        マイページ
+        %i.fas.fa-chevron-right
     %li.side__list-box
-      =link_to "お知らせ", "#", class:"side__list-name"
+      =link_to "#", class:"side__list-name" do
+        お知らせ
+        %i.fas.fa-chevron-right
     %li.side__list-box
-      =link_to "やることリスト", "#", class:"side__list-name"
+      =link_to "#", class:"side__list-name" do
+        やることリスト
+        %i.fas.fa-chevron-right
     %li.side__list-box
-      =link_to "いいね!一覧", "#", class:"side__list-name"
+      =link_to "#", class:"side__list-name" do
+        いいね!一覧
+        %i.fas.fa-chevron-right
     %li.side__list-box
-      =link_to "出品する", "#", class:"side__list-name"
-      
+      =link_to new_post_path, class:"side__list-name" do
+        出品する
+        %i.fas.fa-chevron-right
     %li.side__list-box
       =link_to "/mypages/#{current_user.id}", class:"side__list-name" do
         = "出品した商品 - 出品中"
+        %i.fas.fa-chevron-right
     %li.side__list-box
-      =link_to "出品した商品-取引中", "#", class:"side__list-name"
+      =link_to "#", class:"side__list-name"do
+        %i.fas.fa-chevron-right
+        出品した商品-取引中
     %li.side__list-box
-      =link_to "出品した商品-売却済み", "#", class:"side__list-name"
+      =link_to "#", class:"side__list-name"do
+        %i.fas.fa-chevron-right
+        出品した商品-売却済み
     %li.side__list-box
-      =link_to "購入した商品-取引中", "#", class:"side__list-name"
+      =link_to "#", class:"side__list-name"do
+        %i.fas.fa-chevron-right
+        購入した商品-取引中
     %li.side__list-box
-      =link_to "購入した商品-過去の取引", "#", class:"side__list-name"
+      =link_to "#", class:"side__list-name"do
+        %i.fas.fa-chevron-right
+        購入した商品-過去の取引
     %li.side__list-box
-      =link_to "ニュース一覧", "#", class:"side__list-name"
+      =link_to "#", class:"side__list-name"do
+        %i.fas.fa-chevron-right
+        ニュース一覧
     %li.side__list-box
-      =link_to "評価一覧", "#", class:"side__list-name"
+      =link_to "#", class:"side__list-name"do
+        %i.fas.fa-chevron-right
+        評価一覧
     %li.side__list-box
-      =link_to "ガイド", "#", class:"side__list-name"
+      =link_to "#", class:"side__list-name"do
+        %i.fas.fa-chevron-right
+        ガイド
     %li.side__list-box
-      =link_to "お問い合わせ", "#", class:"side__list-name2"
+      =link_to "#", class:"side__list-name"do
+        %i.fas.fa-chevron-right
+        お問い合わせ
 
   .side__head メルペイ
   %ul.side__list2
     %li.side__list-box
-      =link_to "売上・振込申請", "#", class:"side__list-name"
+      =link_to "#", class:"side__list-name"do
+        %i.fas.fa-chevron-right
+        売上・振込申請
     %li.side__list-box
-      =link_to "ポイント", "#", class:"side__list-name2"
+      =link_to "#", class:"side__list-name"do
+        %i.fas.fa-chevron-right
+        ポイント
 
   .side__head 設定
   %ul.side__list2
     %li.side__list-box
-      =link_to "プロフィール", profile_mypages_path, class:"side__list-name"
+      =link_to profile_mypages_path, class:"side__list-name"do
+        %i.fas.fa-chevron-right
+        プロフィール
     %li.side__list-box
-      =link_to "発送元・お届け先住所変更", address_mypages_path, class:"side__list-name"
+      =link_to address_mypages_path, class:"side__list-name"do
+        %i.fas.fa-chevron-right
+        発送元・お届け先住所変更
     %li.side__list-box
-      =link_to "支払い方法", card_mypages_path, class:"side__list-name"
+      =link_to card_mypages_path, class:"side__list-name"do
+        %i.fas.fa-chevron-right
+        支払い方法
     %li.side__list-box
-      =link_to "メール/パスワード", password_mypages_path, class:"side__list-name"
+      =link_to password_mypages_path, class:"side__list-name"do
+        %i.fas.fa-chevron-right
+        メール/パスワード
     %li.side__list-box
-      =link_to "本人認証", identification_mypages_path, class:"side__list-name"
+      =link_to identification_mypages_path, class:"side__list-name"do
+        %i.fas.fa-chevron-right
+        本人情報
     %li.side__list-box
-      =link_to "電話番号の確認", confirmation_mypages_path, class:"side__list-name"
+      =link_to confirmation_mypages_path, class:"side__list-name"do
+        %i.fas.fa-chevron-right
+        電話番号の確認
     %li.side__list-box
-      =link_to "ログアウト", delete_mypages_path, class:"side__list-name2"
+      =link_to delete_mypages_path, class:"side__list-name"do
+        %i.fas.fa-chevron-right
+        ログアウト

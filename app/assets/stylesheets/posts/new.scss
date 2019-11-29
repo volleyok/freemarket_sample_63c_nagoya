@@ -1,6 +1,22 @@
 .container {
     padding: 0 0 0px;
     font-weight: bold;
+    .footer_wrapper {
+        font-weight: normal;
+        margin-top: 10px;
+        img {
+            height: 150px;
+        }
+    }
+    select {
+        font-weight: normal;
+        height: 50px;
+        width: 100%;
+        background-color: #fff;
+        border-color: rgb(214, 212, 212);
+        cursor: pointer;
+    }
+    
     input {
         border-radius: 5px;
         font-weight: normal;
@@ -327,22 +343,6 @@
     }
 }
 
-.footer_wrapper {
-    font-weight: normal;
-    margin-top: 10px;
-    img {
-        height: 150px;
-    }
-}
-
-select {
-    font-weight: normal;
-    height: 50px;
-    width: 100%;
-    background-color: #fff;
-    border-color: rgb(214, 212, 212);
-    cursor: pointer;
-}
 
 .content_form {
     padding: 10px 0;
