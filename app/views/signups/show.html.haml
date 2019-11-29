@@ -8,11 +8,11 @@
       %i.far.fa-envelope
       .btn-mail-text メールアドレスで登録する。
 
-    =link_to user_facebook_omniauth_callback_path, class: 'btn-blue' do
+    =link_to user_facebook_omniauth_authorize_path, class: 'btn-blue' do
       %i.fab.fa-facebook-square
       .btn-mail-text Facebookで登録する
 
-    =link_to user_google_oauth2_omniauth_callback_path, class: 'btn-white' do
+    =link_to user_google_oauth2_omniauth_authorize_path, class: 'btn-white' do
       %i.fab.fa-google
       .btn-mail-text Googleで登録する
 
