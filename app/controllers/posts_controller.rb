@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   
   def index
     @post = Post.all
+    @category = Category.all.order("id ASC").limit(13)
   end
 
   def new

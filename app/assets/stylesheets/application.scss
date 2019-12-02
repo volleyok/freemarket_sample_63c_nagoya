@@ -123,8 +123,15 @@ img.rogo {
     height: 50px
 }
 
+.fas.fa-list-ul{
+    margin-right: 4px;
+}
+.fas.fa-tag{
+    margin-right: 4px;
+}
+
+
 .bottom-contents ul {
-    // text-align: center;
     list-style-type: none;
     padding: 0;
     color: #fff;
@@ -133,7 +140,6 @@ img.rogo {
 
 .bottom-contents li {
     position: relative;
-    // padding: 5px;
     display: block;
     cursor: pointer;
 }
@@ -152,14 +158,6 @@ h3 {
     display: none;
     position: absolute;
     background: white;
-    li {
-        width: 100%;
-        height: 50px;
-        p {
-            padding-top: 13px;
-            padding-left: 15px;
-        }
-    }
 }
 
 .category-lists li:hover {
@@ -167,26 +165,42 @@ h3 {
     color: white;
 }
 
-ul.ladies-lists {
-    z-index: 2;
+.category-search :hover {
+    color: black
+  }
+  
+.category-search li:hover > ul {
+    display: block;
+  }
+  .category-search ul li {
+	line-height: 44px;
+	text-align: left;
+    font-weight: normal;
     width: 224px;
-    display: none;
-    position: absolute;
-    background: white;
-     :hover {
-        background-color: rgb(230, 230, 230);
-        // color: #000;
-    }
-    li {
-        width: 100%;
-        height: 50px;
-        p {
-            padding-top: 13px;
-            padding-left: 15px;
-        }
-    }
-
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
 }
+
+.category-name {
+	color: black;
+    display: block;
+    padding-left: 15px;
+}
+
+.category-search ul ul {
+	margin: 0px;
+	padding: 0px;
+	display: none;
+	position: absolute;
+	top: 0;
+    left: 100%;
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+}
+
+
+
+
+
 
 .brand-lists {
     width: 224px;
@@ -195,18 +209,18 @@ ul.ladies-lists {
     background: white;
     li {
         width: 100%;
-        height: 50px;
+        height: 44px;
         p {
-            padding-top: 13px;
             padding-left: 15px;
+            padding-top: 10px;
         }
     }
 }
 
 .brand-lists li:hover {
     background-color: rgb(234, 53, 45);
-    color: white;
 }
+
 
 .fa-list-ul:before {
     color: rgb(234, 53, 45);

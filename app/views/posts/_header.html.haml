@@ -15,46 +15,188 @@
           =link_to '#', class: "header-menu cotegory-menu" do
             %i.fas.fa-list-ul
             %h3 カテゴリーから探す
+          -# - Category.where('ancestry IS NULL').each do |category|
+          -#   %option{value: "#{category.id}"} #{category.name}
           %ul.category-lists
             =link_to '#' do
-              %li.category-list-ladies
-                %p レディース
-            =link_to "#" do
-              %li.category-list.mens
-                %p メンズ
-            =link_to "#" do
-              %li.category-list.baby-kids
-                %p ベビー・キッズ
-            =link_to "#" do
-              %li.category-list.interior
-                %p インテリア・住まい・小物
-            =link_to "#" do
-              %li.category-list.hoby
-                %p おもちゃ・ホビー・グッズ
-            =link_to "#" do
-              %li.category-list.cosme
-                %p コスメ・香水・小物
-            =link_to "#" do
-              %li.category-list.category-index
-                %p 家電・スマホ・カメラ
-            =link_to "#" do
-              %li.category-list.category-index
-                %p スポーツ・レジャー
-            =link_to "#" do
-              %li.category-list.category-index
-                %p ハンドメイド
-            =link_to "#" do
-              %li.category-list.category-index
-                %p チケット
-            =link_to "#" do
-              %li.category-list.category-index
-                %p 自転車・オートバイ
-            =link_to "#" do
-              %li.category-list.category-index
-                %p その他
-            =link_to "#" do
-              %li.category-list.category-index
-                %p カテゴリー一覧
+              %li.category-list
+                =link_to "レディース", "#", class:"category-name"
+                %ul.category-lists2
+                  %li.category-list
+                    =link_to "トップス", "#", class:"category-name"
+                    %ul
+                      %li.category-list
+                        =link_to "コート", "#", class:"category-name"
+                      %li.category-list
+                        =link_to "コート", "#", class:"category-name"
+                      %li.category-list
+                        =link_to "コート", "#", class:"category-name"
+                      %li.category-list
+                        =link_to "コート", "#", class:"category-name"
+                  %li.category-list
+                    =link_to "コート", "#", class:"category-name"
+                  %li.category-list
+                    =link_to "コート", "#", class:"category-name"
+                  %li.category-list
+                    =link_to "コート", "#", class:"category-name"
+                    %ul
+                      %li.category-list
+                        =link_to "コート", "#", class:"category-name"
+              %li.category-list
+                =link_to "メンズ", "#", class:"category-name"
+                %ul.category-lists2
+                  %li.category-list
+                    =link_to "コート", "#", class:"category-name"
+                  %li.category-list
+                    =link_to "コート", "#", class:"category-name"
+                  %li.category-list
+                    =link_to "コート", "#", class:"category-name"
+                  %li.category-list
+                    =link_to "コート", "#", class:"category-name"
+                    %ul
+                      %li.category-list
+                        =link_to "コート", "#", class:"category-name"
+              %li.category-list
+                =link_to "ベビー・キッズ", "#", class:"category-name"
+                %ul.category-lists2
+                  %li.category-list
+                    =link_to "コート", "#", class:"category-name"
+                  %li.category-list
+                    =link_to "コート", "#", class:"category-name"
+                  %li.category-list
+                    =link_to "コート", "#", class:"category-name"
+                  %li.category-list
+                    =link_to "コート", "#", class:"category-name"
+                    %ul
+                      %li.category-list
+                        =link_to "コート", "#", class:"category-name"
+              %li.category-list
+                =link_to "インテリア・住まい・小物", "#", class:"category-name"
+                %ul.category-lists2
+                  %li.category-list
+                    =link_to "コート", "#", class:"category-name"
+                  %li.category-list
+                    =link_to "コート", "#", class:"category-name"
+                  %li.category-list
+                    =link_to "コート", "#", class:"category-name"
+                  %li.category-list
+                    =link_to "コート", "#", class:"category-name"
+                    %ul
+                      %li.category-list
+                        =link_to "コート", "#", class:"category-name"
+              %li.category-list
+                =link_to "本・音楽・ゲーム", "#", class:"category-name"
+                %ul.category-lists2
+                  %li.category-list
+                    =link_to "コート", "#", class:"category-name"
+                  %li.category-list
+                    =link_to "コート", "#", class:"category-name"
+                  %li.category-list
+                    =link_to "コート", "#", class:"category-name"
+                  %li.category-list
+                    =link_to "コート", "#", class:"category-name"
+                    %ul
+                      %li.category-list
+                        =link_to "コート", "#", class:"category-name"
+              %li.category-list
+                =link_to "おもちゃ・ホビー・グッズ", "#", class:"category-name"
+                %ul.category-lists2
+                  %li.category-list
+                    =link_to "コスメ・香水・美容", "#", class:"category-name"
+                  %li.category-list
+                    =link_to "コート", "#", class:"category-name"
+                  %li.category-list
+                    =link_to "コート", "#", class:"category-name"
+                  %li.category-list
+                    =link_to "コート", "#", class:"category-name"
+                    %ul
+                      %li.category-list
+                        =link_to "コート", "#", class:"category-name"
+              %li.category-list
+                =link_to "家電・スマホ・カメラ", "#", class:"category-name"
+                %ul.category-lists2
+                  %li.category-list
+                    =link_to "コート", "#", class:"category-name"
+                  %li.category-list
+                    =link_to "コート", "#", class:"category-name"
+                  %li.category-list
+                    =link_to "コート", "#", class:"category-name"
+                  %li.category-list
+                    =link_to "コート", "#", class:"category-name"
+                    %ul
+                      %li.category-list
+                        =link_to "コート", "#", class:"category-name"
+              %li.category-list
+                =link_to "スポーツ・レジャー", "#", class:"category-name"
+                %ul.category-lists2
+                  %li.category-list
+                    =link_to "コート", "#", class:"category-name"
+                  %li.category-list
+                    =link_to "コート", "#", class:"category-name"
+                  %li.category-list
+                    =link_to "コート", "#", class:"category-name"
+                  %li.category-list
+                    =link_to "コート", "#", class:"category-name"
+                    %ul
+                      %li.category-list
+                        =link_to "コート", "#", class:"category-name"
+              %li.category-list
+                =link_to "ハンドメイド", "#", class:"category-name"
+                %ul.category-lists2
+                  %li.category-list
+                    =link_to "コート", "#", class:"category-name"
+                  %li.category-list
+                    =link_to "コート", "#", class:"category-name"
+                  %li.category-list
+                    =link_to "コート", "#", class:"category-name"
+                  %li.category-list
+                    =link_to "コート", "#", class:"category-name"
+                    %ul
+                      %li.category-list
+                        =link_to "コート", "#", class:"category-name"
+              %li.category-list
+                =link_to "チケット", "#", class:"category-name"
+                %ul.category-lists2
+                  %li.category-list
+                    =link_to "コート", "#", class:"category-name"
+                  %li.category-list
+                    =link_to "コート", "#", class:"category-name"
+                  %li.category-list
+                    =link_to "コート", "#", class:"category-name"
+                  %li.category-list
+                    =link_to "コート", "#", class:"category-name"
+                    %ul
+                      %li.category-list
+                        =link_to "コート", "#", class:"category-name"
+              %li.category-list
+                =link_to "自動車・オートバイ", "#", class:"category-name"
+                %ul.category-lists2
+                  %li.category-list
+                    =link_to "コート", "#", class:"category-name"
+                  %li.category-list
+                    =link_to "コート", "#", class:"category-name"
+                  %li.category-list
+                    =link_to "コート", "#", class:"category-name"
+                  %li.category-list
+                    =link_to "コート", "#", class:"category-name"
+                    %ul
+                      %li.category-list
+                        =link_to "コート", "#", class:"category-name"
+              %li.category-list
+                =link_to "その他", "#", class:"category-name"
+                %ul.category-lists2
+                  %li.category-list
+                    =link_to "コート", "#", class:"category-name"
+                  %li.category-list
+                    =link_to "コート", "#", class:"category-name"
+                  %li.category-list
+                    =link_to "コート", "#", class:"category-name"
+                  %li.category-list
+                    =link_to "コート", "#", class:"category-name"
+                    %ul
+                      %li.category-list
+                        =link_to "コート", "#", class:"category-name"
+
 
         %li.brand-search
           =link_to '#', class: "header-menu brand-menu" do
