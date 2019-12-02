@@ -3,6 +3,12 @@ class MypagesController < ApplicationController
     @user = User.find(current_user.id)
   end
 
+  def post_detail
+    @post = Post.find(params[:id])
+    @category = Category.find(@post.category)
+    @area = Area.find(@post.shipment.ship_from)
+  end
+
   def edit
   end
 
