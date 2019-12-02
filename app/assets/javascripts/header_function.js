@@ -5,12 +5,4 @@ $(document).on('turbolinks:load', function() {
             $(".brand-lists:not(:animated)", this).slideToggle(0);
         });
     });
-    $(function() {
-        $('.category-lists-ladies >li').hover(function() {
-            $(".category-lists2 (:animated)", this).slideToggle(0);
-
-
-            $(".brand-lists:not(:animated)", this).slideToggle(0);
-        });
-    });
 });
