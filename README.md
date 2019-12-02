@@ -1,154 +1,153 @@
-# README
+## データベース
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### postsテーブル
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-## usersテーブル
-|Column|Type|Options|
-|------|----|-------|
-|email|string|null: false|
-|encrypted_password|string|null: false|
-|reset_password_token|string|null: false|
-|reset_password_sent_at|string|null: false|
-|remember_created_at|string|null: false|
-|created_at|string|null: false|
-|updated_at|string|null: false|
-|nickname|string|null: false|
-|profile_img|string|null: false|
-|lastname|string|null: false|
-|firstname|string|null: false|
-|lastname_kana|string|null: false|
-|firstname_kana|string|null: false|
-|birthday|string|null: false|
-|postal_code|string|null: false|
-|prefecture|string|null: false|
-|city|string|null: false|
-|address|string|null: false|
-|building_name|string|null: false|
-|phone_number|string|null: false|
-### Association
-- has_many :bought_items, foreign_key: ”buyer_id”, class_name: “Item”
-- has_many :selling_items,->{where(“buyer_id is NULL”)}, foreign_key: ”seller_id”, class_name: “Item”
-- has_many :sold_items, ->{where(“buyer_id is not NULL”)},foreign_key: ”seller_id”, class_name: “Item”
-
-## postsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|image|string|null: false|
 |description|text|null: false|
-|cotegory|string|null: false|
-|status|string|null: false|
-|postage|string|null: false|
-|ship_from|string|null: false|
-|shipping_date|string|null: false|
+|size_id|references|foreign_key: true|
 |price|integer|null: false|
+|status|integer|null: false|
+|category_id|references|null: false, foreign_key: true|
+|seller_id|references|null: false, foreign_key: { to_table: :users }|
+|buyer_id|references|foreign_key: { to_table: :users }|
+|brand_id|references|foreign_key: true|
+|shipments|references|null: false, foreign_key: true|
+
+#### Association
+- has_many :images, dependent: :destroy
+- accepts_nested_attributes_for :images, allow_destroy: true
+- belongs_to :user
+- belongs_to :category
+- belongs_to :brand, optional: true
+- belongs_to :area
+- belongs_to :condition
+- belongs_to :shipment
+
+### shipmentsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
 |delivery_fee|integer|null: false|
-|saller_id|integer|null: false|
-|buyer_id|integer|null: false|
-### Association
-- belongs_to :saler_id, class_name: “User”
-- belongs_to :buyer, class_name: “User”
+|ship_from|references|null: false, foreign_key: true|
+|ship_days|integer|null: false|
+|shipping_method|integer|null: false|
 
-## buy_ordersテーブル
+#### Association
+- has_many :posts
+
+### brandsテーブル
+
 |Column|Type|Options|
 |------|----|-------|
-|saler|references|null: false, foreign_key: true|
-|buyer|references|null: false, foreign_key: true|
-|fee|references|null: false, foreign_key: true|
-|sub_total|references|null: false, foreign_key: true|
-|total_amount|references|null: false, foreign_key: true|
-|created_at|references|null: false, foreign_key: true|
-|update_at|references|null: false, foreign_key: true|
-### Association
-- 
-- 
+|name|string|null: false|
 
+#### Association
+- has_many :posts
 
-## sns_credentialsテーブル
+### categoriesテーブル
+
 |Column|Type|Options|
 |------|----|-------|
-|provider|references|null: false, foreign_key: true|
-|uid|references|null: false, foreign_key: true|
+|name|string|null: false|
+|ancestry|string|add_index :ancestry|
+
+#### Association
+- has_many :posts
+- has_many :brands
+
+### areasテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, add_index :areas, unique: true, length: 10|
+
+#### Association
+- has_many :posts
+- has_many :addresses
+
+### usersテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|email|string|null: false, default: ""|
+|encrypted_password|string|null: false, default: ""|
+|reset_password_token|string|null: false|
+|reset_password_sent_at|datetime|null: false|
+|remember_created_at|datetime|null: false|
+|nickname|string|null: false,limit: 15|
+|first_name|string|null: false,limit: 50|
+|last_name|string|null: false,limit: 50|
+|first_name_kana|string|null: false,limit: 50|
+|last_name_kana|string|null: false,limit: 50|
+|phone_number|integer|null: false,limit: 50, unique: true|
+|birthday|date|null: false|
+|icon|text||
+|introduction|text||
+
+
+#### Association
+- has_many :posts
+- has_many :comments
+- has_one :address
+- has_one :credit_card
+- accepts_nested_attributes_for :user_address
+
+
+#### add_index
+- add_index :email, unique: true
+- add_index :reset_password_token, unique: true
+
+### sns_credentialsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|provider|string|null: false|
+|uid|string|null: false, foreign_key: true|
+|user_id|integer|null: false|
+
+#### Association
+
+
+### credit_cardsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
 |user_id|references|null: false, foreign_key: true|
-### Association
-- 
-- 
+|customer_id|string|null: false|
+|card_id|string|null: false|
 
-## cardsテーブル
+#### Association
+- belongs_to :user
+
+### addressesテーブル
+
 |Column|Type|Options|
 |------|----|-------|
-|saler|integer|
-|buyer|integer|
-|card_id|integer|
-### Association
-- 
-- 
+|first_name|string|null: false, limit: 50|
+|last_name|string|null: false, limit: 50|
+|first_name_kana|string|null: false, limit: 50|
+|last_name_kana|string|null: false, limit: 50|
+|postal_code|integer|null: false|
+|area_id|references|foreign_key: true|
+|city|string|null: false, limit: 20|
+|address|string|null: false, limit: 20|
+|building|string|limit: 50|
+|phone_number|string|limit: 11|
+
+#### Association
+- belongs_to :user, inverse_of: :address
+- belongs_to :area
 
 
-<!-- ## likesテーブル
+### imagesテーブル
+
 |Column|Type|Options|
 |------|----|-------|
-|seller|references|null: false, foreign_key: true|
-|item|references|null: false, foreign_key: true|
+|post_id|references|null: false, foreign_key: true|
+|image_url|text|null: false|
 
-### Association
-- 
--  -->
-
-<!-- ## evaluationsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|seller|text|
-|evaluations|string|
-### Association
-- 
--  -->
-
-<!-- ## relationshipsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|seller|string|
-|buyer|string|
-### Association
-- 
--  -->
-
-<!-- ## messagesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|content|text|
-|image|string|
-### Association
-- 
--  -->
-
-<!-- ## commentsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|user|integer|
-|item|integer|
-### Association
-- 
--  -->
+#### Association
+- belongs_to :post
 
