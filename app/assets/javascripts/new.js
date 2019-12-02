@@ -22,12 +22,13 @@ $(document).on('turbolinks:load', ()=> {
       })(file);
       reader.readAsDataURL(file);
       images.push('<img>');
-      if(image.length >= 6)
-      var pick_image2 = image.slice(5)
-      $.each(pick_image2,function(index,image){
-        image.date('image',index + 5);
-        preview2.append('<img>');
-      })
+      // if(image.length >= 6)
+      // var pick_image2 = image.slice(5)
+      // $.each(pick_image2,function(index,image){
+      //   image.date('image',index + 5);
+      //   console.log()
+      //   preview2.append('<img>');
+      // })
       var new_image = $(`<input multiple= "multiple" name="product_images[image][]"  type="file" id="image" image =${images.length} style = display:none>`);
       $(".image_box").prepend(new_image);
     });
