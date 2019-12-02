@@ -51,27 +51,21 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|ancestry|string||
+|ancestry|string|add_index :ancestry|
 
 #### Association
 - has_many :posts
 - has_many :brands
 
-#### add_index
-- add_index :ancestry
-
 ### areasテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|name|string|null: false, add_index :areas, unique: true, length: 10|
 
 #### Association
 - has_many :posts
 - has_many :addresses
-
-#### add_index
-- add_index :areas, unique: true, length: 10
 
 ### usersテーブル
 
