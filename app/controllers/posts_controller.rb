@@ -22,6 +22,9 @@ class PostsController < ApplicationController
       else
        redirect_to new_post_path
       end
+      respond_to do |format|
+        format.json
+      end
     end
 
   def edit
