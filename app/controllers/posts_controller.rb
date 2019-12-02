@@ -30,12 +30,20 @@ class PostsController < ApplicationController
 
   def update
     post = Post.find(params[:id])
-    post.update(post_params) 
+    if post.update(post_params) 
+      redirect_to mypage_path
+    else
+      redirect_to edit_post_path
+    end
   end
 
   def destroy
     post = Post.find(params[:id])
-    post.destroy  
+    if post.destroy
+      redirect_to mypage_path
+    else
+      redirect_to mypage_path
+    end
   end
 
   def show
