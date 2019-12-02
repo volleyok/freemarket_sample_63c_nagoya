@@ -34,6 +34,6 @@ class MypagesController < ApplicationController
   end
 
   def show
-    @post = Post.where(user_id: current_user.id)
+    @post = Post.where(seller_id: current_user.id)
   end
 end
