@@ -1,36 +1,8 @@
 class SignupsController < ApplicationController
-  # before_action :set_user, only: [:create, :new, :phone, :address, :check, :complete ]
   def index
   end
   def show
   end
-  # def create
-  #   @user = User.new(
-  #   nickname: session[:nickname],
-  #   email: session[:email],
-  #   password: session[:password],
-  #   lastname: session[:lastname],
-  #   firstname: session[:firstname],
-  #   lastname_kana: session[:lastname_kana],
-  #   firstname_kana: session[:firstname_kana],
-  #   birthday: session[:birthday],
-  #   phone_number: session[:phone_number],
-  #   postal_code: session[:postal_code],
-  #   prefecture: session[:prefecture],
-  #   city: session[:city],
-  #   address: session[:address],
-  #   building_name: session[:building_name],
-  #   phone_number: session[:phone_number],
-  #   )
-    
-  #   if @user.save
-  #     # ログインするための情報を保管
-  #     session[:id] = @user.id
-  #     redirect_to done_signups_path
-  #   else
-  #     render ‘/signups/new’
-  #   end
-  # end
   def new
     @user = User.new
   end
