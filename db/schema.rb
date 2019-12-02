@@ -49,17 +49,17 @@ ActiveRecord::Schema.define(version: 20191128095225) do
 
   create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
-    t.text     "description",   limit: 65535
-    t.string   "cotegory"
-    t.string   "brand"
-    t.string   "status"
-    t.string   "postage"
-    t.string   "ship_from"
-    t.string   "shipping_date"
+    t.text     "description", limit: 65535
+    t.text     "size",        limit: 65535
     t.integer  "price"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
-    t.integer  "user_id"
+    t.string   "status"
+    t.string   "category"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.integer  "seller_id"
+    t.integer  "buyer_id"
+    t.integer  "brand_id"
+    t.integer  "shipment_id"
   end
 
   create_table "shipments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -94,7 +94,9 @@ ActiveRecord::Schema.define(version: 20191128095225) do
     t.string   "firstname",                           null: false
     t.string   "lastname_kana",                       null: false
     t.string   "firstname_kana",                      null: false
-    t.date     "birthday"
+    t.integer  "birthday_year"
+    t.integer  "birthday_month"
+    t.integer  "birthday_day"
     t.string   "postal_code",                         null: false
     t.string   "prefecture",                          null: false
     t.string   "city",                                null: false
