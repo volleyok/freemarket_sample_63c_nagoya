@@ -18,7 +18,7 @@
 #### Association
 - has_many :images, dependent: :destroy
 - accepts_nested_attributes_for :images, allow_destroy: true
-- has_many :users
+- belongs_to :user
 - belongs_to :category
 - belongs_to :brand, optional: true
 - belongs_to :area
@@ -60,7 +60,6 @@
 #### add_index
 - add_index :ancestry
 
-
 ### areasテーブル
 
 |Column|Type|Options|
@@ -95,7 +94,7 @@
 
 
 #### Association
-- has_many :products
+- has_many :posts
 - has_many :comments
 - has_one :address
 - has_one :credit_card
@@ -152,7 +151,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|product_id|references|null: false, foreign_key: true|
+|post_id|references|null: false, foreign_key: true|
 |image_url|text|null: false|
 
 #### Association
