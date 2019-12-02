@@ -1,11 +1,31 @@
+.flex-style {
+  display: flex;
+  border-bottom: 1px solid #eee;
+}
+.content__menu li {
+  cursor: pointer;
+  transition: .1s;
+}
+.content__menu li.active {
+  color: #333;
+  background: #fff;
+  border-top: 2px solid #ea352d;
+  cursor: auto;
+}
 .content__box4{
   background: #fff;
+}
+.content__box2 ul {
+  display: none;
 }
 .content2{
   height: 74px;
   background: #fff;
   display: flex;
   width: 100%;
+}
+.content__box2 ul.content__lists {
+  display: block;
 }
 .menu3{
   width: 33.3%;
@@ -37,4 +57,24 @@
 }
 .menu5name{
 
+}
+
+.content__menu_type2 {
+  display: flex;
+  height: 74px;
+}
+.content__box4 ul {
+  display: none;
+}
+.content__box4 ul.content__lists_type2 {
+  display: block;
+}
+.content__menu_type2 li {
+  cursor: pointer;
+}
+.content__menu_type2 li.active {
+  color: #333;
+  background: #fff;
+  border-top: 2px solid #ea352d;
+  cursor: auto;
 }
