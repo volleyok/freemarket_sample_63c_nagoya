@@ -47,9 +47,7 @@
                     border-top: 1px solid #eee;
                     .image_upload {
                         padding: 40px;
-                        
                         .image_upload_box {
-                            
                             display: flex;
                         }
                         .text {
@@ -57,19 +55,15 @@
                         }
                         .image_box_main {
                             display: flex;
-                            width: 695px;
-                            // flex-wrap: wrap;
+                            // width: 695px;
                             .preview {
-                                margin: 10px;
-                                display: flex;
-                                // display: inline-block;
-                            }
-                            .preview2 {
+                                flex-wrap: wrap;
                                 margin: 10px;
                                 display: flex;
                             }
                             .image_box {
-                                width: 620px;
+                                align-content: stretch;
+                                width: 3px;
                                 height: 150px;
                                 text-align: center;
                                 padding: 10px 10px 10px 10px;

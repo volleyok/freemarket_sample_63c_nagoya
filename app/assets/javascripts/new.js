@@ -5,6 +5,7 @@ $(document).on('turbolinks:load', ()=> {
       var file = e.target.files[0],
       reader = new FileReader(),
       $preview = $(".preview");
+      $preview2 = $(".preview2");
       t = this;
       if(file.type.indexOf("image") < 0){
         return false;
@@ -22,13 +23,6 @@ $(document).on('turbolinks:load', ()=> {
       })(file);
       reader.readAsDataURL(file);
       images.push('<img>');
-      // if(image.length >= 6)
-      // var pick_image2 = image.slice(5)
-      // $.each(pick_image2,function(index,image){
-      //   image.date('image',index + 5);
-      //   console.log()
-      //   preview2.append('<img>');
-      // })
       var new_image = $(`<input multiple= "multiple" name="product_images[image][]"  type="file" id="image" image =${images.length} style = display:none>`);
       $(".image_box").prepend(new_image);
     });

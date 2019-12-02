@@ -102,11 +102,14 @@
       -@posts.each do |post|
         %li.item__box-list
           .itme__box-tipe
-          =link_to post_path(post.id), class: "item__box-image" do
-            =image_tag "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Pride_of_Pets_Dog_Show%2C_2011_%286271388774%29.jpg/250px-Pride_of_Pets_Dog_Show%2C_2011_%286271388774%29.jpg", size: '20x20', class:'itme-image'
-            .itme__box-tipe2
-              = post.name
-              .post-price
-                = "¥#{post.price}"
+            =link_to post_path(post.id), class: "item__box-image" do
+              .item-top
+                .post-price
+                  = "¥#{post.price}"
+                =image_tag "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Pride_of_Pets_Dog_Show%2C_2011_%286271388774%29.jpg/250px-Pride_of_Pets_Dog_Show%2C_2011_%286271388774%29.jpg", size: '20x20', class:'itme-image'
+              .itme__bottom
+                .itme__bottom-name
+                  = post.name
+
   = render partial: "footer"
   

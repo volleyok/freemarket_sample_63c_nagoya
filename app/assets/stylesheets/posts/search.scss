@@ -164,9 +164,20 @@
       height: 50px;
     }
   }
-  .item__box-lists{
+  .item__box-list{
+    width: 30%;
+  }
+  .item__box-tipe{
     float: right;
     margin: 0 0 0 40px ;
   }
-  
+  .post-price{
+    margin-top: 170px;
+    position: absolute;
+    border-radius: 0 14px 14px 0;
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    width: 60px;
+    height: 19px;
+  }
 }
