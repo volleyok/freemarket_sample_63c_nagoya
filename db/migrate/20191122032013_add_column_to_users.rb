@@ -6,7 +6,9 @@ class AddColumnToUsers < ActiveRecord::Migration[5.0]
     add_column :users, :firstname, :string, null: false
     add_column :users, :lastname_kana, :string, null: false
     add_column :users, :firstname_kana, :string, null: false
-    add_column :users, :birthday, :date
+    add_column :users, :birthday_year, :integer
+    add_column :users, :birthday_month, :integer
+    add_column :users, :birthday_day, :integer
     add_column :users, :postal_code, :string, null: false
     add_column :users, :prefecture, :string,  null:false
     add_column :users, :city, :string,  null:false
