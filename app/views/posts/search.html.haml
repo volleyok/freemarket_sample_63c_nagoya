@@ -1,7 +1,115 @@
 .contents
   = render partial: "header"
-  .search-contents
-    - @posts.each do |post|
-      = post.name
-      = "¥#{post.price}"
+  .search_list_main
+    .side_list_main 
+    
+      .search_box
+        .search_list_box
+          .icon
+          .list
+      .search_list
+        .search_title 
+          詳細検索
+        .search_keyword
+          %label.search_keyword_box
+            %i.fa.fa-plus
+            .text キーワードを追加する
+          %input{type:"text",value:"",palceholder:"値下げ",class:"search"}/
+        .search_category
+          %label.search_keyword_box
+            %i.fa.fa-list
+            .text カテゴリーを追加する
+          %input{type:"text",value:"",class:"search"}/
+        .search_bland
+          %label.search_keyword_box
+            %i.fa.fa-tag
+            .text ブランド名から探す
+          %input{type:"text",value:"",class:"search"}/
+        .search_size
+          %label.search_keyword_box
+            %i.fa.fa-expand
+            .text サイズを指定する
+          %input{type:"text",value:"",class:"search"}/
+        .search_price
+          %label.search_keyword_box
+            %i.fa.fa-coins
+            .text 価格
+          %input{type:"text",value:"",class:"search"}/
+          %input{type:"text",class:"price_box"}
+          %span.key ~
+          %input{type:"text",class:"price_box"}
+        .search_condition
+          %label.search_keyword_box
+            %i.fa.fa-star
+            .text 商品の状態
+          .check_main1
+            %iabel.check_box
+              %input{type:"checkbox",class:"check"}
+              %span.text1 すべて
+            %iabel.check_box
+              %input{type:"checkbox",class:"check"}
+              %span.text1 新品・未使用
+          .check_main1   
+            %iabel.check_box
+              %input{type:"checkbox",class:"check"}
+              %span.text1 未使用に近い
+            %iabel.check_box
+              %input{type:"checkbox",class:"check"}
+              %span.text1 目立った汚れなし
+          .check_main1    
+            %iabel.check_box
+              %input{type:"checkbox",class:"check"}
+              %span.text1 やや傷や汚れあり
+            %iabel.check_box
+              %input{type:"checkbox",class:"check"}
+              %span.text1 傷や汚れあり
+          %iabel.check_box_2
+            %input{type:"checkbox",class:"check"}
+            %span.text1 全体的に状態が悪い
+        .search_custumer
+          %label.search_keyword_box
+            %i.fa.fa-truck-moving
+            .text 発送料の負担
+          .custumer_box
+            %iabel.check_box
+              %input{type:"checkbox",class:"check"}
+              %span.text1 すべて
+            %iabel.check_box
+              %input{type:"checkbox",class:"check"}
+              %span.text1 着払い（購入者負担）
+          %iabel.check_box
+            %input{type:"checkbox",class:"check"}
+            %span.text1 送料込み（出品者負担）
+        .search_status
+          %label.search_keyword_box
+            %i.fa.fa-weight-hanging
+            .text 販売状況
+          %iabel.check_box
+            %input{type:"checkbox",class:"check"}
+            %span.text1 すべて
+          %iabel.check_box
+            %input{type:"checkbox",class:"check"}
+            %span.text1 販売中
+          %iabel.check_box
+            %input{type:"checkbox",class:"check"}
+            %span.text1 売り切れ
+        .search_btn
+          %bottun.clear_box
+            .clear クリア
+          %buttun.finish_box
+            .finish 完了
+    %ul.item__box-lists
+      -@posts.each do |post|
+        %li.item__box-list
+          .itme__box-tipe
+            =link_to post_path(post.id), class: "item__box-image" do
+              .item-top
+                .post-price
+                  = "¥#{post.price}"
+                =image_tag "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Pride_of_Pets_Dog_Show%2C_2011_%286271388774%29.jpg/250px-Pride_of_Pets_Dog_Show%2C_2011_%286271388774%29.jpg", size: '20x20', class:'itme-image'
+              .itme__bottom
+                .itme__bottom-name
+                  = post.name
+
   = render partial: "footer"
+  

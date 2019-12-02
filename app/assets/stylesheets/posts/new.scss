@@ -55,15 +55,20 @@
                         }
                         .image_box_main {
                             display: flex;
+                            width: 695px;
                             .preview {
+                                flex-wrap: wrap;
                                 margin: 10px;
+                                display: flex;
                             }
                             .image_box {
-                                width: 620px;
+                                align-content: stretch;
+                                width: 3px;
                                 height: 150px;
                                 text-align: center;
                                 padding: 10px 10px 10px 10px;
                                 border: 1px solid #ccc;
+                                
                                 .image_boxs {
                                     display: none;
                                     display: block;
