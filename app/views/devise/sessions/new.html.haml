@@ -3,20 +3,19 @@
     = link_to image_tag('/img/fmarket_logo_red.svg', width: '300', height: '150'), root_path
 
   .member-wrap
-    = form_for @user, url: signups_path, method: :get do |f|
-      .field
-        .member-person-wrap-suer-text-center
-          %p アカウントをお持ちでない方はこちら
-
+    .field
+      .member-person-wrap-suer-text-center
+        %p アカウントをお持ちでない方はこちら
       .field_border
-        = f.submit "新規会員登録", class: "submit-button-blue"
-        -# = button_to "新規会員登録", signup_index_path, class: 'submit-button-blue'
+        = link_to  "新規会員登録", signups_path, class: "submit-button-blue"
+        
       .field
-        = f.submit "Facebookでログイン", class: "submit-button-facebook"
+        = link_to "Facebookでログイン", user_facebook_omniauth_authorize_path, class: "submit-button-facebook"
 
       .field
-        = f.submit "Googleでログイン", class: "submit-button-Google"
+        = link_to "Googleでログイン", user_google_oauth2_omniauth_authorize_path, class: "submit-button-Google"
 
+    = form_for @user, url: user_session_path do |f|
       .field
         = f.label :email
         %br/
@@ -42,5 +41,4 @@
     = link_to image_tag("https://www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?2177740229", width: '70', height: '70'), root_path
   .footer-copy
     %p &copy; 2019 Mercari
-    -# = render "devise/shared/links"
-    -# = link_to 'topへ', root_path
+ 
