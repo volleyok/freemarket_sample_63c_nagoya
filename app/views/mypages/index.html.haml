@@ -12,11 +12,11 @@
         .user-date
           評価  23 出品数  5
     .content__box
-      .content__menu
-        .menu1
+      %ul.content__menu
+        %li.menu1.active
           .menu1name お知らせ
-        .menu2
-          .menu2name やることリスト
+        %li.menu2
+          .menu1name やることリスト
     .content__box2
       %ul.content__lists
         %li.content__list
@@ -66,13 +66,73 @@
                 %span 2日前
         %li.content__list2
           =link_to "一覧を見る","#", class: "list-name2"
+      %ul
+        %li.flex-style
+          =link_to "#", class: "list-name" do
+            =image_tag('/img/logo_red.svg',class:"gazou")
+            %i.fas.fa-chevron-right
+            .content__list-text
+              .text ご登録のメールアドレスに承認メールを送りました。メールに記載のURLをクリックしてメールアドレスを承認してください。
+              .time
+                %i.far.fa-clock
+                %span 2日前
+        %li.flex-style
+          =link_to "#", class: "list-name" do
+            =image_tag('/img/logo_red.svg',class:"gazou")
+            %i.fas.fa-chevron-right
+            .content__list-text
+              .text ご登録のメールアドレスに承認メールを送りました。メールに記載のURLをクリックしてメールアドレスを承認してください。
+              .time
+                %i.far.fa-clock
+                %span 2日前
+        %li.flex-style
+          =link_to "#", class: "list-name" do
+            =image_tag('/img/logo_red.svg',class:"gazou")
+            %i.fas.fa-chevron-right
+            .content__list-text
+              .text ご登録のメールアドレスに承認メールを送りました。メールに記載のURLをクリックしてメールアドレスを承認してください。
+              .time
+                %i.far.fa-clock
+                %span 2日前
     .content__box3
       .content__title 購入した商品
-      .content__menu
-        .menu1
+      %ul.content__menu_type2
+        %li.menu1.active
           .menu1name 取引中
-        .menu2
-          .menu2name 過去の取引
-      .content__hako
+        %li.menu2
+          .menu1name 過去の取引
+    .content__box4
+      %ul.content__lists_type2
+        %li.flex-style
+          =link_to "#", class: "list-name" do
+            =image_tag('/img/1go.jpg',class:"gazou")
+            %i.fas.fa-chevron-right
+            .content__list-text
+              .text サンダーバード１号担当 バージル・トレーシー
+        %li.flex-style
+          =link_to "#", class: "list-name" do
+            =image_tag('/img/2go.jpeg',class:"gazou")
+            %i.fas.fa-chevron-right
+            .content__list-text
+              .text サンダーバード２号担当 ゴードン・トレーシー
+        %li.flex-style
+          =link_to "#", class: "list-name" do
+            =image_tag('/img/3go.jpg',class:"gazou")
+            %i.fas.fa-chevron-right
+            .content__list-text
+              .text サンダーバード３号担当 アラン・トレーシー
+      %ul
+        %li.flex-style
+          =link_to "#", class: "list-name" do
+            =image_tag('/img/4go.jpeg',class:"gazou")
+            %i.fas.fa-chevron-right
+            .content__list-text
+              .text サンダーバード4号担当 ゴードン・トレーシー
+        %li.flex-style
+          =link_to "#", class: "list-name" do
+            =image_tag('/img/5go.jpg',class:"gazou")
+            %i.fas.fa-chevron-right
+            .content__list-text
+              .text サンダーバード5号担当 ジョン・トレーシー
   = render partial: "side"
 = render partial: 'posts/footer', post: @post
