@@ -79,3 +79,4 @@ gem 'pry-rails'
 gem "gretel"
 gem 'ancestry'
 gem 'active_hash'
+gem 'payjp'

@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'card/new'
+
+  get 'card/show'
+
   devise_for :users,
   controllers: {
     sessions: "users/sessions",
@@ -48,6 +52,13 @@ Rails.application.routes.draw do
       get 'check'
       get 'complete' # ここで、入力の全てが終了する
       get 'done' # 登録完了後のページ
+    end
+  end
+  resources :card, only: [:new, :show] do
+    collection do
+      post 'show', to: 'card#show'
+      post 'pay', to: 'card#pay'
+      post 'delete', to: 'card#delete'
     end
   end
 

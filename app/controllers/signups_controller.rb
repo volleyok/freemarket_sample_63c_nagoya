@@ -24,19 +24,26 @@ class SignupsController < ApplicationController
     session[:phone_number] = user_params[:phone_number]
     @user = User.new
   end
-  def check
+  # def check
+  #   session[:postal_code] = user_params[:postal_code]
+  #   session[:prefecture] = user_params[:prefecture]
+  #   session[:city] = user_params[:city]
+  #   session[:address] = user_params[:address]
+  #   session[:building_name] = user_params[:building_name]
+  #   session[:phone_number] = user_params[:phone_number]
+  #   @user = User.new
+  # end
+  def complete
+    # @user = User.new
+  end
+  def done
     session[:postal_code] = user_params[:postal_code]
     session[:prefecture] = user_params[:prefecture]
     session[:city] = user_params[:city]
     session[:address] = user_params[:address]
     session[:building_name] = user_params[:building_name]
     session[:phone_number] = user_params[:phone_number]
-    @user = User.new
-  end
-  def complete
-    @user = User.new
-  end
-  def done
+    # @user = User.new
     @user = User.new(
     nickname: session[:nickname],
     email: session[:email],
@@ -61,7 +68,7 @@ class SignupsController < ApplicationController
       # ログインするための情報を保管
       session[:id] = @user.id
       sign_in User.find(session[:id]) unless user_signed_in?
-      redirect_to root_path
+      redirect_to controller: 'card' ,action: 'new'
     else
       render'signups/new'
     end
