@@ -21,20 +21,6 @@
   %h2 お届け先住所入力
   = form_for @user, url: done_signups_path, method: :get do |f|
 
-    -# .field
-    -#   = f.label :address_last_name, "お名前(全角)", class: "member-text"
-    -#   %span.required 必須
-    -#   %br/
-    -#   = f.text_field :address_last_name, autofocus: true, class: "field-input-half", placeholder: "例) 山田",autocomplete: "address_last_name"
-    -#   = f.text_field :address_first_name, autofocus: true, class: "field-input-half", placeholder: "例) 彩",autocomplete: "address_first_name"
-
-    -# .field
-    -#   = f.label :address_last_name_kana, "お名前カナ(全角)", class: "member-text"
-    -#   %span.required 必須
-    -#   %br/
-    -#   = f.text_field :address_last_name_kana, autofocus: true, class: "field-input-half", placeholder: "例) ヤマダ",autocomplete: "address_last_name_kana"
-    -#   = f.text_field :address_first_name_kana, autofocus: true, class: "field-input-half", placeholder: "例) アヤ",autocomplete: "address_first_name_kana"
-
     .field
       = f.label :postal_code, "郵便番号", class: "member-text"
       %span.required 必須
@@ -73,13 +59,5 @@
 
     .field
     = f.submit "次へ進む", class: "submit-button"
-
-  %ul.footer-wrap
-    %li.footer-text プライバシーポリシー
-    %li.footer-text メルカリ利用規約
-    %li.footer-text 特定商取引に関する表記
   
-  .footer-image
-    = link_to image_tag("https://www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?2177740229", width: '70', height: '70'), root_path
-  .footer-copy
-    %p &copy; 2019 Mercari
+= render 'signups/footer'

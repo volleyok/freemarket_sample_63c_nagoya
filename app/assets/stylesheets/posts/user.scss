@@ -1,12 +1,10 @@
 body {
-  // background: #eee;
   height: 100%;
 }
 .bold {
   font-weight: bold;
 }
 .entry_wrapper {
-  height: 100vh;
   &-btn {
     height: 600px;
   }
@@ -275,7 +273,12 @@ body {
   color: #333;
   justify-content: center;
   margin-top: 30px;
+  margin-bottom: 40px;
   padding: 20px 0 0 0;
+}
+.footer-box {
+  background: rgb(245, 245, 245);
+  height: 100%;
 }
   &-text {
   margin: 0 10px;
@@ -317,7 +320,7 @@ body {
 }
 .field-input-half {
   height: 48px;
-  width: 165.5px;
+  width: 165px;
   box-sizing: border-box;
   border: 1px solid #ccc;
   padding: 10px 16px 8px;
@@ -382,7 +385,6 @@ body {
   }
 }
 .btn {
-  margin-top: 20px;
   border-radius: 4px;
   color: #fff;
   background-color: #ea352d;
@@ -391,7 +393,7 @@ body {
   height: 50px;
   cursor: pointer;
   position: relative;
-  margin: 0 auto 20px;
+  margin: 0 auto 30px;
   display: flex;
   align-items: center;
   box-shadow: 1px 2px 4px rgba(0,0,0,.2);
@@ -409,7 +411,6 @@ body {
 }
 .btn-blue {
   background: #385185;
-  margin-top: 20px;
   border-radius: 4px;
   color: #fff;
   font-size: 14px;
@@ -417,7 +418,7 @@ body {
   height: 50px;
   cursor: pointer;
   position: relative;
-  margin: 0 auto 20px;
+  margin: 0 auto 30px;
   display: flex;
   align-items: center;
   box-shadow: 1px 2px 4px rgba(0,0,0,.2);
@@ -428,7 +429,6 @@ body {
 
 .btn-white {
   background: rgb(249, 249, 249);
-  margin-top: 20px;
   border-radius: 4px;
   color: #385185;
   font-size: 14px;
@@ -436,7 +436,7 @@ body {
   height: 50px;
   cursor: pointer;
   position: relative;
-  margin: auto;
+  margin: 0 auto 30px;
   display: flex;
   align-items: center;
   border: 1px solid #ccc;
