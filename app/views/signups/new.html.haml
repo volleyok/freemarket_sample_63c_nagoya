@@ -39,8 +39,9 @@
       = f.label :password, "パスワード", class: "member-text"
       %span.required 必須
       %br/
-      = f.password_field :password, class: "field-input",placeholder: "7文字以上",autocomplete: "new-password"
-      %input#password-check{type: "checkbox"}
+      = f.password_field :password, type: "password", id: "password", class: "field-input", placeholder: "7文字以上"
+      %input#password-check{type: "checkbox"}/
+
     .actions
 
     .member-person-wrap
@@ -90,4 +91,4 @@
     .submit-button-text
       = link_to "本人登録の情報について＞"
 
-  = render 'signups/footer'
+= render 'signups/footer'
