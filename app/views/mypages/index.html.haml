@@ -94,10 +94,8 @@
               .time
                 %i.far.fa-clock
                 %span 2日前
-
-        -# 購入した商品
     .content__box3
-      -# .content__title 購入した商品
+      .content__title 購入した商品
       %ul.content__menu_type2
         %li.menu1.active
           .menu1name 取引中
@@ -110,31 +108,31 @@
             =image_tag('/img/1go.jpg',class:"gazou")
             %i.fas.fa-chevron-right
             .content__list-text
-              .text サンダーバード１号担当　バージル・トレーシー
+              .text サンダーバード１号担当 バージル・トレーシー
         %li.flex-style
           =link_to "#", class: "list-name" do
             =image_tag('/img/2go.jpeg',class:"gazou")
             %i.fas.fa-chevron-right
             .content__list-text
-              .text サンダーバード２号担当　ゴードン・トレーシー
+              .text サンダーバード２号担当 ゴードン・トレーシー
         %li.flex-style
           =link_to "#", class: "list-name" do
             =image_tag('/img/3go.jpg',class:"gazou")
             %i.fas.fa-chevron-right
             .content__list-text
-              .text サンダーバード３号担当　アラン・トレーシー
+              .text サンダーバード３号担当 アラン・トレーシー
       %ul
         %li.flex-style
           =link_to "#", class: "list-name" do
             =image_tag('/img/4go.jpeg',class:"gazou")
             %i.fas.fa-chevron-right
             .content__list-text
-              .text サンダーバード4号担当　ゴードン・トレーシー
+              .text サンダーバード4号担当 ゴードン・トレーシー
         %li.flex-style
           =link_to "#", class: "list-name" do
             =image_tag('/img/5go.jpg',class:"gazou")
             %i.fas.fa-chevron-right
             .content__list-text
-              .text サンダーバード5号担当　ジョン・トレーシー
+              .text サンダーバード5号担当 ジョン・トレーシー
   = render partial: "side"
 = render partial: 'posts/footer', post: @post

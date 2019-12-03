@@ -105,6 +105,9 @@
     border-bottom: 1px solid #eee;
     height: 80px;
     display: flex;
+    :hover{
+      background-color: #eee;
+    }
   }
   .list-name{
     color: #333;
@@ -190,6 +193,9 @@
   &__list-box{
     height: 48px;
     border-top: 1px solid #eee;
+      :hover{
+        background-color: #eee;
+      }
   }
 
   &__list-name{
@@ -202,7 +208,9 @@
   .fas.fa-chevron-right{
     float: right;
     color: #ccc;
-  
+    :hover{
+      color: red;
+    }
   }
 
   &__list-name2{
@@ -218,4 +226,7 @@
   &__head{
     margin-top: 40px;
   }
+}
+.flex-style:hover{
+  background-color: #eee;
 }
