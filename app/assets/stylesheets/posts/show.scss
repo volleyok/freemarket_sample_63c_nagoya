@@ -14,7 +14,7 @@ body {
 
 .item-box-container {
     width: 700px;
-    height: 950px;
+    height: 100%;
     background: #fff;
     margin: 40px auto 0;
     padding: 24px 40px 40px;
@@ -43,7 +43,18 @@ body {
     height: 420px;
     width: 300px;
 }
-
+// .owl-item-inner-box {
+//     background-image: url('/img/ps5.jpg');
+//     background-size: 60px 60px; 
+//     background-position: 0px 0px;
+//     height: 120px;
+//     width: 300px;
+// }
+.owl-item-inner-box {
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+}
 .item-detail-table {
     flex: 1;
     height: 420px;
@@ -200,15 +211,14 @@ body {
 .social-media-box {
     list-style: none;
     display: flex;
+    align-items: center;
     justify-content: center;
 }
 
 .social-media-box li {
     margin: 5px;
     padding: 5px;
-    background: pink;
     width: 44px;
-    height: 44px;
 }
 
 .items-box-head {
@@ -271,4 +281,41 @@ body {
     list-style-type: none;
     font-size: 14px;
     border-top: 1px solid #eee;
+}
+// SNSのstyle
+
+.share-btn .fab.fa-facebook-square {
+    background: #385185;
+    border-radius: 8px;
+    &::before {
+    font-size: 35px;
+    }
+}
+.share-btn .fab.fa-twitter-square {
+    background: #fff;
+    border-radius: 8px;
+    &::before {
+    font-size: 60px;
+    color: skyblue;
+    }
+}
+.share-btn .fab.fa-line {
+    background: #fff;
+    border-radius: 8px;
+    &::before {
+    font-size: 60px;
+    color: green;
+    }
+}
+.share-btn .fab.fa-pinterest {
+    background: red;
+    border-radius: 8px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    &::before {
+    font-size: 30px;
+    color: #fff;
+    }
 }
