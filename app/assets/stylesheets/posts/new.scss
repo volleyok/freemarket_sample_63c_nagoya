@@ -60,7 +60,21 @@
                                 flex-wrap: wrap;
                                 margin: 10px;
                                 display: flex;
+                                float: left;
                             }
+                            .btn_wrapper{
+                                display: flex;
+                            }
+                            .new_btn_edit{
+                                color: skyblue;
+                                margin: 5px;
+                            }
+                            .new_btn_delete{
+                                color: skyblue;
+                                margin: 5px;
+                                // padding-left: 30px;
+                            }
+
                             .image_box {
                                 align-content: stretch;
                                 width: 3px;

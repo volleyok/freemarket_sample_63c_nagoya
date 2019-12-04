@@ -14,10 +14,9 @@
                   .must 必須
                 .text 最大１０枚までアップロードできます。
                 .image_box_main
-                  .preview
-                    .preview_remove
+                  %li.preview
                   %label{for:"image",class:"image_box"}
-                    %input{name:"product_images[image][]",type: "file", value: "",id:"image",class:"image_boxs",accept: "image/*",multiple: true,image:"0",style:"display:none"}/
+                    %input{name:"product_images[image][]",type: "file", value: "",id:"image",class:"image_boxs",accept: "image/*",accepts_nested_attributes_for: true,image:"0",style:"display:none"}/
               .good_content
                 .good_content_box
                   .good_content_title 商品名
