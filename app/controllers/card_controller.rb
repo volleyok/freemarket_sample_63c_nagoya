@@ -1,9 +1,9 @@
 class CardController < ApplicationController
   
   before_action :set_key,  except:  [:new]
+  before_action :set_card,  except:  [:pay]
   
   def new
-    card = Card.where(user_id: current_user.id)
     redirect_to action: "show" if card.exists?
   end
 
@@ -24,7 +24,6 @@ class CardController < ApplicationController
   end
 
   def delete
-    card = Card.where(user_id: customer_user.id).first
     if card.blank?
       customer = Payjp::Customer.retrieve(card.customer_id)
       customer.delete
@@ -34,7 +33,6 @@ class CardController < ApplicationController
   end
 
   def show
-    card = Card.where(user_id: current_user.id).first
     if card.blank?
       redirect_to action: "new"
     else
@@ -48,6 +46,10 @@ class CardController < ApplicationController
 
   def set_key
     Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+  end
+
+  def set_card
+    card = Card.where(user_id: customer_user.id).first
   end
 
 end
