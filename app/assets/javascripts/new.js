@@ -27,5 +27,24 @@ $(document).on('turbolinks:load', ()=> {
       $(".image_box").prepend(new_image);
     });
   });
-});
 
+
+
+  $(function() {
+    $("#post_price").on('input', function(){ 
+      var data = $("#post_price").val();
+      var profit = Math.round(data * 0.9);
+      var fee = (data - profit);
+      console.log(profit)
+      $('.right_task').html(fee);
+      $('.right_task').prepend('¥');
+      $('.right_profit').html(profit);
+      $('.right_profit').prepend('¥');
+      $('#price').val(profit);
+      if(profit == '') { 
+      $('.right_profit').html('');
+      $('.right_task').html('');
+      }
+    });
+  });
+});
