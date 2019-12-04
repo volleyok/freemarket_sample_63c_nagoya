@@ -1,6 +1,6 @@
 class CardController < ApplicationController
   
-require "payjp"
+  before_action :set_key,  except:  [:new]
   
   def new
     card = Card.where(user_id: current_user.id)
@@ -14,7 +14,6 @@ require "payjp"
     else
       customer = Payjp::Customer.create(
         card: params['payjp-token'],
-        # metadata: {user_id: customer.id}
       )
       @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
@@ -28,7 +27,6 @@ require "payjp"
   def delete
     card = Card.where(user_id: customer_user.id).first
     if card.blank?
-    else
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
       customer = Payjp::Customer.retrieve(card.customer_id)
       customer.delete
@@ -48,4 +46,11 @@ require "payjp"
       
     end
   end
+
+  private
+
+  def set_key
+    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+  end
+
 end

@@ -57,6 +57,7 @@ group :production do
   gem 'unicorn', '5.4.1'
 end
   gem 'haml-rails'
+  gem 'counter_culture', '~> 1.8'
 
 group :development, :test do
   gem 'capistrano'
