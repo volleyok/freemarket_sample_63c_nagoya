@@ -45,7 +45,7 @@
         = "#{@post.description}"
       .item-button-container
         .item-button-left
-          = link_to "いいね！"
+          = render partial: "likes/like"
         .item-button-left
           = link_to "不適切な商品の報告"
         .item-button-right
