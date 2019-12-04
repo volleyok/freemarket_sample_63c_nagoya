@@ -10,11 +10,19 @@ class PostsController < ApplicationController
     @parents = Category.all.order("id ASC").limit(13)
     @post.build_shipment
     @post.build_brand
+    10.times{@post.images.build}
   end
 
   def create
+    # post_params[:image_url].each do |image|
+    #   new_image = Image.new(image_url: image)
+    #   return false unless new_image.save!
+    # end
       @post = Post.new(post_params)
       if @post.save!
+        # params[:images][:image_url].each do |i|
+        #   @post.images.create(image: i)
+        # end
        shipment_id = Shipment.find(@post.id)
        post = Post.find(@post.id)
        post.update(shipment_id: shipment_id)
@@ -66,7 +74,8 @@ class PostsController < ApplicationController
   private
     def post_params
       params.require(:post).permit(:name, :description, :category, :size, :price, :status, 
-      shipment_attributes: [:id, :delivery_fee, :shipping_method, :ship_from, :ship_days],images: [], 
+      shipment_attributes: [:id, :delivery_fee, :shipping_method, :ship_from, :ship_days],
+      images_attributes: [:image_url],
       brand_attributes: [:id, :brand], category_ids: []).merge(seller_id: current_user.id)
     end
 
