@@ -5,8 +5,10 @@ class Post < ApplicationRecord
   belongs_to :shipment
   has_many :likes, dependent: :destroy
   has_many :iine_users, through: :likes, source: :user
-  accepts_nested_attributes_for :shipment
-  accepts_nested_attributes_for :brand
+  has_many :images, inverse_of: :post
+  accepts_nested_attributes_for :shipment, allow_destroy: true
+  accepts_nested_attributes_for :brand, allow_destroy: true
+  accepts_nested_attributes_for :images, allow_destroy: true
   def self.search(search)
     return Post.all unless search
     Post.where('name LIKE(?)', "%#{search}%")
