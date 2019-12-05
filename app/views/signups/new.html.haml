@@ -68,11 +68,11 @@
       = f.label :birthday, "生年月日", class: "member-text"
       %span.required 必須
       %br/
-      = f.select :birthday_year,  [*1919..2019],:prompt => "---", class: "field-input-time"
+      = f.select :birthday_year,  [*1919..2019],:prompt => "---", class: "member-text_day"
       年
-      = f.select :birthday_month,  [*1..12],:prompt => "---", class: "field-input-time"
+      = f.select :birthday_month,  [*1..12],:prompt => "---", class: "member-text_day"
       月
-      = f.select :birthday_day, [*1..31],:prompt => "---", class: "field-input-time"
+      = f.select :birthday_day, [*1..31],:prompt => "---", class: "member-text_day"
       日
       .member-person-wrap-suer-text
         %p ※本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
