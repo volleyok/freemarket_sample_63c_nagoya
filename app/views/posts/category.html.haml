@@ -2,18 +2,19 @@
 .navi
   - breadcrumb :category_posts
   = render "layouts/breadcrumbs"
+= render partial: "camera"
 .category
   .category_main
     .category_name
       %span カテゴリー一覧
     .category_lists
-      - @category.each do |category|
+      - @category.each.with_index do |category,i|
         .category_list
-          =link_to category.name, "#", :href => "#1", class:"category-style"
+          =link_to category.name, "#", class:"category-style-#{i}"
     .category_box
       .category_box2
         .category_title
-          %span レディース
+          %span.bbb レディース
         .category_content
           %span トップス
           .category_content-box
@@ -139,7 +140,7 @@
     .category_box
       .category_box2
         .category_title
-          %span 本・音楽・ゲーム
+          %a{:href => "#1"} 本
         .category_content
           %span 本
           .category_content-box
@@ -331,7 +332,6 @@
     .category_box
       .category_box2
         .category_title
-          %a.button{:href => "#index"} Topへ
           %span その他
         .category_content
           %span まとめ売り
