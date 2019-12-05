@@ -25,10 +25,10 @@
       %label カード番号
       %span.required 必須
       %br/
-      = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
+      = text_field_tag "number", "", class: "member-text_num", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
     
     
-    .field
+    .img_field
       = image_tag('/img/credit-card_22.png', width: '50', height: '30')
       = image_tag('/img/credit-card_9.png', width: '50', height: '30')
       = image_tag('/img/credit-card_26.png', width: '50', height: '30')
@@ -41,7 +41,7 @@
       %label 有効期限
       %span.required 必須
       %br/
-      %select#exp_month{name: "exp_month", type: "text"}
+      %select#exp_month{name: "exp_month", class: "member-text_exp", type: "text"}
         %option{value: ""} --
         %option{value: "1"}01
         %option{value: "2"}02
@@ -55,8 +55,9 @@
         %option{value: "10"}10
         %option{value: "11"}11
         %option{value: "12"}12
-      %span 月/
-      %select#exp_year{name: "exp_year", type: "text"}
+      %span 月
+      %br/
+      %select#exp_year{name: "exp_year", class: "member-text_exp",  type: "text"}
         %option{value: ""} --
         %option{value: "2019"}19
         %option{value: "2020"}20
@@ -75,20 +76,20 @@
       %label セキュリティコード
       %span.required 必須
       %br/
-      = text_field_tag "cvc", "", class: "cvc", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
+      = text_field_tag "cvc", "", class: "member-text_num", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
       #card_token
     .submit-button-text
       = link_to "カード裏面の番号とは？"
 
     .field
-    = submit_tag "次へ", id: "token_submit"
+    = submit_tag "次へ進む", id: "token_submit",  class: "submit-button_card"
 
-  %ul.footer-wrap
-    %li.footer-text プライバシーポリシー
-    %li.footer-text メルカリ利用規約
-    %li.footer-text 特定商取引に関する表記
+%ul.footer-wrap
+  %li.footer-text プライバシーポリシー
+  %li.footer-text メルカリ利用規約
+  %li.footer-text 特定商取引に関する表記
   
-  .footer-image
-    = link_to image_tag("https://www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?2177740229", width: '70', height: '70'), root_path
-  .footer-copy
-    %p &copy; 2019 Mercari
+.footer-image
+  = link_to image_tag("https://www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?2177740229", width: '70', height: '70'), root_path
+.footer-copy
+  %p &copy; 2019 Mercari
