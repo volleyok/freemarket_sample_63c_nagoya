@@ -11,7 +11,7 @@
     %li.progress-bar-normal
       %span 支払い方法
     %li.progress-bar-normal
-      %span 完了
+      %span 完了      
   .progress-bar-clear
 
 %label{for: "progressbar"}
@@ -40,7 +40,7 @@
       %span.required 必須
       %br/
       = f.password_field :password, type: "password", id: "password", class: "field-input", placeholder: "7文字以上"
-      %input#password-check{type: "checkbox"}/
+      %input#password-check{type: "checkbox"}
 
     .actions
 
@@ -77,8 +77,9 @@
       .member-person-wrap-suer-text
         %p ※本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
 
-     
-
+    .field
+      = flash[:recaptcha_error]
+      = recaptcha_tags
 
     .field
       .member-person-wrap-suer-text
