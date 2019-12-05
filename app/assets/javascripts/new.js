@@ -5,7 +5,6 @@ $(document).on('turbolinks:load', ()=> {
       var file = e.target.files[0],
       reader   = new FileReader(),
       $preview = $(".preview"),
-      // 動的にIDを取得する記述
       btn_wrapper = $(
         // 動的にIDを振る
         `<div class="btnimage" id ="btnimages">
@@ -33,14 +32,34 @@ $(document).on('turbolinks:load', ()=> {
           };
         })(file);
       reader.readAsDataURL(file);
-      images.push('<img>');
-      var new_image = $(`<input accepts_nested_attributes_for= "accepts_nested_attributes_for" name="product_images[image][]"  type="file" id="image" image =${images.length} style = display:none>`);
-      $(".image_box").prepend(new_image);
+      // images.push('<img>');
+      // var new_image = $(`<input accepts_nested_attributes_for= "accepts_nested_attributes_for" name="product_images[image][]"  type="file" id="image" image =${images.length} style = display:none>`);
+      // $(".image_box").prepend(new_image);
     });
-    $('.preview').on('click','.new-btn-delete',function(){
-      $(this)
-        .parent()
-        .remove()
+    // $('.preview').on('click','.new-btn-delete',function(){
+    //   $(this)
+    //     .parent()
+    //     .remove()
+    // });
+    $('form').on('change','input[type="file"]','.new-btn-edit',function(e){
+      var file = e.target.files,
+      reader = new FileReader(),
+      $preview =$(".preview"),
+      btn_wrapper = $(
+        `<div class="btnimage" id ="btnimages">
+          <div class="new-btn-edit">
+          編集
+          </div>
+          <div class="new-btn-delete">
+          削除
+          </div>
+        </div>`
+      )
+        reader.onload = (fubction(file){
+          return function(e) {
+
+          };
+        })(file);
     });
   });
   
