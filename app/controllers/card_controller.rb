@@ -1,9 +1,10 @@
 class CardController < ApplicationController
-  
+
   before_action :set_key,  except:  [:new]
-  before_action :set_card,  except:  [:pay]
-  
+  before_action :set_card,  only:  [:delete, :show]
+
   def new
+    card = Card.where(user_id: current_user.id)
     redirect_to action: "show" if card.exists?
   end
 
@@ -41,9 +42,8 @@ class CardController < ApplicationController
       
     end
   end
-
   private
-
+  
   def set_key
     Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
   end
