@@ -55,6 +55,12 @@
                         .image_box_main {
                             display: grid;
                             width: 695px;
+                            input {
+                                display: none;
+                            }
+                            #post_images_attributes_0_image_url {
+                                display: block;
+                            }
                             .preview {
                                 flex-wrap: wrap;
                                 margin: 10px;
