@@ -8,7 +8,6 @@ $(document).on('turbolinks:load', () => {
                 btn_wrapper = $(
                   // 動的にIDを振る
                   `<div class="btnimage" id ="btnimages">
-                    <image src ='<img>'>
                     <div class="new-btn-edit">
                     編集
                     </div>
@@ -23,8 +22,8 @@ $(document).on('turbolinks:load', () => {
             }
             reader.onload = (function(file) {
                 return function(e) {
-                    // $preview.append(btn_wrapper)
-                    $preview.append($('<img>').attr({
+                    $preview.append(btn_wrapper)
+                    $(".btnimage").prepend($('<img>').attr({
                         src: e.target.result,
                         width: "110px",
                         height: "110px",
