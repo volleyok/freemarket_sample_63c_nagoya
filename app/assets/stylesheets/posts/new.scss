@@ -60,19 +60,20 @@
                                 flex-wrap: wrap;
                                 margin: 10px;
                                 display: flex;
-                                float: left;
                             }
-                            .btn_wrapper{
-                                display: flex;
+                            .btn-wrapper{
+                                // display: flex;
+                                width: 100px;
+                                height: 100px;
+                                margin: 5px;
                             }
-                            .new_btn_edit{
+                            .new-btn-edit{
                                 color: skyblue;
                                 margin: 5px;
                             }
-                            .new_btn_delete{
+                            .new-btn-delete{
                                 color: skyblue;
                                 margin: 5px;
-                                // padding-left: 30px;
                             }
 
                             .image_box {

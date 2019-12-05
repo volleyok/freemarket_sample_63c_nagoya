@@ -3,41 +3,47 @@ $(document).on('turbolinks:load', ()=> {
   $(function(){
     $('form').on('change', 'input[type="file"]','#image' ,function(e) {
       var file = e.target.files[0],
-      reader = new FileReader(),
-      $preview = $(".preview");
-      var btn_wrapper = $('<div class="btn_wrapper"><div class="new_btn_edit">編集</div> <div class="new_btn_delete">削除</div></div>');
-      t = this;
-      if(file.type.indexOf("image") < 0){
-        return false;
-      }
-      reader.onload = (function(file) {
-        return function(e) {
-          $preview.append($('<img>').attr({
-            src: e.target.result,
-            width: "110px",
-            height: "110px",
-            class: "preview",
-            title: file.name,
-            
-          }));
-          $preview.append(btn_wrapper);
-        };
-      })(file);
+      reader   = new FileReader(),
+      $preview = $(".preview"),
+      // 動的にIDを取得する記述
+      btn_wrapper = $(
+        // 動的にIDを振る
+        `<div class="btnimage" id ="btnimages">
+          <div class="new-btn-edit">
+          編集
+          </div>
+          <div class="new-btn-delete">
+          削除
+          </div>
+        </div>`
+        )
+        t = this;
+        if(file.type.indexOf("image") < 0){
+          return false;
+        }
+        reader.onload = (function(file) {
+          return function(e) {
+            $preview.append(btn_wrapper);
+            // セレクタを動的に変化させる（上記IDになるようにする）
+            $(`#btnimages`).prepend($('<img>').attr({
+              src: e.target.result,
+              width: 100,
+              height: 100,
+            }));
+          };
+        })(file);
       reader.readAsDataURL(file);
       images.push('<img>');
       var new_image = $(`<input accepts_nested_attributes_for= "accepts_nested_attributes_for" name="product_images[image][]"  type="file" id="image" image =${images.length} style = display:none>`);
       $(".image_box").prepend(new_image);
     });
-    $('.preview').on('click','.new_btn_delete',function(){
+    $('.preview').on('click','.new-btn-delete',function(){
       $(this)
-      
         .parent()
         .remove()
-        
-
-        
     });
   });
+  
 
 
 
