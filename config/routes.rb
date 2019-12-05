@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :posts do
     collection do
       get 'search'
+      get 'category'
     end
   end
   namespace :api do

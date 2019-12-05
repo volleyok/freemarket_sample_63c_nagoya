@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   def index
     @post = Post.all
     @category = Category.all.order("id ASC").limit(13)
+    @category = Post.where(category: true)
   end
 
   def new
@@ -31,7 +32,7 @@ class PostsController < ApplicationController
 
   def update
     post = Post.find(params[:id])
-    if post.update(post_params) 
+    if post.update(post_params)
       redirect_to mypage_path
     else
       redirect_to edit_post_path
@@ -62,6 +63,10 @@ class PostsController < ApplicationController
        @children = Category.find(params[:parent_id]).children
       end
     end
+  end
+
+  def category
+    @category = Category.all.order("id ASC").limit(13)
   end
 
   private
