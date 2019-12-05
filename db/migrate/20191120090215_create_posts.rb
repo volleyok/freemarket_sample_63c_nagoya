@@ -10,7 +10,7 @@ class CreatePosts < ActiveRecord::Migration[5.0]
       t.timestamps
       t.integer     :seller_id
       t.integer     :buyer_id
-      t.integer     :brand_id
+      t.integer     :brand_id 
       t.integer     :shipment_id
     end
   end
