@@ -5,13 +5,25 @@ $(document).on('turbolinks:load', () => {
             var file = e.target.files[0],
                 reader = new FileReader(),
                 $preview = $(".preview");
-            $preview2 = $(".preview2");
+                btn_wrapper = $(
+                  // 動的にIDを振る
+                  `<div class="btnimage" id ="btnimages">
+                    <image src ='<img>'>
+                    <div class="new-btn-edit">
+                    編集
+                    </div>
+                    <div class="new-btn-delete">
+                    削除
+                    </div>
+                  </div>`
+                  )
             t = this;
             if (file.type.indexOf("image") < 0) {
                 return false;
             }
             reader.onload = (function(file) {
                 return function(e) {
+                    // $preview.append(btn_wrapper)
                     $preview.append($('<img>').attr({
                         src: e.target.result,
                         width: "110px",
@@ -23,7 +35,7 @@ $(document).on('turbolinks:load', () => {
             })(file);
             reader.readAsDataURL(file);
             images.push('<img>');
-            var new_image = $(`<input multiple= "multiple" name="product_images[image][]"  type="file" id="image" image =${images.length} style = display:none>`);
+            var new_image = $(`<input accepts_nested_attributes_for= "accepts_nested_attributes_for"  name="product_images[image][]"  type="file" id="image" image =${images.length} style = display:none>`);
             $(".image_box").prepend(new_image);
         });
         $('#post_images_attributes_0_image_url').on('change', function() {

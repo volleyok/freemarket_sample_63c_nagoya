@@ -15,10 +15,10 @@
                 .text 最大１０枚までアップロードできます。
                 .image_box_main
                   .preview
-                  %label{for:"image",class:"image_box"}
+                  -# %label{for:"image",class:"image_box"}
                     -# %input{name:"product_images[image][]",type: "file", value: "",id:"image",class:"image_boxs",accept: "image/*",accepts_nested_attributes_for: true,image:"0",style:"display:none"}/
                   = form.fields_for :images ,class:"image_box"do |img|
-                    = img.file_field :image_url,name:"product_images[image][]",type: "file", value: "",id:"image",class:"image_boxs",accept: "image/*",accepts_nested_attributes_for: true,image:"0",style:"display:none"
+                    = img.file_field :image_url
               .good_content
                 .good_content_box
                   .good_content_title 商品名
