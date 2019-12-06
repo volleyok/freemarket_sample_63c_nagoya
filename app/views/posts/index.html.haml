@@ -58,7 +58,7 @@
                 .item-top
                   .post-price
                     = "¥#{post.price}"
-                  =image_tag "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Pride_of_Pets_Dog_Show%2C_2011_%286271388774%29.jpg/250px-Pride_of_Pets_Dog_Show%2C_2011_%286271388774%29.jpg", size: '20x20', class:'itme-image'
+                  =image_tag "#{post.images[0].image_url}", size: '20x20', class:'itme-image'
                 .itme__bottom
                   .itme__bottom-name
                     = post.name
