@@ -1,0 +1,263 @@
+*,::before, ::after {
+  border-width: 0;
+  border-style: solid;
+}
+.progress-bar-name-gray {
+  height: 20px;
+  list-style: none;
+  position: relative;
+  color: #aaa;
+}
+.return-color-box {
+  background: #aaa;
+  height: 15px;
+  width: 15px;
+  display: block;
+  font-size: 30px;
+  margin: auto;
+  border-radius: 50%;
+  &::after {
+    content: "";
+    width: 100%;
+    height: 4px;
+    background: #aaa;
+    position: absolute;
+    bottom: -40px;
+    z-index: -1;
+    display: block;
+    color: red;
+  }
+  &::before {
+    content: "";
+    width: 100%;
+    height: 4px;
+    background: red;
+    position: absolute;
+    bottom: -40px;
+    right: 50%;
+    z-index: -1;
+    display: block;
+  }
+}
+.return-color-box-f {
+  background: red;
+  height: 15px;
+  width: 15px;
+  display: block;
+  font-size: 30px;
+  margin: auto;
+  border-radius: 50%;
+  &::after {
+    content: "";
+    width: 100%;
+    height: 4px;
+    background: #aaa;
+    position: absolute;
+    bottom: -40px;
+    z-index: -1;
+    display: block;
+  }
+}
+.return-color-box-red {
+  background: red;
+  height: 15px;
+  width: 15px;
+  display: block;
+  font-size: 30px;
+  margin: auto;
+  border-radius: 50%;
+  &::after {
+    content: "";
+    width: 100%;
+    height: 4px;
+    background: #aaa;
+    position: absolute;
+    bottom: -40px;
+    z-index: -1;
+    display: block;
+    color: red;
+  }
+  &::before {
+    content: "";
+    width: 100%;
+    height: 4px;
+    background: red;
+    position: absolute;
+    bottom: -40px;
+    right: 50%;
+    z-index: -1;
+    display: block;
+  }
+}
+.return-color-box-red-red {
+  background: red;
+  height: 15px;
+  width: 15px;
+  display: block;
+  font-size: 30px;
+  margin: auto;
+  border-radius: 50%;
+  &::after {
+    content: "";
+    width: 100%;
+    height: 4px;
+    background: red;
+    position: absolute;
+    bottom: -40px;
+    z-index: -1;
+    display: block;
+    color: red;
+  }
+  &::before {
+    content: "";
+    width: 100%;
+    height: 4px;
+    background: red;
+    position: absolute;
+    bottom: -40px;
+    right: 50%;
+    z-index: -1;
+    display: block;
+  }
+}
+.return-color-box-red-after-red {
+  background: red;
+  height: 15px;
+  width: 15px;
+  display: block;
+  font-size: 30px;
+  margin: auto;
+  border-radius: 50%;
+  &::after {
+    content: "";
+    width: 100%;
+    height: 4px;
+    background: red;
+    position: absolute;
+    bottom: -40px;
+    z-index: -1;
+    display: block;
+    color: red;
+  }
+  &::before {
+    content: "";
+    width: 100%;
+    height: 4px;
+    background: red;
+    position: absolute;
+    bottom: -40px;
+    right: 50%;
+    z-index: -1;
+    display: block;
+  }
+}
+
+.return-color-box-l {
+  background: #aaa;
+  height: 15px;
+  width: 15px;
+  display: block;
+  font-size: 30px;
+  margin: auto;
+  border-radius: 50%;
+  &::before {
+    content: "";
+    width: 100%;
+    height: 4px;
+    background: #aaa;
+    position: absolute;
+    bottom: -40px;
+    right: 50%;
+    z-index: -1;
+    display: block;
+  }
+}
+.return-color-box-l-red {
+  background: red;
+  height: 15px;
+  width: 15px;
+  display: block;
+  font-size: 30px;
+  margin: auto;
+  border-radius: 50%;
+  &::before {
+    content: "";
+    width: 100%;
+    height: 4px;
+    background: red;
+    position: absolute;
+    bottom: -40px;
+    right: 50%;
+    z-index: -1;
+    display: block;
+  }
+}
+.return-color-box-before-gray {
+  background: #aaa;
+  height: 15px;
+  width: 15px;
+  display: block;
+  font-size: 30px;
+  margin: auto;
+  border-radius: 50%;
+  &::before {
+    content: "";
+    width: 100%;
+    height: 4px;
+    background: #aaa;
+    position: absolute;
+    bottom: -40px;
+    right: 50%;
+    z-index: -1;
+    display: block;
+  }
+  &::after {
+    content: "";
+    width: 100%;
+    height: 4px;
+    background: #aaa;
+    position: absolute;
+    bottom: -40px;
+    z-index: -1;
+    display: block;
+    color: red;
+  }
+}
+
+.return-color-box-before-gray-red {
+  background: red;
+  height: 15px;
+  width: 15px;
+  display: block;
+  font-size: 30px;
+  margin: auto;
+  border-radius: 50%;
+  &::before {
+    content: "";
+    width: 100%;
+    height: 4px;
+    background: red;
+    position: absolute;
+    bottom: -40px;
+    right: 50%;
+    z-index: -1;
+    display: block;
+  }
+  &::after {
+    content: "";
+    width: 100%;
+    height: 4px;
+    background: red;
+    position: absolute;
+    bottom: -40px;
+    z-index: -1;
+    display: block;
+    color: red;
+  }
+}
+.progress-bar-name-gray-name-red {
+  height: 20px;
+  list-style: none;
+  position: relative;
+  color: red;
+}

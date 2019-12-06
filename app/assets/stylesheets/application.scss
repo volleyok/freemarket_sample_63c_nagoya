@@ -21,6 +21,10 @@
 @import "mypage/address";
 @import "mypage/password";
 @import "mypage/identification";
+@import "cards/new";
+@import "signup";
+
+
 
 
 
@@ -81,6 +85,7 @@ img.rogo {
         width: 875px;
         height: 40px;
         background-color: whitesmoke;
+        position: relative;
         font-size: 16px;
         border-width: 1px;
         border-style: solid;
