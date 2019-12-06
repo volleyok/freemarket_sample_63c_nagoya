@@ -1,5 +1,6 @@
-// $(document).on('turbolinks:load', function() {
+// パスワード表示のためのjs作成中！！未完成の為消さないでください。
 
+// $(document).on('turbolinks:load', function() {
 //   $(function() {
 //     var pw = document.getElementById('password');
 //     var pwCheck = document.getElementById('password-check');
