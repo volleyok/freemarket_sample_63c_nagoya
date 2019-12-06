@@ -23,7 +23,7 @@ $(document).on('turbolinks:load', () => {
             reader.onload = (function(file) {
                 return function(e) {
                     $preview.append(btn_wrapper)
-                    $(".btnimage").prepend($('<img>').attr({
+                    $(".btn_wrapper").prepend($('<img>').attr({
                         src: e.target.result,
                         width: "110px",
                         height: "110px",
@@ -75,6 +75,11 @@ $(document).on('turbolinks:load', () => {
         });
         $('#post_images_attributes_9_image_url').on('change', function() {
             $('#post_images_attributes_9_image_url').css('display', 'none');
+        });
+        $('.preview').on('click','.new-btn-delete',function(){
+          $(this)
+            .parent()
+            .remove()
         });
 
     });
