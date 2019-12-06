@@ -36,7 +36,12 @@
           = f.label :text, "生年月日", class: "member-text"
           %br/
           .myidentification-group-name
-            = current_user.birthday
+            = current_user.birthday_year 
+            年
+            = current_user.birthday_month
+            月
+            = current_user.birthday_day
+            日
 
         .myidentification-group
           = f.label :postal_code, "郵便番号", class: "member-text"
