@@ -1,10 +1,11 @@
 $(document).on('turbolinks:load', () => {
     var images = [];
+    // console.log(images)
     $(function() {
-        $('form').on('change', 'input[type="file"]', '#image', function(e) {
-            var file = e.target.files[0],
-                reader = new FileReader(),
-                $preview = $(".preview");
+      $('form').on('change', 'input[type="file"]', '#image', function(e) {
+        var file = $(this).prop("files")[0],
+        reader = new FileReader(),
+                $preview = $(".preview"),
                 btn_wrapper = $(
                   // 動的にIDを振る
                   `<div class="btnimage" id ="btnimages">
@@ -17,19 +18,21 @@ $(document).on('turbolinks:load', () => {
                   </div>`
                   )
             t = this;
-            if (file.type.indexOf("image") < 0) {
-                return false;
-            }
             reader.onload = (function(file) {
                 return function(e) {
-                    $preview.append(btn_wrapper)
-                    $(".btn_wrapper").prepend($('<img>').attr({
-                        src: e.target.result,
-                        width: "110px",
-                        height: "110px",
-                        class: "preview",
-                        title: file.name
-                    }));
+                  //  var image_item = `< div class ="aaa"></div>`
+                  //  ('.preview').append(image_item)
+                  //  image_item.append(btn_wrapper)
+                  $preview.append(btn_wrapper)
+                  $('.btnimage').prepend($('<img>').attr({
+                    src: e.target.result,
+                    width: "110px", 
+                    height: "110px",
+                    class: "preview_image",
+                    title: file.name
+                  }));
+                   
+                  
                 };
             })(file);
             reader.readAsDataURL(file);
@@ -37,45 +40,45 @@ $(document).on('turbolinks:load', () => {
             var new_image = $(`<input accepts_nested_attributes_for= "accepts_nested_attributes_for"  name="product_images[image][]"  type="file" id="image" image =${images.length} style = display:none>`);
             $(".image_box").prepend(new_image);
         });
-        $('#post_images_attributes_0_image_url').on('change', function() {
-            $('#post_images_attributes_0_image_url').css('display', 'none');
-            $('#post_images_attributes_1_image_url').css('display', 'block');
-        });
-        $('#post_images_attributes_1_image_url').on('change', function() {
-            $('#post_images_attributes_1_image_url').css('display', 'none');
-            $('#post_images_attributes_2_image_url').css('display', 'block');
-        });
-        $('#post_images_attributes_2_image_url').on('change', function() {
-            $('#post_images_attributes_2_image_url').css('display', 'none');
-            $('#post_images_attributes_3_image_url').css('display', 'block');
-        });
-        $('#post_images_attributes_3_image_url').on('change', function() {
-            $('#post_images_attributes_3_image_url').css('display', 'none');
-            $('#post_images_attributes_4_image_url').css('display', 'block');
-        });
-        $('#post_images_attributes_4_image_url').on('change', function() {
-            $('#post_images_attributes_4_image_url').css('display', 'none');
-            $('#post_images_attributes_5_image_url').css('display', 'block');
-        });
-        $('#post_images_attributes_5_image_url').on('change', function() {
-            $('#post_images_attributes_5_image_url').css('display', 'none');
-            $('#post_images_attributes_6_image_url').css('display', 'block');
-        });
-        $('#post_images_attributes_6_image_url').on('change', function() {
-            $('#post_images_attributes_6_image_url').css('display', 'none');
-            $('#post_images_attributes_7_image_url').css('display', 'block');
-        });
-        $('#post_images_attributes_7_image_url').on('change', function() {
-            $('#post_images_attributes_7_image_url').css('display', 'none');
-            $('#post_images_attributes_8_image_url').css('display', 'block');
-        });
-        $('#post_images_attributes_8_image_url').on('change', function() {
-            $('#post_images_attributes_8_image_url').css('display', 'none');
-            $('#post_images_attributes_9_image_url').css('display', 'block');
-        });
-        $('#post_images_attributes_9_image_url').on('change', function() {
-            $('#post_images_attributes_9_image_url').css('display', 'none');
-        });
+        // $('#post_images_attributes_0_image_url').on('change', function() {
+        //     $('#post_images_attributes_0_image_url').css('display', 'none');
+        //     $('#post_images_attributes_1_image_url').css('display', 'block');
+        // });
+        // $('#post_images_attributes_1_image_url').on('change', function() {
+        //     $('#post_images_attributes_1_image_url').css('display', 'none');
+        //     $('#post_images_attributes_2_image_url').css('display', 'block');
+        // });
+        // $('#post_images_attributes_2_image_url').on('change', function() {
+        //     $('#post_images_attributes_2_image_url').css('display', 'none');
+        //     $('#post_images_attributes_3_image_url').css('display', 'block');
+        // });
+        // $('#post_images_attributes_3_image_url').on('change', function() {
+        //     $('#post_images_attributes_3_image_url').css('display', 'none');
+        //     $('#post_images_attributes_4_image_url').css('display', 'block');
+        // });
+        // $('#post_images_attributes_4_image_url').on('change', function() {
+        //     $('#post_images_attributes_4_image_url').css('display', 'none');
+        //     $('#post_images_attributes_5_image_url').css('display', 'block');
+        // });
+        // $('#post_images_attributes_5_image_url').on('change', function() {
+        //     $('#post_images_attributes_5_image_url').css('display', 'none');
+        //     $('#post_images_attributes_6_image_url').css('display', 'block');
+        // });
+        // $('#post_images_attributes_6_image_url').on('change', function() {
+        //     $('#post_images_attributes_6_image_url').css('display', 'none');
+        //     $('#post_images_attributes_7_image_url').css('display', 'block');
+        // });
+        // $('#post_images_attributes_7_image_url').on('change', function() {
+        //     $('#post_images_attributes_7_image_url').css('display', 'none');
+        //     $('#post_images_attributes_8_image_url').css('display', 'block');
+        // });
+        // $('#post_images_attributes_8_image_url').on('change', function() {
+        //     $('#post_images_attributes_8_image_url').css('display', 'none');
+        //     $('#post_images_attributes_9_image_url').css('display', 'block');
+        // });
+        // $('#post_images_attributes_9_image_url').on('change', function() {
+        //     $('#post_images_attributes_9_image_url').css('display', 'none');
+        // });
         $('.preview').on('click','.new-btn-delete',function(){
           $(this)
             .parent()
