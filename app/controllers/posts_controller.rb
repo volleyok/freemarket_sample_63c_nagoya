@@ -69,6 +69,21 @@ class PostsController < ApplicationController
     @category = Category.all.order("id ASC").limit(13)
   end
 
+  def category_list
+    @post = Post.where(category_id:params[:id])
+  end
+
+  def pay
+    @post = Post.find(params[:id])
+    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+    charge = Payjp::Charge.create(
+    amount: @post.price,
+    card: params['payjp-token'],
+    currency: 'jpy'
+    )
+  end
+
+
   private
     def post_params
       params.require(:post).permit(:name, :description, :category, :size, :price, :status, 

@@ -1,5 +1,5 @@
 $(document).on('turbolinks:load', function(){
-  $('.slick').slick({
+  $('.slick').not('.slick-initialized').slick({
     autoplay:true,  
     dots:true,      
   });

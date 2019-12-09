@@ -14,12 +14,12 @@
     .category_box
       .category_box2
         .category_title
-          %span.bbb レディース
+          %span.category0 レディース
         .category_content
           %span トップス
           .category_content-box
             - Category.where(ancestry:"1/14").each do |category|
-              =link_to category.name, "#", class:"category-block"
+              =link_to category.name, category_list_posts_path , class:"category-block"
         .category_content
           %span ジャケット/アウター
           .category_content-box
@@ -48,7 +48,7 @@
     .category_box
       .category_box2
         .category_title
-          %span メンズ
+          %span.category1 メンズ
         .category_content
           %span トップス
           .category_content-box
@@ -77,7 +77,7 @@
     .category_box
       .category_box2
         .category_title
-          %span ベビー・キッズ
+          %span.category2 ベビー・キッズ
         .category_content
           %span ベビー服(女の子用)
           .category_content-box
@@ -106,7 +106,7 @@
     .category_box
       .category_box2
         .category_title
-          %span インテリア・住まい・小物
+          %span.category3 インテリア・住まい・小物
         .category_content
           %span キッチン/食器
           .category_content-box
@@ -140,7 +140,7 @@
     .category_box
       .category_box2
         .category_title
-          %a{:href => "#1"} 本
+          %span.category4 本・音楽・ゲーム
         .category_content
           %span 本
           .category_content-box
@@ -164,7 +164,7 @@
     .category_box
       .category_box2
         .category_title
-          %span おもちゃ・ホビー・グッズ
+          %span.category5 おもちゃ・ホビー・グッズ
         .category_content
           %span おもちゃ
           .category_content-box
@@ -193,7 +193,7 @@
     .category_box
       .category_box2
         .category_title
-          %span コスメ・香水・美容
+          %span.category6 コスメ・香水・美容
         .category_content
           %span ベースメイク
           .category_content-box
@@ -212,7 +212,7 @@
     .category_box
       .category_box2
         .category_title
-          %span 家電・スマホ・カメラ
+          %span.category7 家電・スマホ・カメラ
         .category_content
           %span スマートフォン/携帯電話
           .category_content-box
@@ -236,7 +236,7 @@
     .category_box
       .category_box2
         .category_title
-          %span スポーツ・レジャー
+          %span.category8 スポーツ・レジャー
         .category_content
           %span フィッシング
           .category_content-box
@@ -260,7 +260,7 @@
     .category_box
       .category_box2
         .category_title
-          %span ハンドメイド
+          %span.category9 ハンドメイド
         .category_content
           %span ファッション/小物
           .category_content-box
@@ -284,7 +284,7 @@
     .category_box
       .category_box2
         .category_title
-          %span チケット
+          %span.category10 チケット
         .category_content
           %span 音楽
           .category_content-box
@@ -308,7 +308,7 @@
     .category_box
       .category_box2
         .category_title
-          %span 自動車・オートバイ
+          %span.category11 自動車・オートバイ
         .category_content
           %span 自動車本体
           .category_content-box
@@ -332,7 +332,7 @@
     .category_box
       .category_box2
         .category_title
-          %span その他
+          %span.category12 その他
         .category_content
           %span まとめ売り
           .category_content-box
