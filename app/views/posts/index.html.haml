@@ -52,6 +52,10 @@
                 .item-top
                   .post-price
                     = "¥#{post.price}"
+                  -if post.buyer_id.present? 
+                    .items-box_photo__sold2
+                      .items-box_photo__sold2__inner2
+                        SOLD
                   =image_tag "#{post.images[0].image_url}", size: '20x20', class:'itme-image'
                 .itme__bottom
                   .itme__bottom-name

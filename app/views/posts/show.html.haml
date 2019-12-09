@@ -6,6 +6,10 @@
         = @post.name
       .item-main-content.flex-box
         .owl-item-inner
+          -if @post.buyer_id.present? 
+            .items-box_photo__sold
+              .items-box_photo__sold__inner
+                SOLD
           = image_tag "#{@post.images[0].image_url}", size: '300x300', class:'post_show_photo_main'
           .owl-item-inner-box
           -@post.images.where("image_url is not NULL").each_with_index do |img, i|
