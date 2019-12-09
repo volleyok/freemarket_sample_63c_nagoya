@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   
   def index
-    @post = Post.all
+    @post = Post.all.order("created_at DESC")
     @category = Category.all.order("id ASC").limit(13)
   end
 
@@ -27,6 +27,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    10.times{@post.images.build}
   end
 
   def update

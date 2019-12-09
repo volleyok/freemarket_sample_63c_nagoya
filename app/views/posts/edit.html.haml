@@ -13,11 +13,10 @@
                   .image_upload_title 出品画像
                   .must 必須
                 .text 最大１０枚までアップロードできます。
-                .image_box_main
-                  .preview
-                  %label{for:"image",class:"image_box"}
-                    %input{name:"item[item_images_attributes][][image]" ,type: "file", value: "",id:"image",class:"image_boxs",accept: "image/*",multiple:  true,data: {image: 0}}/
-
+              .image_box_main
+                .preview
+                = form.fields_for :images do |img|
+                  = img.file_field :image_url 
               .good_content
                 .good_content_box
                   .good_content_title 商品名
@@ -46,6 +45,7 @@
                     .content_form.sell__about__right__wrap-box.grand_child
                       = form.collection_select(:category, [], :id, :name, {prompt: "---"}, {id: "grand_child"})
 
+
                   .content_form.good_form_2
                     .content_form.good_form_2_box
                       .good_form_2_title サイズ
@@ -66,6 +66,11 @@
                       .good_form_3_title 商品の状態
                       .must 必須
                     = form.select :status, [["新品","新品"],["未使用に近い","未使用に近い"],["目立った傷なし","目立った傷なし"],["やや傷や汚れあり","やや傷や汚れあり"],["汚れ傷あり","汚れ傷あり"],["状態が悪い","状態が悪い"]],  :prompt => "---",class:"good_form_box"
+
+
+
+
+
               .good_send_how
                 .good_send_how_title_box
                   .good_send_how_title 配送について
@@ -111,11 +116,11 @@
                   .tasx 
                     .tasx_clreafix
                       .left_task 販売手数料(10%)
-                      .rigth_task -
+                      .right_task
                   .profit
                     .profit_box
                       .left_profit 販売利益
-                      .rigth_profit -
+                      .right_profit
               .sell_btn
                 .sell_btn_text
                   .h1 禁止されている出品、行為を必ずご確認ください
@@ -123,7 +128,7 @@
                   .h3 また、出品をもちまして加盟店規約に同意したことになります。
                 .sell_btn_confirm 
                   .sell_btn_confirm_text
-                    =form.submit "変更する",class: "submit"
+                    =form.submit "出品する",class: "submit"
                 .sell_btn_back
                   =link_to "もどる", :back,  class: "sell_btn_back_text"
 

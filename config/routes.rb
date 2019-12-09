@@ -38,7 +38,7 @@ Rails.application.routes.draw do
       get 'password'
       get 'identification'
       get 'confirmation'
-      get 'post_detail'
+      get 'post_detail/:id' , to:'post#detail'
     end
     end
   resources :buy_order, only: :show
