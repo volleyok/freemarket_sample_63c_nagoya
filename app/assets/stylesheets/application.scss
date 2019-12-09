@@ -9,6 +9,7 @@
 @import "posts/user";
 @import "posts/new";
 @import "posts/search";
+@import "posts/category";
 
 @import "mypage/index";
 @import "mypage/show";
@@ -51,7 +52,7 @@
 }
 
 .all-contents {
-    width: 1020px;
+    width: 1050px;
     margin: 0px auto;
     padding: 8px 0px 0px;
 }
@@ -60,6 +61,7 @@
     height: 50px;
     display: flex;
     justify-content: space-between;
+    width: 100%;
 }
 
 .left-content {
@@ -67,22 +69,23 @@
 }
 
 img.rogo {
-    width: 134px;
+    width: 20%;
     height: 40px;
     margin-right: 45px;
 }
 
 .right-content {
     float: right;
-    width: 841px;
+    width: 80%;
     height: 40px;
     display: flex;
     .item-search {
-        width: 841px;
+        width: 100%;
         height: 40px;
+        position: relative;
     }
     .search-form {
-        width: 875px;
+        width: 100%;
         height: 40px;
         background-color: whitesmoke;
         position: relative;
@@ -93,15 +96,16 @@ img.rogo {
         border-image: initial;
         border-radius: 4px;
         padding: 0px 50px 0px 10px;
+        position: relative;
     }
     .search-btn {
         background-color: transparent;
         cursor: pointer;
         height: 40px;
         position: absolute;
-        right: 180px;
-        top: 8px;
-        width: 40px;
+        top: 0;
+        right: 0;
+        width: 45px;
         -webkit-appearance: none;
         border-width: initial;
         border-style: none;
@@ -109,6 +113,7 @@ img.rogo {
         border-image: initial;
         border-radius: 0px 4px 4px 0px;
         padding: 0px;
+
     
     }
     .fas.fa-search {
