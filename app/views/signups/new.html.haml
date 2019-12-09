@@ -98,3 +98,18 @@
       = link_to "本人登録の情報について＞"
 
 = render 'signups/footer'
+
+:javascript
+  $(document).on('turbolinks:load', function() {
+      $(function() {
+          let pw = document.getElementById('password');
+          let pwCheck = document.getElementById('password-check');
+              pwCheck.addEventListener('change', () => {
+          if(pwCheck.checked) {
+              pw.setAttribute('type', 'text');
+          } else {
+              pw.setAttribute('type', 'password');
+          }
+          }, false);
+      });
+  });

@@ -21,7 +21,7 @@
 
 .member-wrap
   %h2 支払い方法
-  = form_tag(pay_card_index_path, method: :post, id: 'charge-form') do
+  = form_tag(pay_card_index_path, method: :post, id: 'charge-form', name: "inputForm") do
 
     .field
       %label カード番号

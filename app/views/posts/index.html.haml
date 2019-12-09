@@ -57,4 +57,41 @@
                   .itme__bottom-name
                     = post.name
 
+    .item__content
+      .item__title
+        .item__title-name メンズ新着アイテム
+        =link_to "#", class: "miru" do
+          もっとみる
+          %i.fas.fa-chevron-right
+      %ul.item__box-lists
+        -@post.each do |post|
+          %li.item__box-list
+            .itme__box-tipe
+              =link_to post_path(post.id), class: "item__box-image" do
+                .item-top
+                  .post-price
+                    = "¥#{post.price}"
+                  =image_tag "#{post.images[0].image_url}", size: '20x20', class:'itme-image'
+                .itme__bottom
+                  .itme__bottom-name
+                    = post.name
+    .item__content
+      .item__title
+        .item__title-name 家電・スマホ・カメラ新着アイテム
+        =link_to "#", class: "miru" do
+          もっとみる
+          %i.fas.fa-chevron-right
+      %ul.item__box-lists
+        -@post.each do |post|
+          %li.item__box-list
+            .itme__box-tipe
+              =link_to post_path(post.id), class: "item__box-image" do
+                .item-top
+                  .post-price
+                    = "¥#{post.price}"
+                  =image_tag "#{post.images[0].image_url}", size: '20x20', class:'itme-image'
+                .itme__bottom
+                  .itme__bottom-name
+                    = post.name
+
   = render partial: "footer"
