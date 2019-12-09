@@ -82,3 +82,4 @@ gem 'ancestry'
 gem 'active_hash'
 gem 'payjp'
 gem 'recaptcha', require: "recaptcha/rails"
+gem 'jquery-turbolinks'
