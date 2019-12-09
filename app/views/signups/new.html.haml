@@ -100,9 +100,7 @@
   $(document).on('turbolinks:load', function() {
       $(function() {
           let pw = document.getElementById('password');
-          console.log(pw)
           let pwCheck = document.getElementById('password-check');
-          console.log(pwCheck)
               pwCheck.addEventListener('change', () => {
           if(pwCheck.checked) {
               pw.setAttribute('type', 'text');
