@@ -65,8 +65,11 @@
                                 flex-wrap: wrap;
                                 display: flex;
                             }
+                            .btnimage{
+                                margin:5px;
+                            }
                             .btn-wrapper{
-                                // display: flex;
+                                display: flex;
                                 width: 100px;
                                 height: 100px;
                                 margin: 5px;
@@ -79,7 +82,6 @@
                                 color: skyblue;
                                 margin: 5px;
                             }
-
                             .image_box {
                                 align-content: stretch;
                                 width: 80%;
@@ -87,10 +89,6 @@
                                 text-align: center;
                                 padding: 10px 10px 10px 10px;
                                 border: 1px solid #ccc;
-                                .image_boxs {
-                                    display: none;
-                                    display: block;
-                                }
                             }
                         }
                     }

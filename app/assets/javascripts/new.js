@@ -9,6 +9,7 @@ $(document).on('turbolinks:load', () => {
         btn_wrapper = $(
           // 動的にIDを振る
           `<div class="btnimage" id ="btnimages">
+            <div class="new-btn-edit">編集</div>
             <div class="new-btn-delete">削除</div>
           </div>`
         );
@@ -20,7 +21,6 @@ $(document).on('turbolinks:load', () => {
                 src: e.target.result,
                 width: "110px", 
                 height: "110px",
-                margin:"5px",
               }));
             };
           })(file);
@@ -28,8 +28,8 @@ $(document).on('turbolinks:load', () => {
           images.push('<img>');
           // inputs.push($(this));
                     
-            var new_image = $(`<input accepts_nested_attributes_for= "accepts_nested_attributes_for"  name="product_images[image][]"  type="file" id="post_images_attributes_0_image_url" image =${images.length} style = display:none>`);
-            $(".image_box").prepend(new_image);
+            // var new_image = $(`<input accepts_nested_attributes_for= "accepts_nested_attributes_for"  name="product_images[image][]"  type="file" id="post_images_attributes_0_image_url" image =${images.length} style = display:none>`);
+            // $(".image_box").prepend(new_image);
         });
         $('#post_images_attributes_0_image_url').on('change', function() {
             $('#post_images_attributes_0_image_url').css('display', 'none');
