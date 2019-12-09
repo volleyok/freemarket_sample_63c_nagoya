@@ -14,8 +14,6 @@ $(document).on('turbolinks:load', function() {
                     dataType: 'json'
                 })
                 .done(function(categories) {
-                    console.log("ok")
-
                     $('.child').css('display', 'block');
                     $('#child').empty();
                     $('.grand_child').css('display', 'none');
@@ -31,9 +29,7 @@ $(document).on('turbolinks:load', function() {
                 });
         });
 
-        $('#child').change(function() {
-            console.log("ok")
-
+        $(this).on("change", "#child", function() {
             var child_id = $("#child").val();
             $.ajax({
                     type: 'GET',
