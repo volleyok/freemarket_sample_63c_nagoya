@@ -3,12 +3,7 @@ Rails.application.routes.draw do
 
   get 'card/show'
 
-  devise_for :users,
-  controllers: {
-    sessions: "users/sessions",
-    registrations: "users/registrations",
-    omniauth_callbacks: 'users/omniauth_callbacks'
-  }
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root to: 'posts#index'
   resources :posts do
     collection do

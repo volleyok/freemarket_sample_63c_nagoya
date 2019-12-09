@@ -35,13 +35,16 @@
       %br/
       = f.email_field :email, autofocus: true, class: "field-input", placeholder: "PC・携帯どちらでも可",autocomplete: "email"
 
-    .field
-      = f.label :password, "パスワード", class: "member-text"
-      %span.required 必須
-      %br/
-      = f.password_field :password, type: "password", id: "password", class: "field-input", placeholder: "7文字以上"
-      %input#password-check{type: "checkbox"}
-
+    - if session[:password]
+      %h6= ""
+    - else 
+      .field
+        = f.label :password, "パスワード", class: "member-text"
+        %span.required 必須
+        %br/
+        = f.password_field :password, type: "password", id: "password", class: "field-input", placeholder: "7文字以上"
+        %input#password-check{type: "checkbox"}
+     
     .actions
 
     .member-person-wrap

@@ -4,7 +4,15 @@ class SignupsController < ApplicationController
   def show
   end
   def new
-    @user = User.new
+    if session[:password]
+      @user = User.new(
+        nickname: session[:nickname],
+        email: session[:email],
+        password: session[:password]
+      )
+    else
+      @user = User.new
+    end
   end
   def phone
     session[:nickname] = user_params[:nickname]
@@ -43,7 +51,6 @@ class SignupsController < ApplicationController
     session[:address] = user_params[:address]
     session[:building_name] = user_params[:building_name]
     session[:phone_number] = user_params[:phone_number]
-    # @user = User.new
     @user = User.new(
     nickname: session[:nickname],
     email: session[:email],
