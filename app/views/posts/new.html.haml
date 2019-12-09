@@ -15,10 +15,22 @@
                 .text 最大１０枚までアップロードできます。
                 .image_box_main
                   .preview
-                  %label{for:"image",class:"image_box"}
-                    %input{name:"product_images[image][]",type: "file", value: "",id:"image",class:"image_boxs",accept: "image/*",accepts_nested_attributes_for: true,image:"0",style:"display:none"}/
-                  -# = form.fields_for :images ,class:"image_box"do |img|
-                  -#   = img.file_field :image_url
+                  -# %label{for:"image",class:"image_box"}
+                    -# %input{name:"product_images[image][]",type: "file", value: "",id:"post_images_attributes_0_image_url",class:"image_boxs",accept: "image/*",accepts_nested_attributes_for: true,image:"0",style:"display:none"}/
+                  = form.fields_for :images ,class:"image_box" do |img|
+                    = img.file_field :image_url,class:"image_box"
+                -# = form.fields_for :images ,class:"image_box" do |img|
+                -#   .dropzone-container.clearfix
+                -#     #preview
+                -#     .dropzone-area
+                -#       = img.label :images, class: "image_box", for: "upload-image" do
+                -#         .input_area
+                -#           = img.file_field :image_url, multiple: true, name: 'product_images[image][]', id: "upload-image", class: "upload-image", 'data-image': 0
+                -#         %p ここをクリックしてください
+                -#     #preview2
+                -#     .dropzone-area2
+                -#       = img.label :image, for: "upload-image" do
+                -#         %p ここをクリックしてください
               .good_content
                 .good_content_box
                   .good_content_title 商品名

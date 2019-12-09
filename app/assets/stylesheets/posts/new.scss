@@ -54,7 +54,7 @@
                         }
                         .image_box_main {
                             display: grid;
-                            width: 695px;
+                            width: 100%;
                             input {
                                 display: none;
                             }
@@ -63,7 +63,6 @@
                             }
                             .preview {
                                 flex-wrap: wrap;
-                                margin: 10px;
                                 display: flex;
                             }
                             .btn-wrapper{
@@ -83,7 +82,7 @@
 
                             .image_box {
                                 align-content: stretch;
-                                width: 3px;
+                                width: 80%;
                                 height: 150px;
                                 text-align: center;
                                 padding: 10px 10px 10px 10px;
