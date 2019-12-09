@@ -7,11 +7,11 @@
       .content_good_box_form
         .content_good_image gazou 
         .content_good_text 
-          -# =@posts.name
+          =@post.name
       .content_good_detail
         .good_cost
           .good_cost_box
-            .buy_money ¥550
+            .buy_money 
             .send_tax 送料込み
         .good_point
           .good_point_display ポイントがありません
@@ -19,12 +19,13 @@
           .buy_cost_box
             .cost_display 支払い金額
             .real_cost
-              -# = "#{@posts.price}円" 
+              = "#{@post.price}円" 
         .attend_content 配送先と支払い方法の入力を完了してください。
         .purchase
           .purchase_text
-            = form_for :buy_order, url:pay_posts_path do |form|
-              %script.payjp-button{:src => "https://checkout.pay.jp", :type => "text/javascript" ,"data-text" => "購入する" ,"data-key" => "pk_test_**************"}
+            .submit
+              =link_to  "購入" ,buy_order_path
+      
     .content_user
       .content_user_box
         .address 配送先
