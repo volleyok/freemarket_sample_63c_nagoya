@@ -1,11 +1,13 @@
 $(document).on('turbolinks:load', () => {
   var images = [];
   // var inputs  =[];
+  
     $(function() {
       $('form').on('change', 'input[type="file"]', '#post_images_attributes_0_image_url', function(e) {
         var file = $(this).prop("files")[0],
         reader = new FileReader();
         $preview = $(".preview");
+        src =  e.target.result
         btn_wrapper = $(
           // 動的にIDを振る
           `<div class="btnimage" id ="btnimages">
@@ -16,7 +18,7 @@ $(document).on('turbolinks:load', () => {
                     
           reader.onload = (function(file) {
             return function(e) {
-              $preview.append(btn_wrapper);
+              $(".preview").append(btn_wrapper);
               $(".btnimage").prepend($('<img>').attr({
                 src: e.target.result,
                 width: "110px", 
