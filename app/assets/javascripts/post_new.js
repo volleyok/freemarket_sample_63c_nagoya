@@ -29,7 +29,7 @@ $(document).on('turbolinks:load', function() {
                 });
         });
 
-        $(this).on("change", "#child", function() {
+        $("#child").change(function() {
             var child_id = $("#child").val();
             $.ajax({
                     type: 'GET',

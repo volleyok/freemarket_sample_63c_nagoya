@@ -1,11 +1,11 @@
 class Post < ApplicationRecord
   belongs_to :seller, class_name: "User", optional: true
   belongs_to :buyer, class_name: "User", optional: true
-  belongs_to :brand
-  belongs_to :shipment
+  belongs_to :brand, dependent: :destroy
+  belongs_to :shipment, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :iine_users, through: :likes, source: :user
-  has_many :images, inverse_of: :post
+  has_many :images, inverse_of: :post, dependent: :destroy
   accepts_nested_attributes_for :shipment, allow_destroy: true
   accepts_nested_attributes_for :brand, allow_destroy: true
   accepts_nested_attributes_for :images, allow_destroy: true

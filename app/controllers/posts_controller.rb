@@ -28,16 +28,13 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-    10.times{@post.images.build}
+    @category_id = @post.category
+    @category = Category.find(@category_id)
   end
 
   def update
     post = Post.find(params[:id])
-    if post.update(post_params)
-      redirect_to mypage_path
-    else
-      redirect_to edit_post_path
-    end
+    @post = Post.update(post_params)
   end
 
   def destroy

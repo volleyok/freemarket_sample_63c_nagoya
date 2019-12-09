@@ -28,10 +28,7 @@
                 = form.text_field :description, placeholder:"商品説明(必須1000文字まで)",class:"good_description_box"
               .good_content_detail
                 .good_content_detail_title 商品の詳細
-
-
                 .good_content_form  
-
                   .content_form.sell__about__right__wrap
                     = form.label :category, "カテゴリー"
                     %span.required.must 必須
@@ -45,7 +42,6 @@
                     .content_form.sell__about__right__wrap-box.grand_child
                       = form.collection_select(:category, [], :id, :name, {prompt: "---"}, {id: "grand_child"})
 
-
                   .content_form.good_form_2
                     .content_form.good_form_2_box
                       .good_form_2_title サイズ
@@ -58,7 +54,7 @@
                         = brand.label "ブランド"
                         %span.form-require-gray 任意
                       %div
-                      = brand.text_field :brand, placeholder: "例）シャネル", value: "", class: "content_form input-default"
+                      = brand.text_field :brand, placeholder: "例）シャネル", value: "#{@post.brand.brand}", class: "content_form input-default"
 
 
                   .content_form.good_form_3                  
