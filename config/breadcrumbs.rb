@@ -46,3 +46,8 @@ crumb :confirmation_mypage do
   link "電話番号の確認", confirmation_mypages_path
   parent :mypage
 end
+
+crumb :category_posts do
+  link "カテゴリー一覧", category_posts_path
+  parent :root
+end
