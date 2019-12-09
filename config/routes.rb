@@ -11,7 +11,6 @@ Rails.application.routes.draw do
       get 'search'
       get 'category' 
       get 'category_list'
-      post 'pay'
     end
   end
   namespace :api do
