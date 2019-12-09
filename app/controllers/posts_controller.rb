@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   def index
     @post = Post.all.order("created_at DESC")
     @category = Category.all.order("id ASC").limit(13)
+    @category = Post.where(category: true)
   end
 
   def new
@@ -32,7 +33,7 @@ class PostsController < ApplicationController
 
   def update
     post = Post.find(params[:id])
-    if post.update(post_params) 
+    if post.update(post_params)
       redirect_to mypage_path
     else
       redirect_to edit_post_path
@@ -64,6 +65,25 @@ class PostsController < ApplicationController
       end
     end
   end
+
+  def category
+    @category = Category.all.order("id ASC").limit(13)
+  end
+
+  def category_list
+    @post = Post.where(category_id:params[:id])
+  end
+
+  def pay
+    @post = Post.find(params[:id])
+    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+    charge = Payjp::Charge.create(
+    amount: @post.price,
+    card: params['payjp-token'],
+    currency: 'jpy'
+    )
+  end
+
 
   private
     def post_params

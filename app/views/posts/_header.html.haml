@@ -12,7 +12,7 @@
 
       %ul.left-contents
         %li.category-search
-          =link_to '#', class: "header-menu cotegory-menu" do
+          =link_to category_posts_path, class: "header-menu cotegory-menu" do
             %i.fas.fa-list-ul
             %h3 カテゴリーから探す
           -# - Category.where('ancestry IS NULL').each do |category|
