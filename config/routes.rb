@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  get 'card/new'
-
-  get 'card/show'
-
   devise_for :users,
   controllers: {
     sessions: "users/sessions",
@@ -13,6 +9,9 @@ Rails.application.routes.draw do
   resources :posts do
     collection do
       get 'search'
+      get 'category' 
+      get 'category_list'
+      post 'pay'
     end
   end
   namespace :api do
