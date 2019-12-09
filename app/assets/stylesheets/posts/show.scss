@@ -20,6 +20,36 @@ body {
     padding: 24px 40px 40px;
     text-align: center;
     box-sizing: border-box;
+    p {
+        height: 45px;
+    }
+    .bold {
+        .btn1 {
+            width: fit-content;
+            margin: 0 auto;
+            color: #fff;
+        }
+        border-radius: 4px;
+        color: #fff;
+        background-color: #ea352d;
+        font-size: 14px;
+        height: 50px;
+        cursor: pointer;
+        position: relative;
+        margin: 0 auto 30px;
+        display: flex;
+        align-items: center;
+        box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    .btn2 {
+        color: #fff;
+    }
+    .item-stop-btn {
+        background-color: #aaa;
+    }
+    .item-delite-btn {
+        background-color: #aaa;
+    }
 }
 
 .item-name {
@@ -43,11 +73,13 @@ body {
     height: 420px;
     width: 300px;
 }
+
 .owl-item-inner-box {
     display: flex;
     justify-content: left;
     flex-wrap: wrap;
 }
+
 .item-detail-table {
     flex: 1;
     height: 420px;
@@ -82,6 +114,7 @@ body {
 .item-price {
     font-size: 40px;
     margin-right: 16px;
+    font-weight: bold;
 }
 
 .item-tax {
@@ -275,31 +308,34 @@ body {
     font-size: 14px;
     border-top: 1px solid #eee;
 }
-// SNSのstyle
 
+// SNSのstyle
 .share-btn .fab.fa-facebook-square {
     background: #385185;
     border-radius: 8px;
     &::before {
-    font-size: 35px;
+        font-size: 35px;
     }
 }
+
 .share-btn .fab.fa-twitter-square {
     background: #fff;
     border-radius: 8px;
     &::before {
-    font-size: 60px;
-    color: skyblue;
+        font-size: 60px;
+        color: skyblue;
     }
 }
+
 .share-btn .fab.fa-line {
     background: #fff;
     border-radius: 8px;
     &::before {
-    font-size: 60px;
-    color: green;
+        font-size: 60px;
+        color: green;
     }
 }
+
 .share-btn .fab.fa-pinterest {
     background: red;
     border-radius: 8px;
@@ -308,8 +344,8 @@ body {
     text-align: center;
     line-height: 50px;
     &::before {
-    font-size: 30px;
-    color: #fff;
+        font-size: 30px;
+        color: #fff;
     }
 }
 
