@@ -53,17 +53,27 @@
                             font-size: 13px;
                         }
                         .image_box_main {
-                            display: grid;
-                            width: 100%;
+                            // display: grid;
+                            // width: 695px;
+                            // background: #f5f5f5;
+                            // border: 1px dashed #ccc;
+                            // min-height: 162px;
+                            // text-align: center;
+                            display: flex;
+                            align-items: center;
                             input {
                                 display: none;
                             }
                             #post_images_attributes_0_image_url {
                                 display: block;
+                                width: 100%;
+                                background: #f5f5f5;
+                                border: 1px dashed #ccc;
+                                min-height: 162px;
+                                text-align: center;
                             }
                             .preview {
-                                flex-wrap: wrap;
-                                display: flex;
+                                // flex-wrap: wrap;
                                 margin: 10px;
                             }
                             .btnimage{
