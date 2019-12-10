@@ -1,0 +1,35 @@
+= render partial: "/posts/header/"
+.navi 
+  - breadcrumb :post_sold_mypages
+  = render "layouts/breadcrumbs"
+= render partial: "posts/camera"
+.main
+  .content
+    .content__box4
+      .content__title 出品した商品
+      .content2
+        .menu6
+          .menu3name2 出品中
+        .menu4
+          .menu4name 取引中
+        .menu7
+          .menu5name2 売却済み
+      .content__hako
+        - @post.each do |post|
+          =link_to "/posts/#{post.id}" do
+            .post-content
+              .post-img
+                .items-box_photo__sold3
+                  .items-box_photo__sold3__inner3
+                    SOLD
+                =image_tag "#{post.images[0].image_url}", class:'itme-image2'
+              .post-detail
+                .post-name
+                  = post.name
+                .detail-btn
+                  .like-btn 
+                    %i.fas.fa-heart.faa-pulse 7
+                  .comment-btn
+                    %i.fas.fa-comment-alt.faa-pulse 0
+  = render "side"
+= render "posts/footer"
