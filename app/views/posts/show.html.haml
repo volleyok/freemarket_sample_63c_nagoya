@@ -59,8 +59,12 @@
           = link_to 'この商品を削除する', post_path, method: :delete , class:"btn1 btn2"
 
       -else
+      -if @post.buyer_id.present? 
         .item-buy-btn.bold
-          = link_to "購入画面に進む", buy_order_confirmation_path, class:"btn1"
+          = link_to "購入済み", root_path, class:"btn1"
+      - else
+        .item-buy-btn.bold
+          = link_to "購入確認画面に進む", buy_order_confirmation_path, class:"btn1"
         .item-button-container
           .item-button-left
             = link_to "いいね"
