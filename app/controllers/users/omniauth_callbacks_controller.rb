@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   # callback for facebook
   def facebook
@@ -14,7 +12,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   # common callback method
   def callback_for(provider)
     info = User.find_oauth(request.env["omniauth.auth"])
-    # snsの情報からuserが登録されているか or snsから情報を取得できているかを確認
+    # snsの情報からuserが登録されているか　or snsから情報を取得できているかを確認
     @user = User.where(nickname: info[:user][:nickname]).or(User.where(email: info[:user][:email])).first || info[:user]
 
     # persisted?はデータがDBに保存されているかを確認する/配列に対しては使えないから@userを定義するときは気をつける
@@ -29,8 +27,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
       #snsでのユーザ登録ではパスワードを入力させないので準備する。パスワードを作成するDeviseメソッドもある。
       #今回のバリデーションは英数字のみなのでこっちを採用
-      session[:password] = SecureRandom.alphanumeric(30)
-
+      session[:password_confirmation] = SecureRandom.alphanumeric(30)
       #SnsCredentialが登録されていないとき
       if SnsCredential.find_by(uid: info[:sns][:uid], provider: info[:sns][:provider]).nil?
         #ユーザ登録と同時にsns_credentialも登録するために
@@ -39,38 +36,11 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       end
       #登録フォームのviewにリダイレクトさせる
       redirect_to new_signup_path
+
     end
   end
 
   def failure
     redirect_to root_path
   end
-
 end
-
-  # You should configure your model like this:
-  # devise :omniauthable, omniauth_providers: [:twitter]
-
-  # You should also create an action method in this controller like this:
-  # def twitter
-  # end
-
-  # More info at:
-  # https://github.com/plataformatec/devise#omniauth
-
-  # GET|POST /resource/auth/twitter
-  # def passthru
-  #   super
-  # end
-
-  # GET|POST /users/auth/twitter/callback
-  # def failure
-  #   super
-  # end
-
-  # protected
-
-  # The path used when OmniAuth fails
-  # def after_omniauth_failure_path_for(scope)
-  #   super(scope)
-  # end
