@@ -5,7 +5,7 @@ class BuyOrderController < ApplicationController
     @post = Post.find(params[:id])
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     charge = Payjp::Charge.create(
-      amount: post.price,
+      amount: @post.price,
       customer: card.customer_id,
       currency: 'jpy'
       )
