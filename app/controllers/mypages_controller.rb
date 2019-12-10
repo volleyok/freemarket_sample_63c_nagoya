@@ -9,6 +9,10 @@ class MypagesController < ApplicationController
     @area = Area.find(@post.shipment.ship_from)
   end
 
+  def post_sold
+    @post = Post.where('buyer_id IS NOT NULL').all
+  end
+
   def edit
   end
 

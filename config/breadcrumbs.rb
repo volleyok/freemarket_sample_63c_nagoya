@@ -8,7 +8,12 @@ crumb :mypage do
 end
 
 crumb :show_mypage do
-  link "出品した用品-出品中", mypage_path
+  link "出品した用品 - 出品中", mypage_path
+  parent :mypage
+end
+
+crumb :post_sold_mypages do
+  link "出品した商品 - 売却済み", post_sold_mypages_path
   parent :mypage
 end
 

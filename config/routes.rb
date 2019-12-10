@@ -38,6 +38,7 @@ Rails.application.routes.draw do
       get 'identification'
       get 'confirmation'
       get 'post_detail'
+      get 'post_sold'
     end
     end
   resources :buy_order, only: :show
