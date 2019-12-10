@@ -4,12 +4,27 @@ class SignupsController < ApplicationController
   def show
   end
   def new
-    @user = User.new
+    if session[:password_confirmation]
+      @user = User.new(
+        #omniauth_callbacks_controllerで定義したsession
+        nickname: session[:nickname],
+        email: session[:email],
+        password: session[:password_confirmation]
+      )
+    else
+      @user = User.new
+    end
   end
+
   def phone
     session[:nickname] = user_params[:nickname]
     session[:email] = user_params[:email]
-    session[:password] = user_params[:password]
+    if session[:password_confirmation]
+      session[:password] = session[:password_confirmation]
+    else
+      session[:password] = user_params[:password_confirmation]
+      session[:password_confirmation] = user_params[:password_confirmation]
+    end
     session[:lastname] = user_params[:lastname]
     session[:firstname] = user_params[:firstname]
     session[:lastname_kana] = user_params[:lastname_kana]
@@ -17,9 +32,9 @@ class SignupsController < ApplicationController
     session[:birthday_year] = user_params[:birthday_year]
     session[:birthday_month] = user_params[:birthday_month]
     session[:birthday_day] = user_params[:birthday_day]
-    
     @user = User.new
   end
+  
   def address
     session[:phone_number] = user_params[:phone_number]
     @user = User.new
@@ -43,11 +58,11 @@ class SignupsController < ApplicationController
     session[:address] = user_params[:address]
     session[:building_name] = user_params[:building_name]
     session[:phone_number] = user_params[:phone_number]
-    # @user = User.new
     @user = User.new(
     nickname: session[:nickname],
     email: session[:email],
     password: session[:password],
+    password_confirmation: session[:password_confirmation],
     lastname: session[:lastname],
     firstname: session[:firstname],
     lastname_kana: session[:lastname_kana],
@@ -63,9 +78,13 @@ class SignupsController < ApplicationController
     building_name: session[:building_name],
     phone_number: session[:phone_number],
     )
- 
     if @user.save
       # ログインするための情報を保管
+      SnsCredential.create(  #ユーザ登録と同時にこっちも登録
+        uid: session[:uid],
+        provider: session[:provider],
+        user_id: @user.id
+      )
       session[:id] = @user.id
       sign_in User.find(session[:id]) unless user_signed_in?
       redirect_to controller: 'card' ,action: 'new'
@@ -80,6 +99,7 @@ class SignupsController < ApplicationController
         :nickname,
         :email,
         :password,
+        :password_confirmation,
         :lastname,
         :firstname,
         :lastname_kana,
@@ -94,7 +114,7 @@ class SignupsController < ApplicationController
         :address,
         :building_name,
         :phone_number,
-          )
+        )
     end
 
     
