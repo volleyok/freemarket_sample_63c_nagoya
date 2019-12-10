@@ -7,10 +7,11 @@ $(document).on('turbolinks:load', () => {
         var file = $(this).prop("files")[0],
         reader = new FileReader();
         $preview = $(".preview");
-        src =  e.target.result
+        src =  e.target.result;
         btn_wrapper = $(
           // 動的にIDを振る
           `<div class="btnimage" id ="btnimages">
+            <img src ="${src}"></div>
             <div class="new-btn-edit">編集</div>
             <div class="new-btn-delete">削除</div>
           </div>`
@@ -18,8 +19,8 @@ $(document).on('turbolinks:load', () => {
                     
           reader.onload = (function(file) {
             return function(e) {
-              $(".preview").append(btn_wrapper);
-              $(".btnimage").prepend($('<img>').attr({
+              // $(".preview").append(btn_wrapper);
+              $preview.prepend($('<img>').attr({
                 src: e.target.result,
                 width: "110px", 
                 height: "110px",
