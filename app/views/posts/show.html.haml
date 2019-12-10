@@ -49,7 +49,7 @@
         %p.item-description-inner
           = "#{@post.description}"
 
-      - if current_user
+      - if user_signed_in? && current_user.id == @post.seller_id
         .item-edit-btn.bold
           = link_to "商品の編集", edit_post_path, class:"btn1"
         %p or
