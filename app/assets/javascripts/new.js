@@ -1,23 +1,27 @@
 $(document).on('turbolinks:load', () => {
     var images = [];
+    num = 0
     $(function() {
         $('form').on('change', 'input[type="file"]', '#image', function(e) {
             var file = e.target.files[0],
                 reader = new FileReader(),
                 $preview = $(".preview");
-            $preview2 = $(".preview2");
+                src= e.target.result,
+                img =$('<img>');
+                btn_wrapper =$(
+                    `<div class="btnbox">
+                        <image src ="${img}">
+                        <div class ="btn-delete">削除</div>
+                    </div>`
+                );
             t = this;
-            if (file.type.indexOf("image") < 0) {
-                return false;
-            }
             reader.onload = (function(file) {
                 return function(e) {
-                    $preview.append($('<img>').attr({
-                        src: e.target.result,
+                    // $preview.append(btn_wrapper)
+                    $preview.prepend($(btn_wrapper).attr({
+                        // src: e.target.result,
                         width: "110px",
                         height: "110px",
-                        class: "preview",
-                        title: file.name
                     }));
                 };
             })(file);
@@ -132,6 +136,12 @@ $(document).on('turbolinks:load', () => {
         });
         $('#post_images_attributes_9_image_url').on('change', function() {
             $('#post_images_attributes_9_image_url').css('display', 'none');
+        });
+
+        $(".btnbox").on('click','delete',".btn-delete" ,function(e){
+            this()
+                .parent()
+                .remove()
         });
 
     });
