@@ -1,10 +1,20 @@
 class Post < ApplicationRecord
+  validates :images, presence: true
+  validates :name, presence: true
+  validates :description, presence: true
+  validates :category, presence: true
+  validates :size, presence: true
+  validates :status, presence: true
+  validates :name, presence: true
+  validates :shipment, presence: true
+  validates :price, presence: true
 
 
   belongs_to :seller, class_name: "User", optional: true
   belongs_to :buyer, class_name: "User", optional: true
   belongs_to :brand, dependent: :destroy
   belongs_to :shipment, dependent: :destroy
+  belongs_to :category
   has_many :likes, dependent: :destroy
   has_many :iine_users, through: :likes, source: :user
   has_many :images, inverse_of: :post, dependent: :destroy

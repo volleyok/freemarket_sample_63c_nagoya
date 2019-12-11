@@ -17,19 +17,33 @@
                   .preview
                   = form.fields_for :images do |img|
                     = img.file_field :image_url 
-                -#   ドラッグアンドドロップ
-                -#   %br
-                -#   またはクリックしてファイルをアップロード
+                -@post.errors.full_messages_for(:images).each do |error|
+                  .error_message
+                    %p= error
+
+
 
               .good_content
                 .good_content_box
                   .good_content_title 商品名
                   .must 必須
                 = form.text_field :name, placeholder:"商品名（必須40文字まで)",class: "good_box"
+                - if @post.errors.any?
+                  - unless @post.valid?
+                    -@post.errors.full_messages_for(:name).each do |error|
+                      .error_message
+                        %p= error
+
                 .good_description 
                   .good_description_title 商品の説明
                   .must 必須
                 = form.text_field :description, placeholder:"商品説明(必須1000文字まで)",class:"good_description_box"
+                - if @post.errors.any?
+                  - unless @post.valid?
+                    -@post.errors.full_messages_for(:description).each do |error|
+                      .error_message
+                        %p= error
+
               .good_content_detail
                 .good_content_detail_title 商品の詳細
 
@@ -44,18 +58,26 @@
                         %option{value: 0} ---
                         - Category.where('ancestry IS NULL').each do |category|
                           %option{value: "#{category.id}"} #{category.name}
+                    - if @post.errors.any?
+                      - unless @post.valid?
+                        -@post.errors.full_messages_for(:category).each do |error|
+                          .error_message
+                            %p= error
                     .content_form.sell__about__right__wrap-box.child
                       %select#child
                     .content_form.sell__about__right__wrap-box.grand_child
-                      = form.collection_select(:category, [], :id, :name, {prompt: "---"}, {id: "grand_child"})
-
+                      = form.collection_select(:category_id, [], :id, :name, {prompt: "---"}, {id: "grand_child"})
 
                   .content_form.good_form_2
                     .content_form.good_form_2_box
                       .good_form_2_title サイズ
                       .must 必須
                     = form.select :size,[["S","S"],["M","M"],["L","L"]],  :prompt => "---",class:"good_form_box"
-
+                    - if @post.errors.any?
+                      - unless @post.valid?
+                        -@post.errors.full_messages_for(:size).each do |error|
+                          .error_message
+                            %p= error
                   .content_form.form-group.brand--container
                     = form.fields_for :brand do |brand|
                       .form_label
@@ -63,14 +85,16 @@
                         %span.form-require-gray 任意
                       %div
                       = brand.text_field :brand, placeholder: "例）シャネル", value: "", class: "content_forminput-default"
-
-
                   .content_form.good_form_3                  
                     .content_form.good_form_3_box
                       .good_form_3_title 商品の状態
                       .must 必須
                     = form.select :status, [["新品","新品"],["未使用に近い","未使用に近い"],["目立った傷なし","目立った傷なし"],["やや傷や汚れあり","やや傷や汚れあり"],["汚れ傷あり","汚れ傷あり"],["状態が悪い","状態が悪い"]],  :prompt => "---",class:"good_form_box"
-
+                    - if @post.errors.any?
+                      - unless @post.valid?
+                        -@post.errors.full_messages_for(:status).each do |error|
+                          .error_message
+                            %p= error
 
 
 
@@ -113,10 +137,15 @@
                     .cost_clearfix_box
                       .title_cost
                         .cost_clearfix_titie 価格
-                        .must 必須
+                        %span.must 必須
                       .cost_clearfix_num
                         .money_key ¥
                         = form.text_field :price, placeholder:"例300",class: "input_cost"
+                    - if @post.errors.any?
+                      - unless @post.valid?
+                        -@post.errors.full_messages_for(:price).each do |error|
+                          .error_message
+                            %p= error
                   .tasx 
                     .tasx_clreafix
                       .left_task 販売手数料(10%)

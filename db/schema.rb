@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191203043620) do
+ActiveRecord::Schema.define(version: 20191210091156) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "prefecture_id"
@@ -73,19 +73,24 @@ ActiveRecord::Schema.define(version: 20191203043620) do
   end
 
   create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name"
-    t.text     "description", limit: 65535
-    t.text     "size",        limit: 65535
-    t.integer  "price"
-    t.string   "status"
-    t.string   "category"
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
+    t.string   "name",                                  null: false
+    t.text     "description", limit: 65535,             null: false
+    t.string   "size",                                  null: false
+    t.integer  "price",                                 null: false
+    t.string   "status",                                null: false
     t.integer  "seller_id"
     t.integer  "buyer_id"
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+    t.integer  "likes_count",               default: 0, null: false
+    t.integer  "category_id"
     t.integer  "brand_id"
     t.integer  "shipment_id"
-    t.integer  "likes_count",               default: 0, null: false
+    t.index ["brand_id"], name: "index_posts_on_brand_id", using: :btree
+    t.index ["buyer_id"], name: "index_posts_on_buyer_id", using: :btree
+    t.index ["category_id"], name: "index_posts_on_category_id", using: :btree
+    t.index ["seller_id"], name: "index_posts_on_seller_id", using: :btree
+    t.index ["shipment_id"], name: "index_posts_on_shipment_id", using: :btree
   end
 
   create_table "shipments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -133,5 +138,10 @@ ActiveRecord::Schema.define(version: 20191203043620) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "posts", "brands"
+  add_foreign_key "posts", "categories"
+  add_foreign_key "posts", "shipments"
+  add_foreign_key "posts", "users", column: "buyer_id"
+  add_foreign_key "posts", "users", column: "seller_id"
   add_foreign_key "sns_credentials", "users"
 end
