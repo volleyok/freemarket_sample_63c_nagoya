@@ -45,6 +45,13 @@
                 }
                 .text {
                     margin: 8px 0 8px;
+                    .error_message {
+                        p {
+                            font-weight: normal;
+                            font-size: 13px;
+                            color: red;
+                        }
+                    }
                     .image_upload {
                         padding: 40px;
                         .image_upload_box {
@@ -269,7 +276,9 @@
                             float: right;
                             .cost {
                                 height: 60px;
+                                display: contents;
                                 .cost_clearfix_box {
+                                    height: 45px;
                                     .title_cost {
                                         display: flex;
                                         float: left;
@@ -403,7 +412,8 @@
     height: 15px;
     width: 25px;
 }
-.content_forminput-default{
+
+.content_forminput-default {
     padding: 10px 0px 10px 16px;
     height: 28px;
     width: 382px;

@@ -16,13 +16,18 @@ class PostsController < ApplicationController
 
   def create
       @post = Post.new(post_params)
-      if @post.save!
+      if @post.save
        shipment_id = Shipment.find(@post.id)
        post = Post.find(@post.id)
        post.update(shipment_id: shipment_id)
        redirect_to root_path
-      else
-       redirect_to new_post_path
+      else 
+        # @post = Post.new
+        @parents = Category.all.order("id ASC").limit(13)
+        @post.build_shipment
+        @post.build_brand
+        10.times{@post.images.build}
+       render 'new'
       end
     end
 
@@ -49,7 +54,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @category = Category.find(@post.category)
+    @category = Category.find(@post.category_id)
     @area = Area.find(@post.shipment.ship_from)
   end
 
@@ -85,10 +90,10 @@ class PostsController < ApplicationController
 
   private
     def post_params
-      params.require(:post).permit(:name, :description, :category, :size, :price, :status, 
+      params.require(:post).permit(:name, :description, :category, :size, :price, :status, :category_id,
       shipment_attributes: [:id, :delivery_fee, :shipping_method, :ship_from, :ship_days],
       images_attributes: [:image_url],
-      brand_attributes: [:id, :brand], category_ids: []).merge(seller_id: current_user.id)
+      brand_attributes: [:id, :brand]).merge(seller_id: current_user.id)
     end
 
 end

@@ -1,17 +1,17 @@
 class CreatePosts < ActiveRecord::Migration[5.0]
   def change
     create_table :posts do |t|
-      t.string      :name
-      t.text        :description
-      t.text        :size
-      t.integer     :price
-      t.string      :status
-      t.string     :category
+      t.string        :name         , null: false
+      t.text          :description  , null: false
+      t.string        :size         , null: false
+      t.integer       :price        , null: false
+      t.string        :status       , null: false
+      # t.references    :category     , null: false , foreign_key: true
+      t.references    :seller       , foreign_key: { to_table: :users }
+      t.references    :buyer        , foreign_key: { to_table: :users }
+      # t.references    :brand        , foreign_key: true
+      # t.references    :shipment     , null: false , foreign_key: true
       t.timestamps
-      t.integer     :seller_id
-      t.integer     :buyer_id
-      t.integer     :brand_id 
-      t.integer     :shipment_id
     end
   end
 end

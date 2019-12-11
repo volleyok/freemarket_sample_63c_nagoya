@@ -1,7 +1,7 @@
 @import "reset";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import "slick-theme"; 
+@import "slick-theme";
 @import "slick";
 @import "carousel";
 @import "posts/index";
@@ -10,7 +10,6 @@
 @import "posts/new";
 @import "posts/search";
 @import "posts/category";
-
 @import "mypage/index";
 @import "mypage/show";
 @import "buy_order_confirmations";
@@ -24,10 +23,6 @@
 @import "mypage/identification";
 @import "cards/new";
 @import "signup";
-
-
-
-
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
@@ -113,8 +108,6 @@ img.rogo {
         border-image: initial;
         border-radius: 0px 4px 4px 0px;
         padding: 0px;
-
-    
     }
     .fas.fa-search {
         font-size: 14px;
@@ -135,13 +128,13 @@ img.rogo {
     height: 50px
 }
 
-.fas.fa-list-ul{
-    margin-right: 4px;
-}
-.fas.fa-tag{
+.fas.fa-list-ul {
     margin-right: 4px;
 }
 
+.fas.fa-tag {
+    margin-right: 4px;
+}
 
 .bottom-contents ul {
     list-style-type: none;
@@ -179,14 +172,15 @@ h3 {
 
 .category-search :hover {
     color: black
-  }
-  
-.category-search li:hover > ul {
+}
+
+.category-search li:hover>ul {
     display: block;
-  }
-  .category-search ul li {
-	line-height: 44px;
-	text-align: left;
+}
+
+.category-search ul li {
+    line-height: 44px;
+    text-align: left;
     font-weight: normal;
     width: 224px;
     background-color: white;
@@ -194,25 +188,20 @@ h3 {
 }
 
 .category-name {
-	color: black;
+    color: black;
     display: block;
     padding-left: 15px;
 }
 
 .category-search ul ul {
-	margin: 0px;
-	padding: 0px;
-	display: none;
-	position: absolute;
-	top: 0;
+    margin: 0px;
+    padding: 0px;
+    display: none;
+    position: absolute;
+    top: 0;
     left: 100%;
     box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
 }
-
-
-
-
-
 
 .brand-lists {
     width: 224px;
@@ -232,7 +221,6 @@ h3 {
 .brand-lists li:hover {
     background-color: rgb(234, 53, 45);
 }
-
 
 .fa-list-ul:before {
     color: rgb(234, 53, 45);
@@ -269,31 +257,32 @@ h3 {
     padding-right: 14px;
     display: flex;
     padding-bottom: 10px;
-    :hover{
-            color: #0095ee;
+     :hover {
+        color: #0095ee;
     }
 }
 
 .middle-content1 {
     padding: 0px 14px;
     padding-bottom: 10px;
-    :hover{
-            color: #0095ee;
+     :hover {
+        color: #0095ee;
     }
 }
+
 .middle-content2 {
     padding: 0px 14px;
     padding-bottom: 10px;
-    :hover{
-            color: #0095ee;
+     :hover {
+        color: #0095ee;
     }
 }
 
 .right-content1 {
     padding-left: 14px;
     padding-bottom: 10px;
-    :hover{
-            color: #0095ee;
+     :hover {
+        color: #0095ee;
     }
 }
 
