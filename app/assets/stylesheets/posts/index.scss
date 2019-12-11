@@ -253,7 +253,7 @@
         &__content {
             // width: 1175px;
             height: 544px;
-            margin: 0 120px;
+            margin: 0 120px 130px;
         }
         &__title {
             display: flex;
@@ -478,7 +478,6 @@
         border-right: 60px solid transparent;
         border-bottom: 60px solid transparent;
         border-left: 60px solid #ea352d ;
-        z-index:100;
         position: absolute;
         &__inner2{
           transform: rotate(-45deg);

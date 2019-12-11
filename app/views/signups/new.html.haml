@@ -1,6 +1,6 @@
 .progress-wrap
   .progress-image
-  = link_to image_tag('/img/logo_red.svg', width: '150', height: '100'), root_path
+  = link_to image_tag('/img/fmarket_logo_red.svg', width: '200', height: '100'), root_path
   %ur.progress-bar
     %li.progress-bar-name-gray-name-red
       会員情報
@@ -37,13 +37,21 @@
       %br/
       = f.email_field :email, autofocus: true, class: "field-input", placeholder: "PC・携帯どちらでも可",autocomplete: "email"
 
-    .field#one
-      = f.label :password, "パスワード", class: "member-text"
-      %span.required 必須
-      %br/
-      = f.password_field :password, type: "password", id: "password", class: "field-input", placeholder: "7文字以上"
-      %input#password-check{type: "checkbox", "data-turbolinks-permanent": ""}
-
+    -if session[:password_confirmation]
+      %h6= ""
+    -else
+      .field
+        = f.label :password, "パスワード", class: "member-text"
+        %span.required 必須
+        %br/
+        = f.password_field :password, type: "password", id: "password", class: "field-input", placeholder: "7文字以上"
+      .field
+        = f.label :password, "確認用パスワード", class: "member-text"
+        %span.required 必須
+        %br/
+        = f.password_field :password_confirmation, type: "password", id: "password", class: "field-input", placeholder: "7文字以上"
+        %input#password-check{type: "checkbox"}
+     
     .actions
 
     .member-person-wrap
