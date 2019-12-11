@@ -1,28 +1,29 @@
 $(document).on('turbolinks:load', () => {
     var images = [];
-    num = 0
+    var btnbox_index = [1,2,3,4,5,6,7,8,9,10];
     $(function() {
         $('form').on('change', 'input[type="file"]', '#image', function(e) {
             var file = e.target.files[0],
                 reader = new FileReader(),
                 $preview = $(".preview");
-                src= e.target.result,
                 img =$('<img>');
+                btnbox_index_first = $(btnbox_index[0]);
                 btn_wrapper =$(
-                    `<div class="btnbox">
-                        <image src ="${img}">
+                    `<div class="btnbox-${btnbox_index[0]}">
                         <div class ="btn-delete">削除</div>
                     </div>`
                 );
             t = this;
             reader.onload = (function(file) {
                 return function(e) {
-                    // $preview.append(btn_wrapper)
-                    $preview.prepend($(btn_wrapper).attr({
-                        // src: e.target.result,
+                    image = btnbox_index[0];
+                    $preview.append(btn_wrapper);
+                    $(`.btnbox-${btnbox_index[0]}`).prepend($(img).attr({
+                        src: e.target.result,
                         width: "110px",
                         height: "110px",
                     }));
+                    btnbox_index.shift();
                 };
             })(file);
             reader.readAsDataURL(file);
@@ -138,10 +139,9 @@ $(document).on('turbolinks:load', () => {
             $('#post_images_attributes_9_image_url').css('display', 'none');
         });
 
-        $(".btnbox").on('click','delete',".btn-delete" ,function(e){
-            this()
-                .parent()
-                .remove()
+        $(".preview").on('click','delete',".btn-delete",function(e){
+            console.log(".btn-delete")
+            .removeClass(`.btnbox-${btnbox_index[0]}`);
         });
 
     });
