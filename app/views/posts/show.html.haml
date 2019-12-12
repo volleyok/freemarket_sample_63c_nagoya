@@ -63,15 +63,15 @@
           .item-buy-btn.bold
             = link_to "購入済み", root_path, class:"btn1"
         - else
-        .item-buy-btn.bold
-          = link_to "購入確認画面に進む", buy_order_confirmation_path, class:"btn1"
-        .item-button-container
-          .item-button-left
-            = link_to "いいね"
-          .item-button-left
-            = link_to "不適切な商品の報告"
-          .item-button-right
-            = link_to "あんしん・あんぜんへの取り組み"
+          .item-buy-btn.bold
+            = link_to "購入確認画面に進む", buy_order_confirmation_path, class:"btn1"
+          .item-button-container
+            .item-button-left
+              = link_to "いいね"
+            .item-button-left
+              = link_to "不適切な商品の報告"
+            .item-button-right
+              = link_to "あんしん・あんぜんへの取り組み"
           
     .message-content
       %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
