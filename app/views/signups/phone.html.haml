@@ -26,6 +26,11 @@
       = f.label :phone_number, "携帯電話の番号", class: "member-text"
       %br/
       = f.text_field :phone_number, autofocus: true, class: "field-input", placeholder: "携帯電話の番号を入力",autocomplete: "phone_number"
+      - if @user.errors.any?
+        - @user.errors.full_messages_for(:phone_number).each do |error|
+          .error-name
+            = error
+
     
 
       .member-person-wrap-suer-text

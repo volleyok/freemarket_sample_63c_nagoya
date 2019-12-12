@@ -28,24 +28,44 @@
       %span.required 必須
       %br/
       = f.text_field :postal_code, autofocus: true, class: "field-input", placeholder: "例) 123-4567",autocomplete: "postal_code"
+      - if @user.errors.any?
+        - @user.errors.full_messages_for(:postal_code).each do |error|
+          .error-name
+            = error
+
     
     .field
       = f.label :prefecture, "都道府県", class: "member-text"
       %span.required 必須
       %br/
       = f.text_field :prefecture, autofocus: true, class: "field-input", placeholder: "北海道",autocomplete: "prefecture"
+      - if @user.errors.any?
+        - @user.errors.full_messages_for(:prefecture).each do |error|
+          .error-name
+            = error
+
     
     .field
       = f.label :city, "市区町村", class: "member-text"
       %span.required 必須
       %br/
       = f.text_field :city, autofocus: true, class: "field-input", placeholder: "例) 横浜市緑区",autocomplete: "city"
+      - if @user.errors.any?
+        - @user.errors.full_messages_for(:city).each do |error|
+          .error-name
+            = error
+
     
     .field
       = f.label :address, "番地", class: "member-text"
       %span.required 必須
       %br/
       = f.text_field :address, autofocus: true, class: "field-input", placeholder: "例) 青山1-1-1",autocomplete: "address"
+      - if @user.errors.any?
+        - @user.errors.full_messages_for(:address).each do |error|
+          .error-name
+            = error
+
     
     .field
       = f.label :building_name, "建物名", class: "member-text"
@@ -55,9 +75,14 @@
     
     .field
       = f.label :phone_number, "電話", class: "member-text"
-      %span.required-any 任意
+      %span.required 必須
       %br/
       = f.telephone_field :phone_number, autofocus: true, class: "field-input", placeholder: "例) 09012345678",autocomplete: "phone_number"
+      - if @user.errors.any?
+        - @user.errors.full_messages_for(:phone_number).each do |error|
+          .error-name
+            = error
+
 
     .field
     = f.submit "次へ進む", class: "submit-button"
