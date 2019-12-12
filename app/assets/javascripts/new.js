@@ -9,7 +9,7 @@ $(document).on('turbolinks:load', () => {
                 img =$('<img>');
                 btnbox_index_first = $(btnbox_index[0]);
                 btn_wrapper =$(
-                    `<div class="btnbox-${btnbox_index[0]}">
+                    `<div class="btnbox-${btnbox_index[0]} btnbox-margin">
                         <div class ="btn-delete">削除</div>
                     </div>`
                 );
@@ -36,7 +36,7 @@ $(document).on('turbolinks:load', () => {
             $('#post_images_attributes_0_image_url').css('display', 'none');
             $('#post_images_attributes_1_image_url').css({
                 'display': 'block',
-                'width': '100%',
+                'width': '75%',
                 'background': '#f5f5f5',
                 'border': '1px dashed #ccc',
                 'min-height': '162px',
@@ -47,7 +47,7 @@ $(document).on('turbolinks:load', () => {
             $('#post_images_attributes_1_image_url').css('display', 'none');
             $('#post_images_attributes_2_image_url').css({
                 'display': 'block',
-                'width': '100%',
+                'width': '55%',
                 'background': '#f5f5f5',
                 'border': '1px dashed #ccc',
                 'min-height': '162px',
@@ -58,7 +58,7 @@ $(document).on('turbolinks:load', () => {
             $('#post_images_attributes_2_image_url').css('display', 'none');
             $('#post_images_attributes_3_image_url').css({
                 'display': 'block',
-                'width': '100%',
+                'width': '35%',
                 'background': '#f5f5f5',
                 'border': '1px dashed #ccc',
                 'min-height': '162px',
@@ -69,7 +69,7 @@ $(document).on('turbolinks:load', () => {
             $('#post_images_attributes_3_image_url').css('display', 'none');
             $('#post_images_attributes_4_image_url').css({
                 'display': 'block',
-                'width': '100%',
+                'width': '20%',
                 'background': '#f5f5f5',
                 'border': '1px dashed #ccc',
                 'min-height': '162px',
@@ -139,9 +139,10 @@ $(document).on('turbolinks:load', () => {
             $('#post_images_attributes_9_image_url').css('display', 'none');
         });
 
-        $(".preview").on('click','delete',".btn-delete",function(e){
-            console.log(".btn-delete")
-            .removeClass(`.btnbox-${btnbox_index[0]}`);
+        $('.preview').on('click','.btn-delete',function(){
+            $(this)
+              .parent()
+              .remove()
         });
 
     });
