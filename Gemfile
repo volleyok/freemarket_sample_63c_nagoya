@@ -83,3 +83,4 @@ gem 'active_hash'
 gem 'payjp'
 gem 'recaptcha', require: "recaptcha/rails"
 gem 'jquery-turbolinks'
+gem 'rails-i18n'
