@@ -1,2 +1,11 @@
-%h1 購入しました！
-=link_to "トップページに戻る", root_path
+.member-wrap
+  %h2 購入完了
+  .field
+    .member-person-wrap-suer-text-center
+      %p ありがとうございます
+      %p 購入が完了しました。
+  
+  = link_to 'メルカリに戻る',root_path , class: "submit-button_start" 
+
+= render 'signups/footer'
+
