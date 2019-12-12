@@ -18,7 +18,6 @@ body {
     background: #fff;
     margin: 40px auto 0;
     padding: 24px 40px 40px;
-    text-align: center;
     box-sizing: border-box;
     p {
         height: 45px;
@@ -55,6 +54,7 @@ body {
 .item-name {
     font-size: 24px;
     margin: 0;
+    text-align: center;
 }
 
 .item-wording {
