@@ -46,7 +46,7 @@
         .item-tax (税込み)
         .item-shipping-fee #{@post.shipment.delivery_fee}
       .item-description
-        %p.item-description-inner
+        .item-description-inner
           = "#{@post.description}"
 
       - if user_signed_in? && current_user.id == @post.seller_id
@@ -60,8 +60,8 @@
 
       -else
         -if @post.buyer_id.present? 
-          .item-buy-btn.bold
-            = link_to "購入済み", root_path, class:"btn1"
+          .item-buy-btn.bold2
+            = link_to "購入済み", root_path, class:"btn1 btn3"
         - else
           .item-buy-btn.bold
             = link_to "購入確認画面に進む", buy_order_confirmation_path, class:"btn1"
