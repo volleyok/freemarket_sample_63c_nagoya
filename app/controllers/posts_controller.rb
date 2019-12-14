@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new]
+  # before_action :category_info_set, only: :index
 
   def index
     @post = Post.all.order("created_at DESC")
@@ -90,6 +91,25 @@ class PostsController < ApplicationController
 
 
   private
+# # ----トップページの商品をカテゴリー別に分ける記述です[WIP]----
+
+#   def category_info_set
+#     num = 1
+#     while num < 9 do
+#       search_anc = Post.where('ancestry LIKE(?)', "#{num}/%")
+#       ids = []
+#       search_anc.each do |i|
+#         ids << i[:id]
+#       end
+#       posts = Post.where(category_id: ids).order("id DESC").limit(4)
+#       instance_variable_set("@cat_no#{num}", posts)
+#       num += 1
+#     end
+#   end
+
+# # ---------------------------------------------------
+
+
     def post_params
       params.require(:post).permit(:name, :description, :category, :size, :price, :status, :category_id,
       shipment_attributes: [:id, :delivery_fee, :shipping_method, :ship_from, :ship_days],
