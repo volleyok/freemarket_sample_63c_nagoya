@@ -40,15 +40,15 @@ class PostsController < ApplicationController
   def update
     post = Post.find(params[:id])
     post.update(post_params)
-      redirect_to mypage_path
+      redirect_to post_path
   end
 
   def destroy
     post = Post.find(params[:id])
     if post.destroy
-      redirect_to mypage_path
+      redirect_to root_path
     else
-      redirect_to mypage_path
+      redirect_to post_path
     end
   end
 
