@@ -71,6 +71,7 @@ class PostsController < ApplicationController
 
   def category
     @category = Category.all.order("id ASC").limit(13)
+    @category_parent = Category.where(ancestry: nil)
   end
 
   def category_list
