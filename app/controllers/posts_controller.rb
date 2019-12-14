@@ -23,7 +23,6 @@ class PostsController < ApplicationController
        post.update(shipment_id: shipment_id)
        redirect_to root_path
       else 
-        # @post = Post.new
         @parents = Category.all.order("id ASC").limit(13)
         @post.build_shipment
         @post.build_brand
@@ -40,7 +39,7 @@ class PostsController < ApplicationController
 
   def update
     post = Post.find(params[:id])
-    @post = Post.update(post_params)
+    post.update(post_params)
       redirect_to mypage_path
   end
 
