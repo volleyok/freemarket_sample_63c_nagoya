@@ -53,9 +53,11 @@ body {
 }
 
 .item-name {
+    font-weight: bold;
     font-size: 24px;
     margin: 0;
     text-align: center;
+    margin-bottom: 20px;
 }
 
 .item-wording {
@@ -141,7 +143,8 @@ body {
         color: white;
     }
 }
-.item-buy-btn.bold2{
+
+.item-buy-btn.bold2 {
     width: 620px;
     height: 50px;
     line-height: 50px;
