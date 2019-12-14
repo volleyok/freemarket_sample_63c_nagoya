@@ -69,6 +69,8 @@
                             // text-align: center;
                             display: flex;
                             align-items: center;
+                            justify-content: left;
+                            // flex-wrap: wrap;
                             input {
                                 display: none;
                             }
@@ -81,9 +83,16 @@
                                 text-align: center;
                             }
                             .preview {
-                                // flex-wrap: wrap;
+                                flex-wrap: wrap;
                                 margin: 10px;
                                 display: flex;
+                                // width: 80%;
+                            }
+                            .btnbox-margin {
+                                margin: 0 10px;
+                            }
+                            .btnbox{
+                                margin: 10px;
                             }
                             .image_box {
                                 align-content: stretch;

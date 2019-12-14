@@ -5,9 +5,13 @@
     
       .search_box
         .search_list_box 
-          並び替え
-          .icon
-          .list
+          %select{name: "並び替え",class:"search_box" }
+            %option{value: "選択肢1",class:"search_box"} 並び替え
+            %option{value: "選択肢2",class:"search_box"} 家格が安い順
+            %option{value:"選択肢3",class:"search_box"} 価格が高い順
+            %option{value:"選択肢4",class:"search_box"} 出品の古い順
+            %option{value:"選択肢5",class:"search_box"} 出品の新しい順
+            %option{value:"選択肢6",class:"search_box"} いいねの多い順
       .search_list
         .search_title 
           詳細検索

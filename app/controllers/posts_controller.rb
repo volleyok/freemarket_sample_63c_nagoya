@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-  
+  before_action :authenticate_user!, only: [:new]
+
   def index
     @post = Post.all.order("created_at DESC")
     @category = Category.all.order("id ASC").limit(13)

@@ -1,24 +1,29 @@
 $(document).on('turbolinks:load', () => {
     var images = [];
+    var btnbox_index = [1,2,3,4,5,6,7,8,9,10];
     $(function() {
         $('form').on('change', 'input[type="file"]', '#image', function(e) {
             var file = e.target.files[0],
                 reader = new FileReader(),
                 $preview = $(".preview");
-            $preview2 = $(".preview2");
+                img =$('<img>');
+                btnbox_index_first = $(btnbox_index[0]);
+                btn_wrapper =$(
+                    `<div class="btnbox-${btnbox_index[0]} btnbox-margin">
+                        <div class ="btn-delete">削除</div>
+                    </div>`
+                );
             t = this;
-            if (file.type.indexOf("image") < 0) {
-                return false;
-            }
             reader.onload = (function(file) {
                 return function(e) {
-                    $preview.append($('<img>').attr({
+                    image = btnbox_index[0];
+                    $preview.append(btn_wrapper);
+                    $(`.btnbox-${btnbox_index[0]}`).prepend($(img).attr({
                         src: e.target.result,
                         width: "110px",
                         height: "110px",
-                        class: "preview",
-                        title: file.name
                     }));
+                    btnbox_index.shift();
                 };
             })(file);
             reader.readAsDataURL(file);
@@ -31,7 +36,7 @@ $(document).on('turbolinks:load', () => {
             $('#post_images_attributes_0_image_url').css('display', 'none');
             $('#post_images_attributes_1_image_url').css({
                 'display': 'block',
-                'width': '100%',
+                'width': '75%',
                 'background': '#f5f5f5',
                 'border': '1px dashed #ccc',
                 'min-height': '162px',
@@ -42,7 +47,7 @@ $(document).on('turbolinks:load', () => {
             $('#post_images_attributes_1_image_url').css('display', 'none');
             $('#post_images_attributes_2_image_url').css({
                 'display': 'block',
-                'width': '100%',
+                'width': '55%',
                 'background': '#f5f5f5',
                 'border': '1px dashed #ccc',
                 'min-height': '162px',
@@ -53,7 +58,7 @@ $(document).on('turbolinks:load', () => {
             $('#post_images_attributes_2_image_url').css('display', 'none');
             $('#post_images_attributes_3_image_url').css({
                 'display': 'block',
-                'width': '100%',
+                'width': '35%',
                 'background': '#f5f5f5',
                 'border': '1px dashed #ccc',
                 'min-height': '162px',
@@ -64,7 +69,7 @@ $(document).on('turbolinks:load', () => {
             $('#post_images_attributes_3_image_url').css('display', 'none');
             $('#post_images_attributes_4_image_url').css({
                 'display': 'block',
-                'width': '100%',
+                'width': '20%',
                 'background': '#f5f5f5',
                 'border': '1px dashed #ccc',
                 'min-height': '162px',
@@ -132,6 +137,12 @@ $(document).on('turbolinks:load', () => {
         });
         $('#post_images_attributes_9_image_url').on('change', function() {
             $('#post_images_attributes_9_image_url').css('display', 'none');
+        });
+
+        $('.preview').on('click','.btn-delete',function(){
+            $(this)
+              .parent()
+              .remove()
         });
 
     });

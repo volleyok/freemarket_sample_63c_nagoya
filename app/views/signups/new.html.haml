@@ -30,28 +30,43 @@
       %span.required 必須
       %br/
       = f.text_field :nickname, autofocus: true, class: "field-input", placeholder: "例)メルカリ太郎",autocomplete: "nickname"
+      - if @user.errors.any?
+        - @user.errors.full_messages_for(:nickname).each do |error|
+          .error-name
+            = error
+
     
     .field
       = f.label :email, "メールアドレス", class: "member-text"
       %span.required 必須
       %br/
       = f.email_field :email, autofocus: true, class: "field-input", placeholder: "PC・携帯どちらでも可",autocomplete: "email"
+      - if @user.errors.any?
+        - @user.errors.full_messages_for(:email).each do |error|
+          .error-name
+            = error
+      - unless session[:uid]
+        .field
+          = f.label :password, "パスワード", class: "member-text"
+          %span.required 必須
+          %br/
+          = f.password_field :password, type: "password", id: "password", class: "field-input", placeholder: "6文字以上"
+        .field
+          = f.label :password, "確認用パスワード", class: "member-text"
+          %span.required 必須
+          %br/
+          = f.password_field :password_confirmation, type: "password", id: "password", class: "field-input", placeholder: "6文字以上"
+          %input#password-check{type: "checkbox"}
+      - if @user.errors.any?
+        - @user.errors.full_messages_for(:password).each do |error|
+          .error-name
+            = error
+      - if @user.errors.any?
+        - @user.errors.full_messages_for(:password_confirmation).each do |error|
+          .error-name
+            = error
 
-    -if session[:password_confirmation]
-      %h6= ""
-    -else
-      .field
-        = f.label :password, "パスワード", class: "member-text"
-        %span.required 必須
-        %br/
-        = f.password_field :password, type: "password", id: "password", class: "field-input", placeholder: "7文字以上"
-      .field
-        = f.label :password, "確認用パスワード", class: "member-text"
-        %span.required 必須
-        %br/
-        = f.password_field :password_confirmation, type: "password", id: "password", class: "field-input", placeholder: "7文字以上"
-        %input#password-check{type: "checkbox"}
-     
+      
     .actions
 
     .member-person-wrap
@@ -66,13 +81,32 @@
       %br/
       = f.text_field :lastname, autofocus: true, class: "field-input-half", placeholder: "例) 山田",autocomplete: "lastname"
       = f.text_field :firstname, autofocus: true, class: "field-input-half", placeholder: "例) 彩",autocomplete: "firstname"
+      - if @user.errors.any?
+        - @user.errors.full_messages_for(:firstname).each do |error|
+          .error-name
+            = error
+      - if @user.errors.any?
+        - @user.errors.full_messages_for(:lastname).each do |error|
+          .error-name
+            = error
 
     .field
       = f.label :lastname_kana, "お名前カナ(全角)", class: "member-text"
       %span.required 必須
       %br/
       = f.text_field :lastname_kana, autofocus: true, class: "field-input-half", placeholder: "例) ヤマダ",autocomplete: "lastname_kana"
+
       = f.text_field :firstname_kana, autofocus: true, class: "field-input-half", placeholder: "例) アヤ",autocomplete: "firstname_kana"
+      - if @user.errors.any?
+        - @user.errors.full_messages_for(:firstname_kana).each do |error|
+          .error-name
+            = error
+      - if @user.errors.any?
+        - @user.errors.full_messages_for(:lastname_kana).each do |error|
+          .error-name
+            = error
+
+
 
     .field
       = f.label :birthday, "生年月日", class: "member-text"
@@ -84,6 +118,18 @@
       月
       = f.select :birthday_day, [*1..31],:prompt => "---", class: "member-text_day"
       日
+      - if @user.errors.any?
+        - @user.errors.full_messages_for(:birthday_year).each do |error|
+          .error-name
+            = error
+      - if @user.errors.any?
+        - @user.errors.full_messages_for(:birthday_month).each do |error|
+          .error-name
+            = error
+      - if @user.errors.any?
+        - @user.errors.full_messages_for(:birthday_day).each do |error|
+          .error-name
+            = error
       .member-person-wrap-suer-text
         %p ※本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
 
