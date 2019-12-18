@@ -150,4 +150,4 @@
 
 #### Association
 - belongs_to :post
-
+a
