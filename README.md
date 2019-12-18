@@ -151,3 +151,4 @@
 #### Association
 - belongs_to :post
 
+aiueo
