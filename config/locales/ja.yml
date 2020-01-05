@@ -21,10 +21,6 @@ ja:
         city: 市区町村
         address: 番地
 
-  activerecord:
-    models:
-      post: 投稿
-    attributes:
       post:
         name: 商品名
         description: 商品説明
@@ -33,6 +29,18 @@ ja:
         category: カテゴリー
         size: サイズ
         status: 商品状態
+  # activerecord:
+  #   models:
+  #     post: 投稿
+    # attributes:
+    #   post:
+    #     name: 商品名
+    #     description: 商品説明
+    #     price: 価格
+    #     images: 画像
+    #     category: カテゴリー
+    #     size: サイズ
+    #     status: 商品状態
 
 
 
